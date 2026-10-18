@@ -174,6 +174,25 @@ nav.tabbar button[aria-selected="true"] { color: var(--accent); }
 nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
 
 @media (prefers-reduced-motion: reduce) { .meter span { transition: none; } }
+
+/* Blocos de hora e explicações */
+.hour { display: grid; gap: 10px; }
+.hour-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.hour-head h3 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 20px; }
+.hour-head .order { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.taskcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.taskcard:has(input:checked) { background: var(--good-soft); border-color: var(--good); }
+.taskcard .task { border: 0; border-radius: 0; background: transparent; }
+.taskcard:has(input:checked) .task { background: transparent; }
+details.how { border: 0; border-top: 1px dashed var(--line); border-radius: 0; background: transparent; padding: 8px 14px 10px 54px; }
+details.how summary { font-size: 14px; color: var(--accent); font-weight: 700; min-height: 24px; }
+details.how p, details.how li { font-size: 15px; color: var(--ink); }
+details.how ul, details.how ol { margin-top: 6px; }
+.glossary { display: grid; gap: 10px; margin: 0; }
+.glossary div { display: grid; gap: 2px; }
+.glossary dt { font-weight: 700; }
+.glossary dd { margin: 0; color: var(--muted); font-size: 15px; }
+.pill { display: inline-block; font-family: var(--font-mono); font-size: 12px; padding: 1px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--ink); }
 </style>
 </head>
 <body>
@@ -193,55 +212,149 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
 <section class="panel" id="hoje" role="tabpanel" aria-labelledby="tab-hoje">
   <div class="today-head">
     <h2><small id="todayDate">Hoje</small><span id="todayTitle">Treino do dia</span></h2>
+    <p class="muted">São 2 horas: <strong>1 h de Godot</strong> e <strong>1 h de pixel art</strong>, com 5 minutos de pausa entre elas. Comece pela Godot, que cansa mais a cabeça.</p>
   </div>
   <div class="stats">
     <div class="stat"><span class="k">Dia</span><span class="v" id="sDay">1</span><span class="s">do plano</span></div>
     <div class="stat"><span class="k">Sequência</span><span class="v" id="sStreak">0</span><span class="s">dias completos</span></div>
-    <div class="stat"><span class="k">Fase</span><span class="v" id="sPhase">1</span><span class="s" id="sPhaseName">Base 32×32</span></div>
+    <div class="stat"><span class="k">Mês</span><span class="v" id="sMonth">1</span><span class="s" id="sMonthName">Fundamentos</span></div>
   </div>
 
-  <div class="tasks" id="tasks">
-    <label class="task"><input type="checkbox" id="t-estudo"><span><span class="t"><span>Estudo</span><span class="min">30–40 min</span></span><span class="d" id="tdEstudo">Uma aula do curso, em 1,5×.</span></span></label>
-    <label class="task"><input type="checkbox" id="t-ref"><span><span class="t"><span>Referência</span><span class="min">20–30 min</span></span><span class="d" id="tdRef">Copie um sprite olhando, analise, depois desenhe de memória.</span></span></label>
-    <label class="task"><input type="checkbox" id="t-pratica"><span><span class="t"><span>Prática</span><span class="min">~60 min</span></span><span class="d" id="tdPratica">Aplique a aula num desenho seu.</span></span></label>
+  <!-- HORA DE GODOT -->
+  <div class="hour">
+    <div class="hour-head"><h3>Hora de Godot</h3><span class="order">1ª hora · 60 min</span></div>
+    <div class="taskcard">
+      <label class="task"><input type="checkbox" id="h-g1"><span><span class="t"><span>Aprender</span><span class="min">~20 min</span></span><span class="d" id="tdGodot1">Uma aula ou trecho do tutorial, no método PRIMM.</span></span></label>
+      <details class="how"><summary>Como fazer</summary>
+        <p>Use o <strong>PRIMM</strong>, o método que deu notas melhores num estudo com 493 alunos:</p>
+        <ol>
+          <li><strong>Prever:</strong> antes de dar play no código do vídeo, pause e diga o que acha que vai acontecer.</li>
+          <li><strong>Rodar:</strong> rode e veja se acertou.</li>
+          <li><strong>Investigar:</strong> descubra por que funcionou. O que cada linha faz?</li>
+          <li><strong>Modificar:</strong> mude um valor, troque uma tecla, veja o que muda.</li>
+          <li><strong>Criar:</strong> no bloco seguinte, faça algo seu com isso.</li>
+        </ol>
+        <p>Quando o professor propuser algo novo, tente sozinho por 10–15 min antes de ver a solução. Errar antes ensina mais.</p>
+      </details>
+    </div>
+    <div class="taskcard">
+      <label class="task"><input type="checkbox" id="h-g2"><span><span class="t"><span>Fazer sozinho</span><span class="min">~30 min</span></span><span class="d" id="tdGodot2">Aplique o que aprendeu sem olhar a aula.</span></span></label>
+      <details class="how"><summary>Como fazer</summary>
+        <ul>
+          <li>Feche o vídeo e tente reproduzir ou estender o que viu, numa cena sua.</li>
+          <li>Travou? Tente por 10–15 min. Leia a mensagem de erro na aba <strong>Saída</strong> ou <strong>Depurador</strong>.</li>
+          <li>Ainda travado: pesquise <strong>um problema específico</strong> ("como fazer o inimigo seguir o jogador na Godot") ou consulte a documentação. Nunca o jogo inteiro.</li>
+          <li>Se perguntar a uma IA, peça <strong>dica, não código</strong>, e pergunte "por quê".</li>
+        </ul>
+      </details>
+    </div>
+    <div class="taskcard">
+      <label class="task"><input type="checkbox" id="h-g3"><span><span class="t"><span>Lembrar sem olhar</span><span class="min">~10 min</span></span><span class="d" id="tdGodot3">Explique o código do dia em voz alta.</span></span></label>
+      <details class="how"><summary>Como fazer</summary>
+        <ul>
+          <li>Abra o script de hoje e explique <strong>em voz alta</strong>, linha por linha, o que cada uma faz.</li>
+          <li>Ou refaça de memória, numa cena nova, algo que aprendeu na semana passada.</li>
+          <li>Por quê: quem consegue explicar o código em português simples também escreve código melhor (Lopez et al., 2008), e lembrar sem consultar fixa o conteúdo.</li>
+        </ul>
+      </details>
+    </div>
+    <div class="next">
+      <span class="k">Etapa atual na Godot</span>
+      <span class="v" id="nextGodot">Minicurso da NextIndie</span>
+      <span class="d" id="nextGodotD">12 aulas grátis no YouTube.</span>
+      <button class="btn" type="button" data-go="godot">Ver a trilha de Godot</button>
+    </div>
   </div>
-  <div class="done-banner" id="doneBanner" hidden>Treino de hoje completo. Guarde o desenho com a data.</div>
 
-  <div class="next" id="nextBox">
-    <span class="k">Próximo módulo do curso</span>
-    <span class="v" id="nextMod">1. Introdução ao Aseprite</span>
-    <span class="d" id="nextModD">Atenção a Camadas, Frames, Tags e Exportar frames.</span>
-    <button class="btn" type="button" data-go="treino">Ver no Treino</button>
+  <!-- HORA DE PIXEL ART -->
+  <div class="hour">
+    <div class="hour-head"><h3>Hora de pixel art</h3><span class="order">2ª hora · 60 min</span></div>
+    <div class="taskcard">
+      <label class="task"><input type="checkbox" id="h-a1"><span><span class="t"><span>Estudo</span><span class="min">~20 min</span></span><span class="d" id="tdArte1">Uma aula do curso, em 1,5×.</span></span></label>
+      <details class="how"><summary>Como fazer</summary>
+        <ul>
+          <li>Assista uma aula do curso "Pixel Art do zero ao avançado" em velocidade 1,5× (o curso é lento, segundo os próprios alunos).</li>
+          <li>Pule as aulas repetidas. A aba <strong>Treino</strong> mostra o que ver e o que pular.</li>
+          <li>Se a aula tiver exercício, faça. Só assistir quase não faz evoluir.</li>
+        </ul>
+      </details>
+    </div>
+    <div class="taskcard">
+      <label class="task"><input type="checkbox" id="h-a2"><span><span class="t"><span>Referência</span><span class="min">~15 min</span></span><span class="d" id="tdArte2">Copie e analise um sprite de um jogo.</span></span></label>
+      <details class="how"><summary>Como fazer</summary>
+        <ol>
+          <li><strong>Copie olhando, sem decalcar:</strong> a referência fica ao lado, não por baixo.</li>
+          <li><strong>Analise:</strong> quantas cores? De onde vem a luz? Como foi feito com tão poucos pixels?</li>
+          <li><strong>Feche e desenhe de memória:</strong> os erros mostram o que falta entender.</li>
+        </ol>
+        <p>O jogo muda a cada dia de propósito: comparar estilos diferentes ensina mais (Kornell e Bjork, 2008). Sprites originais ficam no The Spriters Resource. Cópia de estudo nunca vai para o seu jogo.</p>
+      </details>
+    </div>
+    <div class="taskcard">
+      <label class="task"><input type="checkbox" id="h-a3"><span><span class="t"><span>Prática</span><span class="min">~25 min</span></span><span class="d" id="tdArte3">Aplique a aula num desenho seu.</span></span></label>
+      <details class="how"><summary>Como fazer</summary>
+        <ul>
+          <li>Faça um desenho <strong>seu</strong> usando o assunto da aula de hoje.</li>
+          <li>Concentre-se no <strong>foco do dia</strong>, um ponto fraco por vez.</li>
+          <li>Salve com a data no nome (ex.: <code>2026-10-18-pocao.aseprite</code>) para comparar depois.</li>
+          <li>A partir do mês 4, coloque seus sprites nos jogos da Godot.</li>
+        </ul>
+      </details>
+    </div>
+    <div class="next" id="nextBox">
+      <span class="k">Próximo módulo do curso</span>
+      <span class="v" id="nextMod">1. Introdução ao Aseprite</span>
+      <span class="d" id="nextModD">Atenção a Camadas, Frames, Tags e Exportar frames.</span>
+      <button class="btn" type="button" data-go="treino">Ver no Treino</button>
+    </div>
   </div>
 
-  <div class="callout" id="todayNote">Medição mensal: no dia 1 de cada mês, desenhe sempre o mesmo personagem e compare com o mês anterior.</div>
+  <div class="done-banner" id="doneBanner" hidden>As duas horas de hoje estão completas. Guarde o desenho e o projeto com a data.</div>
+  <div class="callout" id="todayNote">Lembretes da semana e do mês aparecem aqui.</div>
 
   <details>
-    <summary>O ciclo da referência</summary>
-    <ol class="steps">
-      <li><span><strong>Copie olhando, sem decalcar.</strong> A referência fica ao lado, não por baixo do desenho.</span></li>
-      <li><span><strong>Analise enquanto copia.</strong> Quantas cores? De onde vem a luz? Como o músculo foi feito com tão poucos pixels?</span></li>
-      <li><span><strong>Feche a referência e desenhe de memória.</strong> Os erros mostram o que você ainda não entendeu.</span></li>
-      <li><span><strong>Aplique num personagem seu.</strong> É esse desenho que pode ir para o jogo; a cópia de estudo nunca vai.</span></li>
-    </ol>
+    <summary>Ritmo da semana e do mês</summary>
+    <ul>
+      <li><strong>Domingo, pixel art:</strong> poste um desenho no r/PixelArt e peça uma crítica específica ("o que está errado na luz?"). Elogio genérico não ensina.</li>
+      <li><strong>Domingo, Godot:</strong> refaça de memória, numa cena nova, a mecânica principal da semana.</li>
+      <li><strong>Dia 1 do mês, pixel art:</strong> desenhe sempre o mesmo personagem e compare com o mês anterior. É assim que se vê a evolução.</li>
+      <li><strong>Dia 1 do mês, Godot:</strong> recrie do zero a mecânica mais importante do mês e cronometre. Se o tempo cair, você está aprendendo.</li>
+    </ul>
   </details>
-  <p class="muted">As marcações ficam salvas só neste aparelho. A lista de hoje recomeça a cada dia.</p>
+
+  <details>
+    <summary>Plano mês a mês</summary>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Mês</th><th>Pixel art</th><th>Godot</th></tr></thead>
+      <tbody>
+        <tr><td>1–2</td><td>Módulos 1 e 2. Objetos 32×32 (maçã, poção, espada)</td><td>Fundamentos: minicurso e "Seu primeiro jogo 2D"</td></tr>
+        <tr><td>3</td><td>Módulo 3. Primeiro personagem 32×32</td><td>Jogo 1: Pong</td></tr>
+        <tr><td>4</td><td>Módulo 4. Idle e caminhada 32×32</td><td>Jogo 2: Breakout, com seus sprites</td></tr>
+        <tr><td>5–6</td><td>Começo do 64×64 em 3/4. Teste 64 × 96</td><td>Jogo 3: plataforma simples</td></tr>
+        <tr><td>7–9</td><td>Módulo 5. Combo de socos 64×64</td><td>Jogo 4: arena de briga</td></tr>
+        <tr><td>10–12</td><td>Inimigos e efeitos de impacto</td><td>Jogo 5: uma fase de beat 'em up. Checklist "pronto para IA"</td></tr>
+        <tr><td>12–24</td><td>Personagem completo, cenários, inimigos</td><td>Seu jogo: página no Steam, demo, Next Fest, lançamento</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Os prazos são estimativas. As medições mensais mostram o ritmo real.</p>
+  </details>
+  <p class="muted">As marcações ficam salvas só neste aparelho. As tarefas de hoje recomeçam a cada dia.</p>
 </section>
 
 <!-- TREINO -->
 <section class="panel" id="treino" role="tabpanel" aria-labelledby="tab-treino" hidden>
-  <h2><small>Curso comprado</small>Pixel Art do zero ao avançado</h2>
+  <h2><small>Pixel art · curso comprado</small>Pixel Art do zero ao avançado</h2>
   <div class="group">
-    <p>São 204 aulas e 49 h. Para um beat 'em up, o essencial são umas 30 h, ou umas 20 h assistindo em 1,5×. Marque cada módulo ao terminar.</p>
+    <p>São 204 aulas e 49 h. Para um beat 'em up, o essencial são umas 30 h, ou umas 20 h assistindo em 1,5×. Com ~20 min de aula por dia, dá uns 2–3 meses. Marque cada módulo ao terminar.</p>
     <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
     <p class="progress" id="prog">0 de 6 módulos essenciais concluídos</p>
     <div class="check" id="mods">
-      <label><input type="checkbox" id="m1" data-ess><span><span class="t">1. Introdução ao Aseprite<span class="h">2h21</span></span><span class="d">Atenção a Camadas, Frames, Tags e Exportar frames.</span></span></label>
-      <label><input type="checkbox" id="m2" data-ess><span><span class="t">2. Técnicas básicas<span class="h">9h29</span></span><span class="d">Luz e sombra, Materiais, Dithering, Anti-aliasing. Faça os 4 exercícios do pirata.</span></span></label>
-      <label><input type="checkbox" id="m3" data-ess><span><span class="t">3. Desenho em pixel art<span class="h">4h17</span></span><span class="d">Proporção, volume, silhueta, ação, boneco de palito, perspectiva em jogos 2D.</span></span></label>
-      <label><input type="checkbox" id="m4" data-ess><span><span class="t">4. Design de personagem<span class="h">4h25</span></span><span class="d">Resolução do jogo, tamanho do personagem, paleta limitada. Aulas 11–15 repetem silhueta: dá para acelerar.</span></span></label>
-      <label><input type="checkbox" id="m5" data-ess><span><span class="t">5. Animação<span class="h">8h36</span></span><span class="d">Aulas 1–5 (quadros-chave), 12–24 (idle, tiro, pulo, corrida), 25–29 (espada e smear). Aula 11 é um bom bônus.</span></span></label>
-      <label><input type="checkbox" id="m6" data-ess><span><span class="t">6. Animação de efeitos<span class="h">~1h15</span></span><span class="d">Só as aulas 1, 7, 8 e 9: faíscas de impacto e poeira de queda.</span></span></label>
+      <label><input type="checkbox" id="m1" data-ess><span><span class="t">1. Introdução ao Aseprite<span class="h">2h21</span></span><span class="d">Veja tudo. Atenção a Camadas, Frames, Tags e Exportar frames: você vai usar em toda animação.</span></span></label>
+      <label><input type="checkbox" id="m2" data-ess><span><span class="t">2. Técnicas básicas<span class="h">9h29</span></span><span class="d">Veja tudo. Luz e sombra, Materiais, Dithering e Anti-aliasing são a base do visual do SoR2. Faça os 4 exercícios do pirata: é aqui que a evolução aparece.</span></span></label>
+      <label><input type="checkbox" id="m3" data-ess><span><span class="t">3. Desenho em pixel art<span class="h">4h17</span></span><span class="d">Veja tudo. Proporção, volume, silhueta, ação, boneco de palito e Perspectiva em jogos 2D (a pose 3/4 do beat 'em up).</span></span></label>
+      <label><input type="checkbox" id="m4" data-ess><span><span class="t">4. Design de personagem<span class="h">4h25</span></span><span class="d">Resolução do jogo, tamanho do personagem e paleta limitada. As aulas 11–15 repetem silhueta do módulo 3: dá para acelerar.</span></span></label>
+      <label><input type="checkbox" id="m5" data-ess><span><span class="t">5. Animação<span class="h">8h36</span></span><span class="d">O mais importante para beat 'em up. Aulas 1–5 (quadros-chave, interpolação), 12–24 (idle, pulo, corrida), 25–29 (espada e smear = socos com impacto). A 11 é um bom bônus.</span></span></label>
+      <label><input type="checkbox" id="m6" data-ess><span><span class="t">6. Animação de efeitos<span class="h">~1h15</span></span><span class="d">Só as aulas 1, 7, 8 e 9: faíscas de impacto e poeira quando o inimigo cai.</span></span></label>
       <label class="skip"><input type="checkbox" id="m7"><span><span class="t">Background <span class="tag later">depois</span><span class="h">1h47</span></span><span class="d">Cidade com prédios, como os cenários do SoR2. Fica para quando o personagem estiver pronto.</span></span></label>
       <label class="skip"><input type="checkbox" id="m8"><span><span class="t">Tilesets e Top Down <span class="tag no">pular</span><span class="h">13h02</span></span><span class="d">Beat 'em up usa cenário de fundo, não tiles, e a vista de cima não serve para o gênero.</span></span></label>
     </div>
@@ -252,32 +365,52 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
     <div class="table-wrap"><table class="stack">
       <thead><tr><th>Fase</th><th>Quando</th><th>Meta</th></tr></thead>
       <tbody>
-        <tr><td>1. Base</td><td>Mês 1–2</td><td>Objetos e personagens 32×32, luz e sombra, idle e caminhada simples</td></tr>
-        <tr><td>2. 64×64</td><td>Mês 3–4</td><td>Personagem parado com anatomia, roupa e sombra estilo Mega Drive</td></tr>
-        <tr><td>3. Luta</td><td>Mês 5–6</td><td>Idle, caminhada e um combo de socos com peso</td></tr>
-        <tr><td>4. Nível SoR2</td><td>Mês 7–12</td><td>Personagem completo com 10–15 animações e primeiros inimigos</td></tr>
+        <tr><td>1. Base</td><td>Mês 1–4</td><td>Objetos e personagens 32×32, luz e sombra, idle e caminhada simples</td></tr>
+        <tr><td>2. 64×64</td><td>Mês 5–6</td><td>Personagem parado em 3/4, com anatomia, roupa e sombra estilo Mega Drive</td></tr>
+        <tr><td>3. Luta</td><td>Mês 7–9</td><td>Idle, caminhada e um combo de socos com peso</td></tr>
+        <tr><td>4. Jogo</td><td>Mês 10–24</td><td>Inimigos, efeitos, chefes, cenários e os personagens completos</td></tr>
       </tbody>
     </table></div>
+    <div class="callout"><strong>Teste do mês 5–6:</strong> desenhe o mesmo personagem em 64×64 e em 96×96, anime um soco nos dois e cronometre. Se o 96 ficou muito mais bonito e levou menos de 2× o tempo, vá para o grande. Senão, fique em 64 ou em 80×80. Decida antes de começar a arte do jogo.</div>
     <ul>
-      <li>Fique 2 meses em 32×32 antes de subir para 64×64.</li>
+      <li>Fique em 32×32 até o mês 4: com poucos pixels se aprende cor, luz e sombra mais rápido.</li>
       <li>Paleta do Mega Drive: 15 cores mais transparência por personagem.</li>
-      <li>Golpes pedem antecipação, frame de impacto mais longo e smear.</li>
+      <li>Resolução do jogo recomendada: 320×180, com personagens de ~58 px de altura.</li>
+      <li>Golpes pedem antecipação, quadro de impacto mais longo e smear.</li>
       <li>Estude quadro a quadro no YouTube: <code>.</code> avança e <code>,</code> volta um quadro.</li>
+      <li>Arquivo de estudo de mãos: <code>Documentos\pixel-art\estudo-maos.aseprite</code> (para o mês 5).</li>
     </ul>
-    <p class="muted">Os prazos são uma estimativa. A medição mensal mostra onde você realmente está.</p>
   </div>
 
   <div class="group">
     <h3>Depois deste curso</h3>
-    <p><a href="https://www.udemy.com/course/pixel-art-e-animacao-2d-com-aseprite/">Pixel Art e Animação 2D com Aseprite</a>, por R$ 27,90 e nota 4,6. É direto e focado em personagem, nos 12 princípios da animação e em sprite sheets. As avaliações dizem que é rápido demais para iniciante, então fica para depois.</p>
+    <p><a href="https://www.udemy.com/course/pixel-art-e-animacao-2d-com-aseprite/">Pixel Art e Animação 2D com Aseprite</a>, por ~R$ 27,90 e nota 4,6. Direto e focado em personagem, nos 12 princípios da animação e em sprite sheets. É rápido para iniciante, por isso fica para depois.</p>
   </div>
+
+  <details>
+    <summary>O que é cada coisa (pixel art)</summary>
+    <dl class="glossary">
+      <div><dt>3/4 (três quartos)</dt><dd>Corpo virado meio de lado e meio para a câmera. É a pose do beat 'em up: pés desencontrados, braço e perna de trás mais escuros e uma sombra oval no chão.</dd></div>
+      <div><dt>Paleta</dt><dd>O conjunto limitado de cores do desenho. Poucas cores deixam o visual coeso e facilitam as decisões.</dd></div>
+      <div><dt>Luz e sombra</dt><dd>Escolha de onde vem a luz (sempre do mesmo lado) e uso de tons claro, médio e escuro para dar volume.</dd></div>
+      <div><dt>Dithering</dt><dd>Xadrez de pixels de duas cores para simular um tom intermediário ou uma transição suave.</dd></div>
+      <div><dt>Anti-aliasing</dt><dd>Pixels de tom intermediário nas bordas e curvas para suavizar o "serrilhado".</dd></div>
+      <div><dt>Silhueta</dt><dd>A forma do personagem pintada de uma cor só. Se ela for legível, o personagem é reconhecível mesmo pequeno.</dd></div>
+      <div><dt>Quadro-chave</dt><dd>As poses principais de uma animação (início, golpe, fim). Os quadros entre elas são a interpolação.</dd></div>
+      <div><dt>Antecipação</dt><dd>Movimento contrário antes do golpe (puxar o braço antes do soco). Dá peso.</dd></div>
+      <div><dt>Quadro de impacto</dt><dd>O quadro em que o golpe acerta. Fica mais tempo na tela para o soco "pesar".</dd></div>
+      <div><dt>Smear</dt><dd>Borrão desenhado num quadro para mostrar movimento muito rápido.</dd></div>
+      <div><dt>Sprite sheet</dt><dd>Uma imagem com todos os quadros da animação lado a lado, que a Godot lê para animar.</dd></div>
+      <div><dt>Medição mensal</dt><dd>Desenhar sempre o mesmo personagem no dia 1 de cada mês para comparar e ver a evolução real.</dd></div>
+    </dl>
+  </details>
 
   <details>
     <summary>Por que a rotina é assim</summary>
     <ul>
       <li><strong>Prática com foco vale mais que horas.</strong> A prática deliberada explica 18%–26% das diferenças de desempenho (Macnamara et al., 2014).</li>
       <li><strong>A evolução é rápida no começo e depois desacelera.</strong> Ela só aparece comparando desenhos de semanas atrás.</li>
-      <li><strong>Todo dia rende mais que maratonas</strong> (Cepeda et al., 2006). Se puder, faça dois blocos de 1 hora.</li>
+      <li><strong>Todo dia rende mais que maratonas</strong> (Cepeda et al., 2006).</li>
       <li><strong>Misturar exemplos ensina estilo:</strong> 59% contra 36% de acerto (Kornell e Bjork, 2008).</li>
       <li><strong>Feedback específico ajuda</strong> (d = 0,48; Wisniewski et al., 2020).</li>
       <li><strong>Desenhar observando melhora a precisão</strong> (Vodyanyk e Jaeggi, 2025, estudo pequeno).</li>
@@ -288,16 +421,85 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
 <!-- GODOT -->
 <section class="panel" id="godot" role="tabpanel" aria-labelledby="tab-godot" hidden>
   <h2><small>Programação</small>Trilha de Godot</h2>
-  <div class="callout">Ao criar cada projeto, escolha o renderizador <strong>Compatibilidade</strong>. É o que roda na placa do notebook, e resolve tudo em 2D.</div>
-  <div class="check" id="godotSteps">
-    <label><input type="checkbox" id="g1"><span><span class="t">Minicurso da NextIndie</span><span class="d"><a href="https://www.youtube.com/playlist?list=PLXiMbAkZF_BlKDfPoIOwFmmzC4dHX1eQt">12 aulas grátis</a>, umas 3h40, montando um jogo completo. Pule a aula 13, que é só para membros.</span></span></label>
-    <label><input type="checkbox" id="g2"><span><span class="t">"Seu primeiro jogo 2D"</span><span class="d">Tutorial oficial na documentação da Godot em português. Grátis e atualizado para a sua versão.</span></span></label>
-    <label><input type="checkbox" id="g3"><span><span class="t">Curso pago, se precisar</span><span class="d"><a href="https://www.udemy.com/course/crie-jogos-2d-com-godot/">Godot Engine: Aprenda do Zero</a>, por R$ 24,90, nota 4,7, 17h42. É o mesmo professor do minicurso.</span></span></label>
-    <label><input type="checkbox" id="g4"><span><span class="t">Hitbox e hurtbox</span><span class="d">Vídeo do canal Ludonauta, em português: o sistema de golpe e dano.</span></span></label>
-    <label><input type="checkbox" id="g5"><span><span class="t">Tutorial de beat 'em up</span><span class="d"><a href="https://www.dlab.ninja/2025/05/course-beatem-up-godot-tutorial.html">20 episódios grátis</a>, em inglês, com legenda traduzida.</span></span></label>
+  <p>O objetivo é conseguir fazer um jogo <strong>sozinho</strong> e, depois, <strong>entender todo código que a IA escrever</strong> no seu jogo. A regra geral: você aprende escrevendo, lendo e consertando código, não assistindo.</p>
+  <div class="callout">Ao criar cada projeto, escolha o renderizador <strong>Compatibilidade</strong>. É o que roda na placa do notebook, e resolve tudo em 2D. Resolução do jogo: <strong>320×180</strong>.</div>
+
+  <div class="group">
+    <h3>Fase 1 · Fundamentos (mês 1–2)</h3>
+    <p class="muted">Aqui pode seguir tutorial passo a passo, sempre com o método PRIMM.</p>
+    <div class="check" id="godotSteps">
+      <label><input type="checkbox" id="g1" data-ess><span><span class="t">Minicurso da NextIndie</span><span class="d"><a href="https://www.youtube.com/playlist?list=PLXiMbAkZF_BlKDfPoIOwFmmzC4dHX1eQt">12 aulas grátis</a>, umas 3h40, montando um jogo completo. Pule a aula 13 (só para membros). Gravado numa Godot 4 mais antiga: menus podem mudar de nome, o resto é igual.</span></span></label>
+      <label><input type="checkbox" id="g2" data-ess><span><span class="t">"Seu primeiro jogo 2D"</span><span class="d">Tutorial oficial em docs.godotengine.org, em português. Grátis e atualizado para a sua versão.</span></span></label>
+      <label><input type="checkbox" id="g3"><span><span class="t">Curso pago (opcional)</span><span class="d"><a href="https://www.udemy.com/course/crie-jogos-2d-com-godot/">Godot Engine: Aprenda do Zero</a>, ~R$ 24,90, nota 4,7. Só se sentir falta de estrutura. É o mesmo professor do minicurso.</span></span></label>
+    </div>
   </div>
-  <div class="callout"><strong>Não compre</strong> "Criação de Beat'em up com a Godot Engine" da Udemy: é de 2021, na Godot 3.2, e custa R$ 197,90.</div>
-  <p>Comece o jogo com <strong>quadrados que andam e socam</strong>, sem arte. Troque pelos seus sprites quando ficarem prontos.</p>
+
+  <div class="group">
+    <h3>Fase 2 · Escada de jogos (mês 3–12)</h3>
+    <p>Cinco jogos pequenos, cada um mais difícil, de até ~20 h cada. <strong>Regra: sem tutorial do jogo inteiro.</strong> Pode consultar a documentação e pesquisar um problema específico por vez. É aqui que se aprende de verdade.</p>
+    <div class="check" id="ladder">
+      <label><input type="checkbox" id="j1" data-ess><span><span class="t">1. Pong <span class="pill">mês 3</span></span><span class="d">Ensina movimento, colisão e pontuação. Duas raquetes, uma bola e um placar.</span></span></label>
+      <label><input type="checkbox" id="j2" data-ess><span><span class="t">2. Breakout <span class="pill">mês 4</span></span><span class="d">Ensina a instanciar objetos (os tijolos), sinais e passar de fase. Já use sprites seus de 32×32.</span></span></label>
+      <label><input type="checkbox" id="j3" data-ess><span><span class="t">3. Plataforma simples <span class="pill">mês 5–6</span></span><span class="d">Ensina gravidade, pulo e animações do personagem (parado, andando, pulando) com as suas animações.</span></span></label>
+      <label><input type="checkbox" id="j4" data-ess><span><span class="t">4. Arena de briga numa tela <span class="pill">mês 7–9</span></span><span class="d">O primeiro protótipo do beat 'em up: hitbox e hurtbox, inimigos que perseguem, máquina de estados e Y-sort. Use o seu combo de socos.</span></span></label>
+      <label><input type="checkbox" id="j5" data-ess><span><span class="t">5. Uma fase de beat 'em up <span class="pill">mês 10–12</span></span><span class="d">Câmera que avança, ondas de inimigos, um chefe, menu e game over. Com ela pronta, abra a página no Steam.</span></span></label>
+    </div>
+  </div>
+
+  <div class="group">
+    <h3>Pronto para usar IA?</h3>
+    <p>Marque só o que consegue fazer <strong>sem ajuda nem tutorial</strong>. Com tudo marcado, a IA pode entrar no seu jogo.</p>
+    <div class="check" id="readyAI">
+      <label><input type="checkbox" id="k1"><span><span class="t">Personagem com animações</span><span class="d">Mover e trocar entre parado, andando e atacando.</span></span></label>
+      <label><input type="checkbox" id="k2"><span><span class="t">Colisões e física</span><span class="d">Paredes, chão, objetos que se tocam.</span></span></label>
+      <label><input type="checkbox" id="k3"><span><span class="t">Sinais entre nós</span><span class="d">Um nó avisa o outro que algo aconteceu.</span></span></label>
+      <label><input type="checkbox" id="k4"><span><span class="t">Instanciar cenas</span><span class="d">Criar inimigos, tiros e efeitos durante o jogo.</span></span></label>
+      <label><input type="checkbox" id="k5"><span><span class="t">Máquina de estados</span><span class="d">Parado → andando → atacando → levando dano.</span></span></label>
+      <label><input type="checkbox" id="k6"><span><span class="t">Hitbox e hurtbox</span><span class="d">O golpe acerta e o inimigo sente o dano.</span></span></label>
+      <label><input type="checkbox" id="k7"><span><span class="t">Interface</span><span class="d">Barra de vida, pontuação, menu.</span></span></label>
+      <label><input type="checkbox" id="k8"><span><span class="t">Consertar um erro sozinho</span><span class="d">Ler a mensagem de erro e achar o problema.</span></span></label>
+    </div>
+  </div>
+
+  <details>
+    <summary>Como usar a IA sem atrapalhar o aprendizado</summary>
+    <ul>
+      <li><strong>Tente sozinho primeiro</strong>, por 10–15 min.</li>
+      <li><strong>Peça dica, não a resposta:</strong> "me dá uma dica do que procurar, sem o código".</li>
+      <li><strong>Pergunte o porquê.</strong> No estudo da Anthropic (2026), quem pedia explicações aprendeu quase como quem programou sozinho. Quem delegava tudo acertou 17 pontos a menos na prova.</li>
+      <li><strong>Digite você mesmo</strong>, sem copiar e colar, e explique cada linha.</li>
+      <li><strong>Erros, você tenta consertar primeiro.</strong> É a habilidade que mais se perde quando a IA faz tudo.</li>
+      <li><strong>Depois do checklist completo:</strong> primeiro a IA como revisora do seu código, depois como ajudante em tarefas que você já sabe fazer.</li>
+      <li><strong>Regra de ouro:</strong> só entra no jogo código que você consegue explicar linha por linha.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>O que é cada coisa (Godot)</summary>
+    <dl class="glossary">
+      <div><dt>PRIMM</dt><dd>Prever, Rodar, Investigar, Modificar e Criar. Jeito de estudar código em que você pensa antes de ver o resultado.</dd></div>
+      <div><dt>Nó e cena</dt><dd>Nó é a peça básica (um sprite, uma colisão, um som). Cena é um conjunto de nós salvo junto, como o jogador ou um inimigo.</dd></div>
+      <div><dt>GDScript</dt><dd>A linguagem de programação da Godot, parecida com Python.</dd></div>
+      <div><dt>Sinal</dt><dd>Um aviso que um nó manda para outro ("fui atingido", "o tempo acabou"). Na versão 4.7 fica na aba Sinais, à direita.</dd></div>
+      <div><dt>Instanciar</dt><dd>Criar uma cópia de uma cena durante o jogo, como gerar um inimigo novo.</dd></div>
+      <div><dt>_process e _physics_process</dt><dd>Funções que rodam a cada quadro. Movimento e física vão no _physics_process.</dd></div>
+      <div><dt>Máquina de estados</dt><dd>Organizar o personagem em estados (parado, andando, atacando, levando dano) e regras de quando trocar de um para outro.</dd></div>
+      <div><dt>Hitbox e hurtbox</dt><dd>Hitbox é a área do golpe que acerta. Hurtbox é a área do corpo que pode ser acertada. Quando se tocam, há dano.</dd></div>
+      <div><dt>Y-sort</dt><dd>Quem está mais embaixo na tela é desenhado na frente. É o que faz um inimigo passar na frente ou atrás do personagem.</dd></div>
+      <div><dt>AnimatedSprite2D</dt><dd>Nó que toca as animações dos seus sprites (idle, andar, socar).</dd></div>
+      <div><dt>Renderizador Compatibilidade</dt><dd>Modo gráfico mais leve da Godot, que funciona em placas de vídeo antigas.</dd></div>
+      <div><dt>Godot 3 x Godot 4</dt><dd>Tutoriais com KinematicBody2D, export ou yield são da Godot 3 e o código não funciona igual. Prefira Godot 4.</dd></div>
+    </dl>
+  </details>
+
+  <details>
+    <summary>Para depois: recursos de beat 'em up</summary>
+    <ul>
+      <li>Vídeo de hitbox e hurtbox do canal Ludonauta, em português.</li>
+      <li><a href="https://www.dlab.ninja/2025/05/course-beatem-up-godot-tutorial.html">Tutorial de beat 'em up</a>: 20 episódios grátis, em inglês, com legenda traduzida.</li>
+      <li><strong>Não compre</strong> "Criação de Beat'em up com a Godot Engine" da Udemy: é de 2021, na Godot 3.2, e custa ~R$ 197,90.</li>
+    </ul>
+  </details>
 </section>
 
 <!-- JOGO -->
@@ -398,6 +600,21 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
       <li><span>Passar de US$ 1.000 e ter a taxa devolvida.</span></li>
     </ol>
   </div>
+  <details>
+    <summary>O que é cada coisa (lançamento)</summary>
+    <dl class="glossary">
+      <div><dt>Wishlist (lista de desejos)</dt><dd>Quando alguém marca o jogo para comprar depois no Steam. É o número que mais prevê as vendas no lançamento.</dd></div>
+      <div><dt>Página "Em breve"</dt><dd>A página do jogo no Steam antes do lançamento, onde as pessoas já podem adicionar à wishlist.</dd></div>
+      <div><dt>Capa (cápsula)</dt><dd>A imagem principal do jogo no Steam. Tem que ser legível até em miniatura.</dd></div>
+      <div><dt>Demo</dt><dd>Uma versão grátis e curta do jogo para as pessoas testarem.</dd></div>
+      <div><dt>Steam Next Fest</dt><dd>Festival do Steam, várias vezes por ano, em que milhares de jogos mostram demos. É a maior fonte de wishlists.</dd></div>
+      <div><dt>BIG Festival</dt><dd>Festival de jogos indie em São Paulo, junto com a gamescom latam. Inscrição grátis, tem a seleção BIG Starter só para jogos brasileiros. As inscrições fecham por volta de janeiro.</dd></div>
+      <div><dt>Taxa do Steam Direct</dt><dd>US$ 100 por jogo para publicar. É devolvida quando o jogo passa de US$ 1.000 de receita.</dd></div>
+      <div><dt>Preço regional</dt><dd>O Steam ajusta o preço ao poder de compra de cada país. US$ 9,99 vira perto de R$ 29,99 no Brasil.</dd></div>
+      <div><dt>Remote Play Together</dt><dd>Recurso do Steam que deixa jogar o co-op local pela internet, sem você programar rede.</dd></div>
+      <div><dt>Regra das 2 horas</dt><dd>O Steam reembolsa quem jogou menos de 2 h e pede em até 14 dias. Por isso a meta é zerar em ~3 h.</dd></div>
+    </dl>
+  </details>
 </section>
 
 <!-- MERCADO -->
@@ -488,15 +705,15 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   };
+  function $(id) { return document.getElementById(id); }
 
   /* Abas */
   var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tab]'));
   var panels = ['hoje', 'treino', 'godot', 'jogo', 'mercado'];
   function show(id, keepScroll) {
     if (panels.indexOf(id) < 0) id = 'hoje';
-    panels.forEach(function (p) { document.getElementById(p).hidden = p !== id; });
+    panels.forEach(function (p) { $(p).hidden = p !== id; });
     tabs.forEach(function (b) { b.setAttribute('aria-selected', b.dataset.tab === id ? 'true' : 'false'); });
-    store.set('plano-aba', id);
     if (!keepScroll) window.scrollTo(0, 0);
   }
   tabs.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.tab); }); });
@@ -512,7 +729,7 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
     });
   });
 
-  /* Checklists persistentes (curso e Godot) */
+  /* Checklists persistentes */
   function persist(selector, key) {
     var saved = store.get(key, {});
     var boxes = Array.prototype.slice.call(document.querySelectorAll(selector));
@@ -520,7 +737,9 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
     return boxes;
   }
   var mods = persist('#mods input', 'plano-beu-modulos');
-  persist('#godotSteps input', 'plano-beu-godot');
+  var godotSteps = persist('#godotSteps input', 'plano-beu-godot');
+  var ladder = persist('#ladder input', 'plano-beu-escada');
+  persist('#readyAI input', 'plano-beu-ia');
 
   /* Datas */
   function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
@@ -530,63 +749,84 @@ nav.tabbar button[aria-selected="true"] svg { stroke-width: 2.4; }
   var startDate = new Date(start + 'T00:00:00');
   var dayN = Math.max(1, Math.floor((new Date(todayKey + 'T00:00:00') - startDate) / 86400000) + 1);
   var monthN = Math.floor((dayN - 1) / 30.44) + 1;
-  var phases = [[1, 'Base 32×32'], [3, '64×64'], [5, 'Luta'], [7, 'Nível SoR2']];
-  var phase = 1, phaseName = phases[0][1];
-  phases.forEach(function (p, i) { if (monthN >= p[0]) { phase = i + 1; phaseName = p[1]; } });
+  var stages = [[1, 'Fundamentos'], [3, 'Pong'], [4, 'Breakout'], [5, 'Plataforma'], [7, 'Arena de briga'], [10, 'Fase de beat \'em up'], [13, 'Seu jogo']];
+  var stageName = stages[0][1];
+  stages.forEach(function (s) { if (monthN >= s[0]) stageName = s[1]; });
 
   var weekdays = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
   var months = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
-  document.getElementById('todayDate').textContent = weekdays[now.getDay()] + ', ' + now.getDate() + ' de ' + months[now.getMonth()];
-  document.getElementById('headDay').textContent = 'Dia ' + dayN + ' · mês ' + monthN;
-  document.getElementById('sDay').textContent = dayN;
-  document.getElementById('sPhase').textContent = phase;
-  document.getElementById('sPhaseName').textContent = phaseName;
+  $('todayDate').textContent = weekdays[now.getDay()] + ', ' + now.getDate() + ' de ' + months[now.getMonth()];
+  $('headDay').textContent = 'Dia ' + dayN + ' · mês ' + monthN;
+  $('sDay').textContent = dayN;
+  $('sMonth').textContent = monthN;
+  $('sMonthName').textContent = stageName;
 
-  /* Sugestões do dia, alternando para misturar exemplos */
+  /* Sugestões do dia */
   var refs = ['Streets of Rage 2', 'Final Fight', 'Streets of Rage 3', 'Streets of Rage 4', 'Fight\'N Rage', 'TMNT: Shredder\'s Revenge'];
   var focos = ['luz e sombra', 'proporção', 'paleta com poucas cores', 'silhueta legível', 'contorno e anti-aliasing', 'pose de ação', 'animação (tempo dos quadros)'];
-  document.getElementById('tdRef').innerHTML = 'Jogo de hoje: <strong>' + refs[(dayN - 1) % refs.length] + '</strong>. Copie olhando, analise e depois desenhe de memória.';
-  document.getElementById('tdPratica').innerHTML = 'Aplique a aula num desenho seu. Foco de hoje: <strong>' + focos[(dayN - 1) % focos.length] + '</strong>.';
+  $('tdArte2').innerHTML = 'Jogo de hoje: <strong>' + refs[(dayN - 1) % refs.length] + '</strong>. Copie olhando, analise e desenhe de memória.';
+  $('tdArte3').innerHTML = 'Aplique a aula num desenho seu. Foco de hoje: <strong>' + focos[(dayN - 1) % focos.length] + '</strong>.';
 
   /* Lembretes */
-  var note = document.getElementById('todayNote');
+  var note = $('todayNote');
   var nextFirst = new Date(now.getFullYear(), now.getMonth() + 1, 1);
   var daysToFirst = Math.round((nextFirst - new Date(todayKey + 'T00:00:00')) / 86400000);
-  if (now.getDate() === 1) note.innerHTML = '<strong>Hoje é dia de medição:</strong> desenhe o mesmo personagem de sempre e compare com o do mês passado.';
-  else if (now.getDay() === 0) note.innerHTML = '<strong>Domingo:</strong> poste um desenho no r/PixelArt e peça uma crítica específica, como "o que está errado na luz?".';
-  else note.innerHTML = 'Próxima medição mensal em <strong>' + daysToFirst + (daysToFirst === 1 ? ' dia' : ' dias') + '</strong>: desenhe sempre o mesmo personagem e compare.';
+  if (now.getDate() === 1) note.innerHTML = '<strong>Hoje é dia de medição.</strong> Pixel art: desenhe o mesmo personagem de sempre e compare com o mês passado. Godot: recrie do zero a mecânica principal do mês e cronometre.';
+  else if (now.getDay() === 0) note.innerHTML = '<strong>Domingo.</strong> Pixel art: poste um desenho no r/PixelArt e peça uma crítica específica. Godot: refaça de memória, numa cena nova, a mecânica principal da semana.';
+  else note.innerHTML = 'Próxima medição mensal em <strong>' + daysToFirst + (daysToFirst === 1 ? ' dia' : ' dias') + '</strong>, no dia 1. Domingo é dia de crítica no r/PixelArt e de revisão de memória na Godot.';
 
-  /* Treino de hoje */
-  var taskBoxes = Array.prototype.slice.call(document.querySelectorAll('#tasks input'));
-  var log = store.get('plano-dias', {});
+  /* Tarefas de hoje (6: 3 de Godot e 3 de pixel art) */
+  var taskIds = ['h-g1', 'h-g2', 'h-g3', 'h-a1', 'h-a2', 'h-a3'];
+  var log = store.get('plano-dias2', {});
   var today = log[todayKey] || {};
-  taskBoxes.forEach(function (b) {
-    b.checked = !!today[b.id];
-    b.addEventListener('change', function () { today[b.id] = b.checked; log[todayKey] = today; store.set('plano-dias', log); refresh(); });
+  taskIds.forEach(function (id) {
+    var b = $(id);
+    b.checked = !!today[id];
+    b.addEventListener('change', function () { today[id] = b.checked; log[todayKey] = today; store.set('plano-dias2', log); refresh(); });
   });
-
-  function complete(entry) { return entry && entry['t-estudo'] && entry['t-ref'] && entry['t-pratica']; }
+  function complete(entry) { return !!entry && taskIds.every(function (id) { return entry[id]; }); }
   function streak() {
     var n = 0, d = new Date(todayKey + 'T00:00:00');
     if (!complete(log[todayKey])) d.setDate(d.getDate() - 1);
     while (complete(log[ymd(d)])) { n++; d.setDate(d.getDate() - 1); }
     return n;
   }
+  function titleOf(input) { var l = input.closest('label'); return l.querySelector('.t').firstChild.textContent.trim(); }
+  function descOf(input) { return input.closest('label').querySelector('.d').textContent; }
 
   function refresh() {
+    /* Pixel art */
     var ess = mods.filter(function (b) { return b.hasAttribute('data-ess'); });
     var done = ess.filter(function (b) { return b.checked; }).length;
-    document.getElementById('prog').textContent = done + ' de ' + ess.length + ' módulos essenciais concluídos';
-    document.getElementById('meterFill').style.width = (100 * done / ess.length) + '%';
+    $('prog').textContent = done + ' de ' + ess.length + ' módulos essenciais concluídos';
+    $('meterFill').style.width = (100 * done / ess.length) + '%';
     var next = ess.filter(function (b) { return !b.checked; })[0];
-    var label = next ? next.closest('label') : null;
-    document.getElementById('nextMod').textContent = label ? label.querySelector('.t').firstChild.textContent.trim() : 'Módulos essenciais concluídos';
-    document.getElementById('nextModD').textContent = label ? label.querySelector('.d').textContent : 'Hora do curso "Pixel Art e Animação 2D com Aseprite".';
-    document.getElementById('tdEstudo').innerHTML = label ? 'Uma aula de <strong>' + label.querySelector('.t').firstChild.textContent.trim() + '</strong>, em 1,5×.' : 'Uma aula do próximo curso, em 1,5×.';
-    document.getElementById('sStreak').textContent = streak();
+    $('nextMod').textContent = next ? titleOf(next) : 'Módulos essenciais concluídos';
+    $('nextModD').textContent = next ? descOf(next) : 'Hora do curso "Pixel Art e Animação 2D com Aseprite".';
+    $('tdArte1').innerHTML = next ? 'Uma aula de <strong>' + titleOf(next) + '</strong>, em 1,5×.' : 'Uma aula do próximo curso, em 1,5×.';
+
+    /* Godot */
+    var path = godotSteps.filter(function (b) { return b.hasAttribute('data-ess'); }).concat(ladder);
+    var g = path.filter(function (b) { return !b.checked; })[0];
+    var inLadder = g && ladder.indexOf(g) >= 0;
+    $('nextGodot').textContent = g ? titleOf(g) : 'Trilha completa: hora do seu jogo';
+    $('nextGodotD').textContent = g ? descOf(g) : 'Confira o checklist "Pronto para usar IA".';
+    if (!g) {
+      $('tdGodot1').innerHTML = 'Estude o problema da vez no seu jogo (documentação ou um vídeo curto), com PRIMM.';
+      $('tdGodot2').innerHTML = 'Avance uma parte do seu beat \'em up.';
+    } else if (inLadder) {
+      $('tdGodot1').innerHTML = 'Jogo da vez: <strong>' + titleOf(g) + '</strong>. Pesquise só a parte em que travou (documentação ou um problema específico).';
+      $('tdGodot2').innerHTML = 'Construa <strong>' + titleOf(g) + '</strong> sem tutorial do jogo inteiro.';
+    } else {
+      $('tdGodot1').innerHTML = 'Próxima aula de <strong>' + titleOf(g) + '</strong>, no método PRIMM.';
+      $('tdGodot2').innerHTML = 'Repita ou estenda o que a aula fez, sem olhar o vídeo.';
+    }
+    $('tdGodot3').innerHTML = 'Explique em voz alta o código de hoje, ou refaça de memória algo da semana passada.';
+
+    $('sStreak').textContent = streak();
     var allDone = complete(today);
-    document.getElementById('doneBanner').hidden = !allDone;
-    document.getElementById('todayTitle').textContent = allDone ? 'Dia completo' : 'Treino do dia';
+    $('doneBanner').hidden = !allDone;
+    $('todayTitle').textContent = allDone ? 'Dia completo' : 'Treino do dia';
   }
   refresh();
 })();
