@@ -306,6 +306,13 @@ details.how ul, details.how ol { margin-top: 6px; }
     </div>
   </div>
 
+  <div class="next" id="cronoBox">
+    <span class="k" id="cronoK">Cronograma deste mês</span>
+    <span class="v" id="cronoV">–</span>
+    <span class="d" id="cronoD"></span>
+    <button class="btn" type="button" id="cronoBtn">Ver o cronograma</button>
+  </div>
+
   <div class="done-banner" id="doneBanner" hidden>As duas horas de hoje estão completas. Guarde o desenho e o projeto com a data.</div>
   <div class="callout" id="todayNote">Lembretes da semana e do mês aparecem aqui.</div>
 
@@ -542,16 +549,220 @@ details.how ul, details.how ol { margin-top: 6px; }
       <tbody>
         <tr><td>Out–dez 2026</td><td>Fundamentos e protótipo com quadrados (andar, Y-sort, soco, inimigo)</td><td>Módulos 1–2. Objetos 32×32, primeira cabeça de personagem</td><td>Decidir gancho, tamanho do sprite (~48 px) e paleta. Guardar GIFs</td></tr>
         <tr><td>Jan–mar 2027</td><td>Combo, máquina de estados, inimigos que cercam, ondas, modelo de chefe</td><td>Módulos 3–5. Personagem principal: idle, andar, combo de 3, dano, cair, levantar (~30–40 quadros)</td><td>Postar a evolução (opcional)</td></tr>
-        <tr class="hl"><td>Abril 2027</td><td>Fase 1 completa com chefe (fatia vertical)</td><td>Arte da fase 1. Encomendar a capa</td><td>Trailer curto. Página "Em breve" até 30/04. Checkpoint</td></tr>
-        <tr><td>Mai–ago 2027</td><td>Fases 2–3, novos inimigos, 2º chefe</td><td>Inimigos, efeitos de impacto, cenários</td><td>Reddit mensal, vídeos curtos, Discord. Demo em agosto</td></tr>
+        <tr class="hl"><td>Abril 2027</td><td>Fase 1 completa com chefe (fatia vertical)</td><td>Arte da fase 1. Encomendar a capa</td><td>Taxa paga em março. Trailer curto. Página "Em breve" até 30/04. Checkpoint</td></tr>
+        <tr><td>Mai–ago 2027</td><td>Fases 2–3, novos inimigos, 2º chefe</td><td>Inimigos, efeitos de impacto, cenários</td><td>Reddit mensal, vídeos curtos, Discord. Demo pronta em julho, pública em agosto. Inscrição no Next Fest</td></tr>
         <tr><td>Set 2027</td><td>Ajustes pela opinião de quem jogou a demo</td><td>Polimento</td><td>E-mails para criadores. Tradução para espanhol. Meta: ~1.500 wishlists</td></tr>
         <tr><td>Out 2027</td><td>Fase 4, modo difícil ou arcade, polimento</td><td>Últimas animações</td><td>Next Fest de outubro com a demo. Configurar o desconto de lançamento</td></tr>
-        <tr class="hl"><td>Nov 2027</td><td>Lançamento (2–4 semanas depois do Next Fest)</td><td>Ajustes</td><td>US$ 9,99 com −20%. Comunidade garante as 10 primeiras avaliações</td></tr>
+        <tr class="hl"><td>Nov 2027</td><td>Lançamento (data provisória: 4/11)</td><td>Ajustes</td><td>US$ 9,99 com −20%. Comunidade garante as 10 primeiras avaliações</td></tr>
         <tr><td>Dez 2027</td><td>Correções</td><td>Ajustes</td><td>Responder avaliações. Sem desconto nos 30 dias após o lançamento</td></tr>
       </tbody>
     </table></div>
     <p class="muted">Para caber em 2027: ~3–4 h por dia quando possível (ou 2 h nos dias úteis e mais nos fins de semana). Evite lançar na semana de uma grande promoção do Steam ou de um jogo grande.</p>
   </div>
+
+<style>
+#crono details.month { margin: 8px 0; }
+#crono .when { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-weight: 400; white-space: nowrap; }
+#crono .tag { margin-left: 2px; }
+.area-g { color: var(--accent); } .area-a { color: var(--good); } .area-som { color: var(--muted); }
+.area-s { color: var(--warn); } .area-m { color: var(--bad); } .area-p { color: var(--ink); }
+#crono details.month.now > summary { color: var(--accent); }
+</style>
+  <div class="group" id="crono">
+    <h3>Cronograma detalhado</h3>
+    <p class="muted">Marque cada item ao terminar. O mês atual abre sozinho. "sem 1" é a primeira semana do mês. Com 2 h por dia são ~7 h de Godot e ~7 h de arte por semana.</p>
+    <details class="month" data-month="2026-10"><summary>Out 2026 · Antes de começar <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202610-1"><span><span class="t">Git e GitHub no projeto <span class="tag area-p">Você</span> <span class="when">esta semana</span></span><span class="d">Um repositório para o projeto da Godot e outro para a pasta de arte. Faça um commit no fim de cada sessão. Protege contra queda de luz e arquivo corrompido.</span></span></label>
+        <label><input type="checkbox" id="c202610-2"><span><span class="t">Pastas do jogo e licencas.txt <span class="tag area-p">Você</span> <span class="when">esta semana</span></span><span class="d">Documentos\jogo\ com godot, arte, audio e marketing. No licencas.txt vai cada coisa baixada: nome, autor, link e licença, com print da página.</span></span></label>
+        <label><input type="checkbox" id="c202610-3"><span><span class="t">Steam Guard no celular <span class="tag area-s">Steam</span> <span class="when">esta semana</span></span><span class="d">Ative o autenticador no app do Steam. É necessário para mexer no Steamworks.</span></span></label>
+        <label><input type="checkbox" id="c202610-4"><span><span class="t">Caderno de ideias e de horas <span class="tag area-p">Você</span> <span class="when">esta semana</span></span><span class="d">Ideia nova vai para o caderno, nunca para um projeto novo. No domingo, anote quantas horas fez na semana.</span></span></label>
+        <label><input type="checkbox" id="c202610-5"><span><span class="t">Minicurso da NextIndie, aulas 1–6 <span class="tag area-g">Godot</span> <span class="when">até 31/10</span></span><span class="d">Com o método PRIMM: prever, rodar, investigar, modificar e criar.</span></span></label>
+        <label><input type="checkbox" id="c202610-6"><span><span class="t">Módulo 1: Introdução ao Aseprite <span class="tag area-a">Arte</span> <span class="when">até 31/10</span></span><span class="d">Camadas, Frames, Tags e Exportar frames.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2026-11"><summary>Nov 2026 · Fundamentos <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202611-1"><span><span class="t">Minicurso, aulas 7–12 <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span><span class="d">Pule a aula 13, que é só para membros.</span></span></label>
+        <label><input type="checkbox" id="c202611-2"><span><span class="t">"Seu primeiro jogo 2D" <span class="tag area-g">Godot</span> <span class="when">sem 3</span></span><span class="d">Tutorial oficial da Godot, em português.</span></span></label>
+        <label><input type="checkbox" id="c202611-3"><span><span class="t">Protótipo 1: andar com profundidade <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span><span class="d">Com quadrados coloridos. Para os lados, "para dentro" da tela e com Y-sort.</span></span></label>
+        <label><input type="checkbox" id="c202611-4"><span><span class="t">Módulo 2: Técnicas básicas <span class="tag area-a">Arte</span> <span class="when">sem 1–4</span></span><span class="d">Luz e sombra, materiais, dithering, anti-aliasing e os 4 exercícios do pirata.</span></span></label>
+        <label><input type="checkbox" id="c202611-5"><span><span class="t">Documento do jogo, versão 0 <span class="tag area-p">Você</span> <span class="when">até 30/11</span></span><span class="d">Uma página: gênero, gancho (Brasil?), história numa frase, 1–2 personagens, 4 fases, 5–8 inimigos e os chefes.</span></span></label>
+        <label><input type="checkbox" id="c202611-6"><span><span class="t">Lista de 10 nomes para o jogo <span class="tag area-m">Marketing</span> <span class="when">até 30/11</span></span><span class="d">Pesquise cada um no Steam, no Google e no INPI (busca.inpi.gov.br, grátis). Fique com 3 finalistas.</span></span></label>
+        <label><input type="checkbox" id="c202611-7"><span><span class="t">Gravar GIFs de cada avanço <span class="tag area-m">Marketing</span> <span class="when">sempre</span></span><span class="d">Mesmo com quadrados. Guarde em marketing\gifs: vira devlog e trailer depois.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2026-12"><summary>Dez 2026 · Protótipo <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202612-1"><span><span class="t">Protótipo 2: soco com hitbox e hurtbox <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span><span class="d">Só acerta quem está na mesma faixa de profundidade.</span></span></label>
+        <label><input type="checkbox" id="c202612-2"><span><span class="t">Protótipo 3: inimigo que persegue e apanha <span class="tag area-g">Godot</span> <span class="when">sem 3</span></span><span class="d">Vai até o jogador, ataca, perde vida e some.</span></span></label>
+        <label><input type="checkbox" id="c202612-3"><span><span class="t">Protótipo 4: máquina de estados (começar) <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span><span class="d">Parado, andando, atacando e levando dano.</span></span></label>
+        <label><input type="checkbox" id="c202612-4"><span><span class="t">Módulos 3 e 4: desenho e design de personagem <span class="tag area-a">Arte</span> <span class="when">sem 1–2</span></span><span class="d">Proporção, silhueta, pose 3/4, tamanho do personagem e paleta limitada.</span></span></label>
+        <label><input type="checkbox" id="c202612-5"><span><span class="t">Personagem principal parado e um soco de teste <span class="tag area-a">Arte</span> <span class="when">sem 3–4</span></span><span class="d">~48 px de altura em 3/4, até 15 cores. Aqui você confirma tamanho e paleta, e depois não muda mais.</span></span></label>
+        <label><input type="checkbox" id="c202612-6"><span><span class="t">Documento final, critério de abril e lista de cortes <span class="tag area-p">Você</span> <span class="when">até 31/12</span></span><span class="d">Critério: fase 1 do começo ao chefe, com menu e co-op, sem travar. Cortes, nesta ordem: modo difícil, fase 4, 2º personagem.</span></span></label>
+        <label><input type="checkbox" id="c202612-7"><span><span class="t">Testar o gancho <span class="tag area-m">Marketing</span> <span class="when">até 31/12</span></span><span class="d">Poste o personagem no r/PixelArt e a ideia no r/beatemups. Veja se o "beat 'em up no Brasil" anima as pessoas.</span></span></label>
+        <label><input type="checkbox" id="c202612-8"><span><span class="t">Reservar o nome nas redes <span class="tag area-m">Marketing</span> <span class="when">até 31/12</span></span><span class="d">Mesmo @ no TikTok, YouTube, Reddit e Bluesky.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-01"><summary>Jan 2027 · Núcleo do jogo <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202701-1"><span><span class="t">Terminar a máquina de estados <span class="tag area-g">Godot</span> <span class="when">sem 1</span></span></span></label>
+        <label><input type="checkbox" id="c202701-2"><span><span class="t">Protótipo 5: combo de 3 golpes <span class="tag area-g">Godot</span> <span class="when">sem 2–4</span></span><span class="d">Com hit stop: o jogo congela 2–6 quadros no impacto.</span></span></label>
+        <label><input type="checkbox" id="c202701-3"><span><span class="t">Textos com tr() desde já <span class="tag area-g">Godot</span> <span class="when">sempre</span></span><span class="d">Todo texto da tela vai para uma planilha CSV. Deixa a tradução fácil depois.</span></span></label>
+        <label><input type="checkbox" id="c202701-4"><span><span class="t">Módulo 5: aulas 1–5 e 12–24 <span class="tag area-a">Arte</span> <span class="when">sem 1–2</span></span><span class="d">Quadros-chave, interpolação, idle, pulo e corrida.</span></span></label>
+        <label><input type="checkbox" id="c202701-5"><span><span class="t">Animar idle (4–6 quadros) e andar (6–8 quadros) <span class="tag area-a">Arte</span> <span class="when">sem 3–4</span></span><span class="d">E colocar no jogo no lugar do quadrado.</span></span></label>
+        <label><input type="checkbox" id="c202701-6"><span><span class="t">BIG Festival (opcional) <span class="tag area-s">Steam</span> <span class="when">até ~fim de jan</span></span><span class="d">Inscrição grátis. Só vale se já tiver um vídeo de jogo apresentável; senão, fica para 2028.</span></span></label>
+        <label><input type="checkbox" id="c202701-7"><span><span class="t">Teste 1 com 1–2 amigos <span class="tag area-p">Você</span> <span class="when">fim do mês</span></span><span class="d">Só olhe, sem explicar nada. Anote onde se confundem.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-02"><summary>Fev 2027 · Núcleo do jogo <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202702-1"><span><span class="t">Protótipo 6: dano, cair e levantar <span class="tag area-g">Godot</span> <span class="when">sem 1–3</span></span><span class="d">Recuar, ser arremessado, cair, ficar invencível um instante e levantar. Para jogador e inimigo.</span></span></label>
+        <label><input type="checkbox" id="c202702-2"><span><span class="t">Segundo tipo de inimigo <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span><span class="d">Um que ataque de um jeito diferente do primeiro.</span></span></label>
+        <label><input type="checkbox" id="c202702-3"><span><span class="t">Combo de 3 com smear (~10–12 quadros) <span class="tag area-a">Arte</span> <span class="when">sem 1–2</span></span><span class="d">Módulo 5, aulas 25–29. Antecipação e quadro de impacto mais longo.</span></span></label>
+        <label><input type="checkbox" id="c202702-4"><span><span class="t">Dano, cair e levantar (~10 quadros) <span class="tag area-a">Arte</span> <span class="when">sem 3–4</span></span></span></label>
+        <label><input type="checkbox" id="c202702-5"><span><span class="t">Efeitos sonoros no jsfxr ou ChipTone <span class="tag area-som">Som</span> <span class="when">até 28/02</span></span><span class="d">Soco, acerto, queda e pegar item. Grátis, no navegador. Anote no licencas.txt.</span></span></label>
+        <label><input type="checkbox" id="c202702-6"><span><span class="t">4–6 músicas grátis <span class="tag area-som">Som</span> <span class="when">até 28/02</span></span><span class="d">Só CC0 ou CC-BY (esta exige crédito), do itch.io ou OpenGameArt. Print da licença de cada uma.</span></span></label>
+        <label><input type="checkbox" id="c202702-7"><span><span class="t">Observar o Couch Co-Op Fest <span class="tag area-m">Marketing</span> <span class="when">8–15/02</span></span><span class="d">Veja capas, trailers e preços dos jogos de co-op local. Estudo de mercado: o seu ainda não entra.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-03"><summary>Mar 2027 · Núcleo e burocracia <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202703-1"><span><span class="t">Protótipo 7: ondas de inimigos e câmera <span class="tag area-g">Godot</span> <span class="when">sem 1</span></span><span class="d">A câmera trava, vem a onda, aparece o "GO →" e a câmera libera.</span></span></label>
+        <label><input type="checkbox" id="c202703-2"><span><span class="t">Segundo jogador (co-op local) <span class="tag area-g">Godot</span> <span class="when">sem 2</span></span><span class="d">Teclado + controle, ou dois controles.</span></span></label>
+        <label><input type="checkbox" id="c202703-3"><span><span class="t">Protótipo 8: HUD e game over <span class="tag area-g">Godot</span> <span class="when">sem 3</span></span><span class="d">Vida, pontuação, vidas e continuar.</span></span></label>
+        <label><input type="checkbox" id="c202703-4"><span><span class="t">Protótipo 9: modelo de chefe <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span><span class="d">Mais vida, 2–3 ataques com aviso e padrões que mudam.</span></span></label>
+        <label><input type="checkbox" id="c202703-5"><span><span class="t">Inimigo comum: andar, socar, dano, cair <span class="tag area-a">Arte</span> <span class="when">sem 1–3</span></span><span class="d">Reaproveite o esqueleto do herói e troque a paleta.</span></span></label>
+        <label><input type="checkbox" id="c202703-6"><span><span class="t">Módulo 6, aulas 1, 7, 8 e 9 <span class="tag area-a">Arte</span> <span class="when">sem 4</span></span><span class="d">Faíscas de impacto e poeira quando alguém cai.</span></span></label>
+        <label><input type="checkbox" id="c202703-7"><span><span class="t">Pagar a taxa de US$ 100 <span class="tag area-s">Steam</span> <span class="when">até 15/03</span></span><span class="d">Cartão internacional, ~R$ 560–600 com IOF. Depois disso são 30 dias de espera para poder lançar.</span></span></label>
+        <label><input type="checkbox" id="c202703-8"><span><span class="t">Entrevista fiscal e conta para receber <span class="tag area-s">Steam</span> <span class="when">até 31/03</span></span><span class="d">W-8BEN com o CPF. Antes, mande e-mail para financevalve@valvesoftware.com perguntando se pagam por ACH na Wise.</span></span></label>
+        <label><input type="checkbox" id="c202703-9"><span><span class="t">Questionário de conteúdo <span class="tag area-s">Steam</span> <span class="when">até 31/03</span></span><span class="d">Gera a classificação indicativa do Brasil e da Alemanha. Decida antes se o jogo tem sangue.</span></span></label>
+        <label><input type="checkbox" id="c202703-10"><span><span class="t">Teste 2 com 2–3 amigos, em co-op <span class="tag area-p">Você</span> <span class="when">fim do mês</span></span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-04"><summary>Abr 2027 · Fatia vertical e checkpoint <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202704-1"><span><span class="t">Fase 1 do começo ao chefe, com menu inicial <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span><span class="d">É a "fatia vertical" (protótipo 10).</span></span></label>
+        <label><input type="checkbox" id="c202704-2"><span><span class="t">Cenário da fase 1 e chefe 1 <span class="tag area-a">Arte</span> <span class="when">sem 1–2</span></span><span class="d">Módulo Background do curso.</span></span></label>
+        <label><input type="checkbox" id="c202704-3"><span><span class="t">Capa (cápsula) em todos os tamanhos <span class="tag area-a">Arte</span> <span class="when">sem 3</span></span><span class="d">Você mesmo faz, em pixel art. Teste em miniatura (120×45) e peça opinião no r/IndieDev.</span></span></label>
+        <label><input type="checkbox" id="c202704-4"><span><span class="t">Trailer de 30–45 s e 5 imagens <span class="tag area-m">Marketing</span> <span class="when">sem 3</span></span><span class="d">Grave com o OBS e edite no Shotcut, grátis e leves. Jogabilidade nos 5 primeiros segundos.</span></span></label>
+        <label><input type="checkbox" id="c202704-5"><span><span class="t">Enviar a página para revisão <span class="tag area-s">Steam</span> <span class="when">até ~20/04</span></span><span class="d">Gênero nas 10 primeiras palavras, tags, imagens e trailer. A revisão leva 3–5 dias úteis.</span></span></label>
+        <label><input type="checkbox" id="c202704-6"><span><span class="t">Página "Em breve" no ar e anunciada <span class="tag area-s">Steam</span> <span class="when">até 30/04</span></span><span class="d">Post no Reddit e nas redes, com GIF e um pouco da sua história.</span></span></label>
+        <label><input type="checkbox" id="c202704-7"><span><span class="t">Checkpoint <span class="tag area-p">Você</span> <span class="when">30/04</span></span><span class="d">Passou no critério escrito em dezembro? Segue para novembro de 2027. Não passou? Vai para 2028, sem culpa.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-05"><summary>Mai 2027 · Fases 2–3 <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202705-1"><span><span class="t">Fase 2: cenário, ondas e inimigos 3 e 4 <span class="tag area-g">Godot</span> <span class="when">sem 1–4</span></span></span></label>
+        <label><input type="checkbox" id="c202705-2"><span><span class="t">Corrigir o que os testes mostraram <span class="tag area-g">Godot</span> <span class="when">sempre</span></span></span></label>
+        <label><input type="checkbox" id="c202705-3"><span><span class="t">Inimigos 3 e 4 e cenário da fase 2 <span class="tag area-a">Arte</span> <span class="when">sem 1–4</span></span></span></label>
+        <label><input type="checkbox" id="c202705-4"><span><span class="t">Medir as 2 primeiras semanas da página <span class="tag area-m">Marketing</span> <span class="when">~15/05</span></span><span class="d">100 é bronze, 500 é prata e 1.200 é ouro.</span></span></label>
+        <label><input type="checkbox" id="c202705-5"><span><span class="t">Um vídeo curto <span class="tag area-m">Marketing</span> <span class="when">toda semana</span></span><span class="d">10 segundos de combo com impacto. Link do Steam na bio.</span></span></label>
+        <label><input type="checkbox" id="c202705-6"><span><span class="t">Um post no Reddit e lista de e-mails <span class="tag area-m">Marketing</span> <span class="when">no mês</span></span><span class="d">A lista pode ser um formulário grátis.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-06"><summary>Jun 2027 · Fases 2–3 <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202706-1"><span><span class="t">Chefe 2 <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span></span></label>
+        <label><input type="checkbox" id="c202706-2"><span><span class="t">Salvar o progresso <span class="tag area-g">Godot</span> <span class="when">sem 3</span></span></span></label>
+        <label><input type="checkbox" id="c202706-3"><span><span class="t">Começar a fase 3 <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span></span></label>
+        <label><input type="checkbox" id="c202706-4"><span><span class="t">Chefe 2 e cenário da fase 3 <span class="tag area-a">Arte</span> <span class="when">sem 1–4</span></span></span></label>
+        <label><input type="checkbox" id="c202706-5"><span><span class="t">Steam Playtest fechado <span class="tag area-s">Steam</span> <span class="when">até 30/06</span></span><span class="d">Teste grátis do próprio Steam, com inscrição pela sua página. Chame 10–30 pessoas.</span></span></label>
+        <label><input type="checkbox" id="c202706-6"><span><span class="t">Só observar o Next Fest de junho <span class="tag area-m">Marketing</span> <span class="when">14–21/06</span></span><span class="d">Cada jogo só entra em um Next Fest na vida. O seu é o de outubro.</span></span></label>
+        <label><input type="checkbox" id="c202706-7"><span><span class="t">Abrir o Discord <span class="tag area-m">Marketing</span> <span class="when">se houver gente</span></span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-07"><summary>Jul 2027 · Demo <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202707-1"><span><span class="t">Fase 3 completa <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span></span></label>
+        <label><input type="checkbox" id="c202707-2"><span><span class="t">Menus de pausa e opções <span class="tag area-g">Godot</span> <span class="when">sem 3</span></span><span class="d">Volume, tela cheia, troca de teclas e controle funcionando nos menus.</span></span></label>
+        <label><input type="checkbox" id="c202707-3"><span><span class="t">Montar a demo <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span><span class="d">Fase 1 polida, link para formulário de opinião e tela final "adicione à wishlist".</span></span></label>
+        <label><input type="checkbox" id="c202707-4"><span><span class="t">Inimigos 5 e 6 e polimento da fase 1 <span class="tag area-a">Arte</span> <span class="when">sem 1–4</span></span></span></label>
+        <label><input type="checkbox" id="c202707-5"><span><span class="t">Demo para revisão <span class="tag area-s">Steam</span> <span class="when">até 31/07</span></span><span class="d">A demo é um app separado no Steamworks, com revisão própria.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-08"><summary>Ago 2027 · Demo pública <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202708-1"><span><span class="t">Demo pública <span class="tag area-s">Steam</span> <span class="when">~15/08</span></span><span class="d">Meta: mais de 12% de quem joga põe na wishlist.</span></span></label>
+        <label><input type="checkbox" id="c202708-2"><span><span class="t">Inscrição no Next Fest de outubro <span class="tag area-s">Steam</span> <span class="when">assim que abrir</span></span><span class="d">Deve fechar entre o fim de agosto e o começo de setembro. Confira a data no Steamworks.</span></span></label>
+        <label><input type="checkbox" id="c202708-3"><span><span class="t">Correções do Playtest e da demo <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span></span></label>
+        <label><input type="checkbox" id="c202708-4"><span><span class="t">Layout da fase 4 <span class="tag area-g">Godot</span> <span class="when">sem 3–4</span></span></span></label>
+        <label><input type="checkbox" id="c202708-5"><span><span class="t">Cenário da fase 4 e chefe 3 <span class="tag area-a">Arte</span> <span class="when">sem 1–4</span></span></span></label>
+        <label><input type="checkbox" id="c202708-6"><span><span class="t">Planilha com 50–100 criadores e kit de imprensa <span class="tag area-m">Marketing</span> <span class="when">até 31/08</span></span><span class="d">Beat 'em up, retrô, co-op e canais brasileiros. Kit: GIFs, logo, descrição e capa.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-09"><summary>Set 2027 · Criadores <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202709-1"><span><span class="t">Fase 4 e chefe final <span class="tag area-g">Godot</span> <span class="when">sem 1–3</span></span></span></label>
+        <label><input type="checkbox" id="c202709-2"><span><span class="t">Créditos e espanhol <span class="tag area-g">Godot</span> <span class="when">sem 4</span></span><span class="d">Créditos com a licença da Godot e o licencas.txt. Espanhol pelo DeepL ou IA, revisado por um jogador nativo.</span></span></label>
+        <label><input type="checkbox" id="c202709-3"><span><span class="t">Chefe final, tela de título e de game over <span class="tag area-a">Arte</span> <span class="when">sem 1–4</span></span></span></label>
+        <label><input type="checkbox" id="c202709-4"><span><span class="t">Demo e itens do Next Fest para revisão <span class="tag area-s">Steam</span> <span class="when">~meados de set</span></span><span class="d">Para entrar na prévia para a imprensa.</span></span></label>
+        <label><input type="checkbox" id="c202709-5"><span><span class="t">E-mails para os criadores, com a demo <span class="tag area-m">Marketing</span> <span class="when">set</span></span><span class="d">Pessoais, curtos, com GIF. Keymailer tem plano grátis.</span></span></label>
+        <label><input type="checkbox" id="c202709-6"><span><span class="t">Data de lançamento na página <span class="tag area-m">Marketing</span> <span class="when">set</span></span><span class="d">4/11 (provisória). Meta: ~1.500 wishlists.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-10"><summary>Out 2027 · Next Fest <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202710-1"><span><span class="t">Build quase final para revisão <span class="tag area-g">Godot</span> <span class="when">até ~11/10</span></span><span class="d">A data trava 14 dias antes do lançamento. Depois de aprovado, dá para mandar atualizações.</span></span></label>
+        <label><input type="checkbox" id="c202710-2"><span><span class="t">Modo difícil ou arcade <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span></span></label>
+        <label><input type="checkbox" id="c202710-3"><span><span class="t">Teste do começo ao fim, só com controle <span class="tag area-g">Godot</span> <span class="when">sem 3–4</span></span><span class="d">Cronometre: a meta é ~3 h no normal. Teste também no formato do Steam Deck.</span></span></label>
+        <label><input type="checkbox" id="c202710-4"><span><span class="t">Configurar o desconto de lançamento (20%) <span class="tag area-s">Steam</span> <span class="when">até 20/10</span></span></span></label>
+        <label><input type="checkbox" id="c202710-5"><span><span class="t">Declarar IA no Steam, se usou <span class="tag area-s">Steam</span> <span class="when">até 20/10</span></span><span class="d">Por exemplo, na tradução.</span></span></label>
+        <label><input type="checkbox" id="c202710-6"><span><span class="t">Next Fest <span class="tag area-m">Marketing</span> <span class="when">meados de out</span></span><span class="d">Responda comentários. Faça uma live, se puder.</span></span></label>
+        <label><input type="checkbox" id="c202710-7"><span><span class="t">Chaves para criadores <span class="tag area-m">Marketing</span> <span class="when">~21/10</span></span><span class="d">Umas 2 semanas antes do lançamento.</span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-11"><summary>Nov 2027 · Lançamento <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202711-1"><span><span class="t">Lançar <span class="tag area-s">Steam</span> <span class="when">4/11</span></span><span class="d">Data provisória. Aperte "Release" no Steamworks: o jogo não se lança sozinho.</span></span></label>
+        <label><input type="checkbox" id="c202711-2"><span><span class="t">Avisar todo mundo <span class="tag area-m">Marketing</span> <span class="when">4/11</span></span><span class="d">Reddit, redes, Discord e lista de e-mails.</span></span></label>
+        <label><input type="checkbox" id="c202711-3"><span><span class="t">Corrigir erros dos primeiros dias <span class="tag area-g">Godot</span> <span class="when">sem 1–2</span></span><span class="d">Atualização rápida, se precisar.</span></span></label>
+        <label><input type="checkbox" id="c202711-4"><span><span class="t">Chegar às 10 primeiras avaliações <span class="tag area-m">Marketing</span> <span class="when">sem 1–3</span></span><span class="d">Peça a quem comprou, sem oferecer nada em troca.</span></span></label>
+        <label><input type="checkbox" id="c202711-5"><span><span class="t">Descansar alguns dias <span class="tag area-p">Você</span> <span class="when">depois</span></span></span></label>
+      </div>
+    </details>
+    <details class="month" data-month="2027-12"><summary>Dez 2027 · Pós-lançamento <span class="pill mcount"></span></summary>
+      <div class="check">
+        <label><input type="checkbox" id="c202712-1"><span><span class="t">Atualização 1.1 <span class="tag area-g">Godot</span> <span class="when">dez</span></span><span class="d">Correções e o que os jogadores mais pediram.</span></span></label>
+        <label><input type="checkbox" id="c202712-2"><span><span class="t">Primeira promoção <span class="tag area-s">Steam</span> <span class="when">dez</span></span><span class="d">Só 30 dias depois do fim do desconto de lançamento. A Promoção de Inverno, se der.</span></span></label>
+        <label><input type="checkbox" id="c202712-3"><span><span class="t">Relatório e próxima decisão <span class="tag area-p">Você</span> <span class="when">fim do mês</span></span><span class="d">Vendas, reembolsos, wishlists e margem real. Depois: consoles pela QUByte ou segundo jogo.</span></span></label>
+      </div>
+    </details>
+  </div>
+
+
+  <details>
+    <summary>Orçamento: só os US$ 100 da taxa</summary>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Item</th><th>Como fica de graça</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Taxa do Steam</td><td>US$ 100 no cartão internacional, ~R$ 560–600 com IOF. É o único gasto.</td></tr>
+        <tr><td>Efeitos sonoros</td><td>Você gera no jsfxr ou no ChipTone (grátis, no navegador), ou baixa no Freesound com licença CC0.</td></tr>
+        <tr><td>Música</td><td>Pacotes grátis com uso comercial no itch.io e no OpenGameArt. Só CC0 ou CC-BY, com print da licença.</td></tr>
+        <tr><td>Capa</td><td>Você faz em pixel art. Teste em miniatura e peça opinião no r/IndieDev.</td></tr>
+        <tr><td>Backup</td><td>Git e GitHub.</td></tr>
+        <tr><td>Tradução</td><td>Planilha da Godot + DeepL ou IA + revisão de um jogador nativo.</td></tr>
+        <tr><td>Trailer</td><td>OBS para gravar e Shotcut para editar.</td></tr>
+        <tr><td>Criadores</td><td>Plano grátis do Keymailer e e-mails.</td></tr>
+        <tr><td>Testes</td><td>Amigos e o Steam Playtest.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Se sobrar dinheiro em 2027, o primeiro lugar para gastar é a capa.</p>
+  </details>
+
+  <details>
+    <summary>Regras e leis para não esquecer</summary>
+    <ul>
+      <li><strong>Prazos do Steam:</strong> 30 dias entre pagar a taxa e lançar; página "Em breve" no ar pelo menos 2 semanas antes; revisão da página em 3–5 dias úteis; a revisão do jogo vem depois da página; a data trava 14 dias antes; a demo tem revisão própria.</li>
+      <li><strong>Next Fest:</strong> cada jogo entra em um só, na vida. O seu é o de outubro de 2027.</li>
+      <li><strong>Classificação indicativa:</strong> sai do questionário de conteúdo do Steam. Sem ela, o jogo pode sumir na Alemanha e no Brasil.</li>
+      <li><strong>ECA Digital (Lei 15.211):</strong> nada de compra de itens aleatórios (loot box) e nada de chat online. Assim o jogo fica fora das obrigações da lei.</li>
+      <li><strong>Pessoas e marcas reais:</strong> nada de personagem reconhecível de alguém real (art. 20 do Código Civil) nem logotipos de verdade nos cenários.</li>
+      <li><strong>Licenças:</strong> o texto da licença da Godot vai nos créditos, e cada música, som e fonte baixados vão no licencas.txt.</li>
+      <li><strong>IA:</strong> conteúdo que o jogador vê feito por IA (inclusive tradução) precisa ser declarado no Steam.</li>
+      <li><strong>Antivírus:</strong> se puser a demo no itch.io, desligue "Embed PCK" na exportação.</li>
+    </ul>
+  </details>
 
   <div class="group">
     <h3>Escopo para 2027</h3>
@@ -674,9 +885,9 @@ details.how ul, details.how ol { margin-top: 6px; }
   <details>
     <summary>Marketing: o que funciona</summary>
     <ol>
-      <li><strong>Festivais com demo:</strong> Next Fest (fevereiro, junho e outubro) e festivais temáticos. Para 2027 o Steam anunciou um Couch Co-Op Fest. Lance a demo meses antes: ~2,5× mais wishlists.</li>
+      <li><strong>Festivais com demo:</strong> Next Fest (fevereiro, junho e outubro; cada jogo só entra em um) e festivais temáticos. O Couch Co-Op Fest de 2027 é em fevereiro, cedo demais; mire a próxima edição, depois do lançamento. Lance a demo semanas antes do Next Fest: ~2,5× mais wishlists.</li>
       <li><strong>Criadores pequenos e médios</strong> de beat 'em up, retrô e co-op, incluindo brasileiros. E-mail pessoal com chave, link da demo e GIF. Keymailer tem plano grátis. Mandar chave não garante vídeo.</li>
-      <li><strong>Página "Em breve" com capa forte:</strong> de 68% a 88% das wishlists do Next Fest vêm de quem nem baixou a demo. Se for pagar algo, pague uma capa.</li>
+      <li><strong>Página "Em breve" com capa forte:</strong> de 68% a 88% das wishlists do Next Fest vêm de quem nem baixou a demo. Sem orçamento, você mesmo faz a capa, com muito cuidado.</li>
       <li><strong>Vídeos curtos</strong> (TikTok, Shorts, Reels): ~2–7 wishlists por 1.000 visualizações. 10 segundos de um combo com impacto. Link do Steam na bio.</li>
       <li><strong>Reddit, uma vez por mês:</strong> r/beatemups, r/PixelArt, r/IndieGaming, r/IndieDev, r/godot. GIF com história pessoal, não anúncio.</li>
       <li><strong>Discord e lista de e-mails</strong> desde ~12 meses antes. Só abra o Discord quando já houver gente vindo de outros lugares.</li>
@@ -883,6 +1094,8 @@ details.how ul, details.how ol { margin-top: 6px; }
   var proto = persist('#proto input', 'plano-beu-proto');
   persist('#ladder input', 'plano-beu-escada');
   persist('#readyAI input', 'plano-beu-ia');
+  var cronoBoxes = persist('#crono input', 'plano-beu-crono');
+  var monthsEls = Array.prototype.slice.call(document.querySelectorAll('#crono details.month'));
 
   /* Datas */
   function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
@@ -907,7 +1120,7 @@ details.how ul, details.how ol { margin-top: 6px; }
   var toCheck = daysUntil('2027-04-30');
   if (toCheck >= 0) { $('sCount').textContent = toCheck; $('sCountS').textContent = toCheck === 1 ? 'dia até 30/04' : 'dias até 30/04'; }
   else {
-    var toLaunch = daysUntil('2027-11-01');
+    var toLaunch = daysUntil('2027-11-04');
     $('sCountK').textContent = 'Lançamento';
     $('sCount').textContent = Math.max(0, toLaunch);
     $('sCountS').textContent = toLaunch > 0 ? 'dias até nov/27' : 'lançou!';
@@ -975,12 +1188,39 @@ details.how ul, details.how ol { margin-top: 6px; }
     }
     $('tdGodot3').innerHTML = 'Explique em voz alta o código de hoje, ou refaça de memória algo da semana passada.';
 
+    /* Cronograma: contagem por mês, item do mês atual e atrasados */
+    var curKey = todayKey.slice(0, 7), late = 0, cur = null, curLeft = 0;
+    monthsEls.forEach(function (m) {
+      var boxes = Array.prototype.slice.call(m.querySelectorAll('input'));
+      var left = boxes.filter(function (b) { return !b.checked; });
+      m.querySelector('.mcount').textContent = (boxes.length - left.length) + '/' + boxes.length;
+      var key = m.dataset.month;
+      if (key < curKey) late += left.length;
+      if (key === curKey) { cur = left[0] || null; curLeft = left.length; }
+    });
+    if (cur) {
+      $('cronoV').textContent = titleOf(cur);
+      $('cronoD').textContent = 'Faltam ' + curLeft + (curLeft === 1 ? ' item' : ' itens') + ' neste mês' + (late ? ', mais ' + late + ' atrasado' + (late === 1 ? '' : 's') + ' de meses anteriores.' : '.');
+    } else {
+      $('cronoV').textContent = late ? late + (late === 1 ? ' item atrasado' : ' itens atrasados') : 'Mês em dia';
+      $('cronoD').textContent = late ? 'De meses anteriores. Veja no cronograma.' : 'Tudo do mês marcado.';
+    }
+
     $('sStreak').textContent = streak();
     var allDone = complete(today);
     $('doneBanner').hidden = !allDone;
     $('todayTitle').textContent = allDone ? 'Dia completo' : 'Treino do dia';
   }
   refresh();
+
+  /* Abre o mês atual do cronograma; o botão da aba Hoje leva até ele */
+  var curMonth = monthsEls.filter(function (m) { return m.dataset.month === todayKey.slice(0, 7); })[0];
+  if (curMonth) { curMonth.open = true; curMonth.classList.add('now'); }
+  $('cronoBtn').addEventListener('click', function () {
+    show('jogo');
+    var target = curMonth || $('crono');
+    setTimeout(function () { target.scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }, 0);
+  });
 })();
 </script>
 <script>
