@@ -387,6 +387,258 @@ details.how ul, details.how ol { margin-top: 6px; }
     </ul>
   </div>
 
+<style>
+#manual .lvl > summary { font-weight: 700; }
+#manual .lvl .meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+#manual .ex { display: flex; flex-wrap: wrap; gap: 16px; margin: 10px 0; }
+#manual .ex figure { margin: 0; text-align: center; }
+#manual .ex canvas { image-rendering: pixelated; image-rendering: crisp-edges; height: auto; border: 1px solid var(--line); background: #fff; border-radius: 4px; }
+#manual .ex figcaption { font-size: 13px; margin-top: 4px; }
+#manual .ex .bad { color: var(--bad); font-weight: 700; } #manual .ex .good { color: var(--good); font-weight: 700; }
+#manual h4 { margin: 14px 0 4px; font-size: 15px; }
+</style>
+  <div class="group" id="manual">
+    <h3>Manual de pixel art, do simples ao complexo</h3>
+    <p>Um manual em português, montado a partir das referências sérias (<em>Pixel Logic</em>, os tutoriais do Pedro Medeiros, o tutorial do cure no Pixel Joint, o Pixelblog do Slynyrd) e ligado ao seu curso e ao cronograma. <strong>Um nível por vez</strong>: leia, faça o exercício, confira os erros e marque.</p>
+    <p class="muted">Tutoriais do Pedro: <a href="https://saint11.art/blog/pixel-art-tutorials/">saint11.art/blog/pixel-art-tutorials</a> (GIFs, quase sem texto). Em português: o seu curso, o canal Interprete Pixel e o tutorial do Dado Almeida no site do Clip Studio. Páginas em inglês: botão direito → "Traduzir para o português".</p>
+
+    <div id="manualList">
+
+    <details class="lvl"><summary>Nível 0 · A ferramenta</summary>
+      <p class="meta">Outubro · Curso: módulo 1 · ~1 semana</p>
+      <p>Antes de desenhar, deixe o Aseprite pronto para pixel art:</p>
+      <ul>
+        <li><strong>Lápis (B)</strong> com a opção <strong>Pixel-perfect</strong> ligada na barra de cima: ao desenhar à mão, ela tira os "cantinhos" em L das linhas.</li>
+        <li><strong>Borracha (E)</strong>, <strong>balde (G)</strong>, <strong>conta-gotas (I</strong>, ou segurar <strong>Alt</strong> com o lápis), <strong>seleção (M)</strong>.</li>
+        <li><strong>Shift + clique</strong> faz linha reta do último ponto até o clique.</li>
+        <li><strong>Camadas</strong>: contorno, cor e sombra separados no começo, para errar sem medo.</li>
+        <li><strong>Quadros (frames)</strong> e <strong>tags</strong> para animação; <strong>Enter</strong> toca a animação; <strong>F3</strong> liga a "casca de cebola", que mostra o quadro anterior por baixo.</li>
+        <li>Desenhe com zoom alto, mas <strong>deixe a pré-visualização aberta em 100% ou 200%</strong> (menu View → Preview): é no tamanho real que o desenho tem de funcionar.</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn0"><span><span class="t">Exercício: um quadrado 16×16 com uma letra sua</span><span class="d">Use lápis, borracha, balde e conta-gotas, e salve como .aseprite com a data no nome.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 1 · O pixel e a linha</summary>
+      <p class="meta">Outubro–novembro · Curso: módulo 2 · Pedro: Fundamentals, Outlines · ~2 semanas</p>
+      <p>Em pixel art, a linha é feita de <strong>segmentos</strong> (trechos retos de pixels). O segredo é o <strong>ritmo</strong>:</p>
+      <ul>
+        <li><strong>Linha reta inclinada:</strong> todos os segmentos com o mesmo tamanho (2-2-2-2), ou um padrão que se repete (2-1-2-1).</li>
+        <li><strong>Curva:</strong> os segmentos <strong>diminuem ou aumentam aos poucos</strong> (4-3-2-1-1). Se pularem (4-1-3-1), a curva fica "amassada".</li>
+        <li>Segmentos que mudam de tamanho sem padrão viram <strong>jaggies</strong>: serrilhado feio.</li>
+        <li><strong>Pixels órfãos</strong>: pixels soltos que não ajudam a forma. Apague.</li>
+      </ul>
+      <div class="ex">
+        <figure><canvas data-ex="line-bad"></canvas><figcaption class="bad">Ruim: 3-1-2-1-3</figcaption></figure>
+        <figure><canvas data-ex="line-good"></canvas><figcaption class="good">Bom: 2-2-2-2-2</figcaption></figure>
+        <figure><canvas data-ex="curve-bad"></canvas><figcaption class="bad">Curva ruim: 4-1-3-1-2</figcaption></figure>
+        <figure><canvas data-ex="curve-good"></canvas><figcaption class="good">Curva boa: 4-3-2-1-1</figcaption></figure>
+      </div>
+      <div class="check">
+      <label><input type="checkbox" id="mn1"><span><span class="t">Exercício: linhas, círculo e 3 frutas 16×16</span><span class="d">Linhas em 5 inclinações, um círculo de 16 px e maçã, pera e banana só com contorno. Conte os segmentos de cada curva.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 2 · Forma e silhueta</summary>
+      <p class="meta">Novembro · Curso: módulo 3 · Pedro: Silhouette · ~1 semana</p>
+      <ul>
+        <li>Comece sempre pela <strong>forma grande</strong>, pintada de uma cor só. Detalhe vem por último.</li>
+        <li><strong>Teste da silhueta:</strong> pinte tudo de preto. Se ainda der para saber o que é (e para onde está virado), a forma está boa.</li>
+        <li>Em jogo, a silhueta é o que o jogador lê no meio da briga. A Luana e o Tonho precisam ser reconhecíveis <strong>só pela sombra preta</strong>: ela fina e ágil, ele largo e pesado.</li>
+        <li>Exagere: ombros maiores, cabeça um pouco maior, pose mais aberta. Em 48 px, o realismo some; o exagero fica.</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn2"><span><span class="t">Exercício: 10 silhuetas 32×32</span><span class="d">Espada, poção, cadeira, Kombi, orelhão, robô, chapéu, coxinha, guitarra e um personagem. Mostre a alguém e veja se adivinha cada uma.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 3 · Cor e paleta</summary>
+      <p class="meta">Novembro · Curso: módulo 2 · Lospec (paletas) · ~2 semanas</p>
+      <ul>
+        <li><strong>Poucas cores.</strong> Uma paleta limitada deixa o visual coeso. O Mega Drive usa 15 cores (mais a transparência) por personagem: é a sua regra.</li>
+        <li><strong>Rampa de cor:</strong> 3 a 5 tons de cada material (pele, roupa, metal), do mais escuro ao mais claro.</li>
+        <li><strong>Mude o matiz, não só o brilho</strong> (<em>hue shifting</em>): a sombra puxa para o azul ou o roxo, a luz puxa para o amarelo. Rampa só "mais escura" fica sem vida.</li>
+        <li><strong>Valor é mais importante que cor:</strong> converta o desenho para cinza (Sprite → Color Mode → Grayscale numa cópia). Se as partes se confundem no cinza, o contraste está fraco.</li>
+        <li>Para o GINGA 2034: personagens com cores fortes; fundos menos saturados; neon magenta, ciano e amarelo só nas luzes.</li>
+      </ul>
+      <div class="ex">
+        <figure><canvas data-ex="ramp-flat"></canvas><figcaption class="bad">Só escurecer</figcaption></figure>
+        <figure><canvas data-ex="ramp-hue"></canvas><figcaption class="good">Com mudança de matiz</figcaption></figure>
+      </div>
+      <div class="check">
+      <label><input type="checkbox" id="mn3"><span><span class="t">Exercício: 4 rampas de cor</span><span class="d">Pele, tecido vermelho, metal azulado e neon, com 4–5 tons cada e mudança de matiz. Teste no cinza.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 4 · Luz e volume</summary>
+      <p class="meta">Novembro–dezembro · Curso: módulo 2 (Luz e sombra, Materiais) · Pedro: Shading, Metal, Fabric · ~2 semanas</p>
+      <ul>
+        <li><strong>Uma fonte de luz só</strong>, sempre do mesmo lado (em beat 'em up, de cima e um pouco da frente).</li>
+        <li><strong>Sombra própria</strong> (o lado do objeto longe da luz) e <strong>sombra projetada</strong> (a que cai no chão). No beat 'em up, a sombra no chão é uma elipse nos pés.</li>
+        <li><strong>Pillow shading</strong> (erro): sombra em volta de tudo, com luz no meio, como um travesseiro. Parece sem volume.</li>
+        <li><strong>Banding</strong> (erro): faixas de cor que seguem o contorno lado a lado, parecendo uma escada de cores.</li>
+        <li><strong>Materiais:</strong> metal tem contraste forte e brilho pequeno e duro; tecido tem sombras suaves; pele tem luz quente. Os robôs do jogo são metal.</li>
+      </ul>
+      <div class="ex">
+        <figure><canvas data-ex="pillow"></canvas><figcaption class="bad">Pillow shading</figcaption></figure>
+        <figure><canvas data-ex="light"></canvas><figcaption class="good">Luz de um lado</figcaption></figure>
+      </div>
+      <div class="check">
+      <label><input type="checkbox" id="mn4"><span><span class="t">Exercício: esfera, cubo e cilindro 32×32; depois uma poção e uma lata</span><span class="d">Luz do mesmo lado em todos, com sombra no chão. Faça a lata em metal.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 5 · Acabamento: contorno, anti-aliasing e dithering</summary>
+      <p class="meta">Dezembro · Curso: módulo 2 (Dithering, Anti-aliasing) · Pedro: Outlines, Subpixel · ~1 semana</p>
+      <ul>
+        <li><strong>Contorno:</strong> preto em tudo pesa. O <strong>contorno seletivo</strong> (<em>selout</em>) usa uma cor mais escura do próprio material, e fica mais claro do lado da luz. Para personagem de jogo, mantenha o contorno de fora escuro (legibilidade) e suavize os de dentro.</li>
+        <li><strong>Anti-aliasing (AA):</strong> pixels de tom intermediário nos "degraus" das curvas, para suavizar. Use pouco e só por dentro: AA na borda de fora do sprite fica sujo sobre o fundo do jogo.</li>
+        <li><strong>Dithering:</strong> xadrez de duas cores para simular uma terceira ou uma transição. Bom em céu, metal e texturas grandes; ruim em personagem pequeno, onde vira chiado.</li>
+        <li><strong>Clusters:</strong> agrupe os pixels de uma mesma cor em manchas com forma. Pixels de cores alternadas soltos viram ruído.</li>
+      </ul>
+      <div class="ex">
+        <figure><canvas data-ex="dither"></canvas><figcaption>Transição com dithering</figcaption></figure>
+      </div>
+      <div class="check">
+      <label><input type="checkbox" id="mn5"><span><span class="t">Exercício: refazer a poção e a lata do nível 4</span><span class="d">Com contorno seletivo e um pouco de AA nas curvas. Compare as duas versões lado a lado.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 6 · Personagem de beat 'em up</summary>
+      <p class="meta">Dezembro · Curso: módulos 3 e 4 · Pedro: characterIdle, Portrait, Cuteness · ~3 semanas</p>
+      <ul>
+        <li><strong>Tamanho:</strong> ~48 px de altura, num quadro de 64×64 com espaço para os golpes. Proporção de ~6 cabeças (cabeça com ~7–8 px).</li>
+        <li><strong>A pose 3/4:</strong> corpo meio de lado e meio para a câmera, pés desencontrados, braço e perna de trás mais escuros. É a pose de todo beat 'em up.</li>
+        <li><strong>Linha de ação:</strong> uma curva imaginária que atravessa o corpo. Pose com linha de ação clara parece viva; pose reta parece boneco.</li>
+        <li><strong>Mãos em 48 px:</strong> são blocos de 3–4 px. Não desenhe dedos; desenhe a forma do punho fechado ou da mão aberta.</li>
+        <li><strong>Leitura:</strong> o rosto é quase nada (2–3 pixels de olho e boca). Quem conta quem é o personagem é a silhueta, o cabelo e as cores da roupa.</li>
+        <li><strong>Paleta do personagem:</strong> até 15 cores. Guarde-a no Aseprite: as versões de inimigo com outra cor saem trocando a paleta.</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn6"><span><span class="t">Exercício: Luana e Tonho parados, em 3/4</span><span class="d">Primeiro as silhuetas pretas lado a lado, depois a cor, depois a luz. Confira o teste do cinza e o tamanho real.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 7 · Animação básica</summary>
+      <p class="meta">Janeiro · Curso: módulo 5 (aulas 1–5 e 12–24) · Pedro: Walk, RunCycleSimple, Easings, Squash, loop · ~3 semanas</p>
+      <ul>
+        <li><strong>Quadros-chave primeiro:</strong> desenhe as poses principais e só depois os quadros do meio (interpolação).</li>
+        <li><strong>Tempo é tudo:</strong> no Aseprite, cada quadro tem uma duração (clique duas vezes no quadro). O mesmo desenho parece pesado ou leve só mudando o tempo.</li>
+        <li><strong>Idle (4–6 quadros, ~150 ms cada):</strong> respiração: o peito sobe 1 pixel, os ombros acompanham. A Luana pode usar a ginga da capoeira.</li>
+        <li><strong>Andar (6–8 quadros, ~100 ms):</strong> contato (pé à frente toca o chão), descida, passagem (pernas se cruzam, corpo mais alto) e volta. A cabeça sobe e desce 1 pixel.</li>
+        <li><strong>Easing:</strong> movimento natural acelera e desacelera. Quadros mais próximos no começo e no fim do movimento.</li>
+        <li><strong>Casca de cebola (F3)</strong> para ver o quadro anterior e manter o volume igual.</li>
+        <li><strong>Loop:</strong> o último quadro tem que encaixar no primeiro sem "pulo".</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn7"><span><span class="t">Exercício: idle e andar da Luana e do Tonho</span><span class="d">Teste no jogo, no lugar dos quadrados. Se o personagem parecer "patinar", ajuste a velocidade do código ao passo do desenho.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 8 · Animação de luta</summary>
+      <p class="meta">Fevereiro · Curso: módulo 5 (aulas 25–29) · Pedro: AttackSheet, Impact, MotionBlur, Jump, Slide-Roll, Defend, Death · ~4 semanas</p>
+      <ul>
+        <li><strong>Antecipação → golpe → recuperação.</strong> Antecipação: o corpo vai para trás (1–2 quadros, ~80–100 ms). Golpe: rápido (1 quadro). <strong>Quadro de impacto:</strong> fica mais tempo (~100–150 ms), e a Godot ainda congela o jogo uns quadros (hit stop). Recuperação: volta à guarda.</li>
+        <li><strong>Smear:</strong> um quadro com o membro "esticado" ou borrado no meio do golpe. Dá velocidade sem desenhar quadros a mais.</li>
+        <li><strong>Esticar e achatar:</strong> exagere a forma no golpe e no impacto; volte ao normal logo depois.</li>
+        <li><strong>Peso:</strong> o Tonho tem antecipação mais longa e impacto mais forte; a Luana, antecipação curta e golpes encadeados.</li>
+        <li><strong>Dano, queda e levantar:</strong> o corpo recua na direção do golpe; na queda, quica uma vez no chão; ao levantar, passa por uma pose de joelho.</li>
+        <li><strong>Grave referência:</strong> filme você mesmo com o celular, de lado e em 3/4, e procure os golpes em câmera lenta no YouTube.</li>
+      </ul>
+      <h4>Golpes da Luana (capoeira)</h4>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Golpe real</th><th>No jogo</th></tr></thead>
+        <tbody>
+          <tr><td>Ginga</td><td>O idle, balançando de um lado para o outro</td></tr>
+          <tr><td>Martelo (chute lateral rápido)</td><td>Golpe 1 do combo</td></tr>
+          <tr><td>Armada (chute giratório)</td><td>Golpe 2 do combo</td></tr>
+          <tr><td>Meia-lua de compasso (giro com a mão no chão)</td><td>Golpe 3, que derruba</td></tr>
+          <tr><td>Rasteira</td><td>Golpe baixo que derruba</td></tr>
+          <tr><td>Aú (estrela)</td><td>Esquiva ou dash</td></tr>
+          <tr><td>Bênção (chute frontal que empurra)</td><td>Afastar inimigos</td></tr>
+        </tbody>
+      </table></div>
+      <h4>Golpes do Tonho (estivador e luta livre)</h4>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Golpe real</th><th>No jogo</th></tr></thead>
+        <tbody>
+          <tr><td>Socos curtos e pesados</td><td>Combo de 3</td></tr>
+          <tr><td>Joelhada agarrado</td><td>Golpe com o inimigo seguro</td></tr>
+          <tr><td>Suplex (arremesso para trás)</td><td>Arremesso que derruba quem está atrás</td></tr>
+          <tr><td>Body slam (levantar e jogar no chão)</td><td>Arremesso para a frente</td></tr>
+          <tr><td>Lariat (braçada de corrida)</td><td>Golpe do dash</td></tr>
+          <tr><td>Soco do braço biônico</td><td>Especial</td></tr>
+        </tbody>
+      </table></div>
+      <div class="check">
+      <label><input type="checkbox" id="mn8"><span><span class="t">Exercício: combo de 3 dos dois, com smear e impacto</span><span class="d">Depois: levar dano, cair e levantar. Teste no jogo com o hit stop ligado.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 9 · Efeitos</summary>
+      <p class="meta">Março · Curso: módulo 6 (aulas 1, 7, 8 e 9) · Pedro: Impact, Blood, Explosion, Electric, SmokeSheet, Breaking · ~2 semanas</p>
+      <ul>
+        <li><strong>Efeito começa forte e some devagar:</strong> o primeiro quadro é o maior e mais claro; os seguintes encolhem e escurecem.</li>
+        <li><strong>Poucos quadros, rápidos:</strong> faísca de impacto com 3–4 quadros de ~50 ms.</li>
+        <li><strong>Cor mais clara que tudo na tela</strong> no primeiro quadro (quase branco), para o olho ir direto ao golpe.</li>
+        <li><strong>Para o jogo:</strong> faísca de impacto, poeira da queda, respingo curto de sangue (humanos), óleo e peças (robôs), explosão de robô, choque elétrico do drone, objeto quebrando.</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn9"><span><span class="t">Exercício: faísca, poeira e explosão de robô</span><span class="d">Teste no jogo junto com o golpe e a tremida de tela.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 10 · Cenário</summary>
+      <p class="meta">Abril · Curso: módulo Background · Pedro: City, Parallax, Tech, Holograms-Ghosts, Shine · ~3 semanas</p>
+      <ul>
+        <li><strong>Perspectiva de beat 'em up:</strong> o chão ocupa a parte de baixo da tela (onde se anda), as paredes e prédios ficam atrás, e o horizonte fica alto.</li>
+        <li><strong>Parallax:</strong> camadas que se movem em velocidades diferentes. O fundo distante (céu, prédios) anda devagar; o da frente, rápido. Dá profundidade com pouco desenho.</li>
+        <li><strong>O cenário perde para o personagem:</strong> menos saturado, menos contraste e menos detalhe que os personagens. Se o personagem some no fundo, o fundo está errado.</li>
+        <li><strong>Peças reaproveitáveis:</strong> desenhe a fachada, a barraca e o poste como peças separadas e monte a fase combinando. É o que o Pedro chama de modular.</li>
+        <li><strong>Neon:</strong> o tubo de luz é quase branco no centro, com a cor forte em volta e um halo escuro e pouco saturado ao redor. O brilho vem do contraste, não de muitas cores.</li>
+        <li>Para referência real, use fotos de feiras, orelhões, Kombis e calçadões. Os 20% de futuro vêm por cima.</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn10"><span><span class="t">Exercício: a feira da Vila Esperança em 3 camadas</span><span class="d">Céu e prédios ao fundo, barracas no meio e o chão onde se luta. Teste com a Luana na frente e confira se ela se destaca.</span></span></label>
+      </div>
+    </details>
+
+    <details class="lvl"><summary>Nível 11 · Do Aseprite para o jogo</summary>
+      <p class="meta">Janeiro em diante, sempre · Curso: módulo 1 (Exportar)</p>
+      <ul>
+        <li><strong>Quadro do mesmo tamanho</strong> para todas as animações de um personagem (64×64), com os pés sempre na mesma altura.</li>
+        <li><strong>O ponto de origem nos pés</strong>, no centro: é ele que a Godot usa para o Y-sort e para a sombra.</li>
+        <li><strong>Uma tag por animação</strong> (idle, andar, soco1...) e exportação como sprite sheet (File → Export Sprite Sheet).</li>
+        <li><strong>Nomes sem acento nem espaço:</strong> luana_idle.png, tonho_soco1.png.</li>
+        <li><strong>Guia de estilo:</strong> uma folha com as paletas, o tamanho, a direção da luz e o tipo de contorno. Consulte antes de cada desenho novo para o jogo inteiro ficar igual.</li>
+      </ul>
+      <div class="check">
+      <label><input type="checkbox" id="mn11"><span><span class="t">Exercício: guia de estilo do GINGA 2034</span><span class="d">Paletas da Luana, do Tonho e de um robô; direção da luz; contorno; o tamanho com uma régua de 48 px.</span></span></label>
+      </div>
+    </details>
+
+    </div>
+
+    <details>
+      <summary>Checklist de erros (use no domingo, antes de postar)</summary>
+      <ul>
+        <li><strong>Jaggies:</strong> as linhas têm ritmo? As curvas diminuem aos poucos?</li>
+        <li><strong>Pixels órfãos:</strong> tem pixel solto sem função?</li>
+        <li><strong>Banding:</strong> as cores seguem o contorno em faixas?</li>
+        <li><strong>Pillow shading:</strong> a luz vem de um lado só?</li>
+        <li><strong>Matiz:</strong> as sombras mudam de cor ou só escurecem?</li>
+        <li><strong>Contraste:</strong> no cinza, as partes se separam? O personagem se destaca do fundo?</li>
+        <li><strong>Contorno:</strong> está pesado demais por dentro?</li>
+        <li><strong>Dithering:</strong> ajuda ou virou chiado?</li>
+        <li><strong>Tamanho real:</strong> funciona em 100%, e não só com zoom?</li>
+        <li><strong>Animação:</strong> o loop encaixa? O impacto fica tempo suficiente na tela?</li>
+      </ul>
+    </details>
+  </div>
+
+
+
   <div class="group">
     <h3>Depois deste curso</h3>
     <p><a href="https://www.udemy.com/course/pixel-art-e-animacao-2d-com-aseprite/">Pixel Art e Animação 2D com Aseprite</a>, por ~R$ 27,90 e nota 4,6. Direto e focado em personagem, nos 12 princípios da animação e em sprite sheets. É rápido para iniciante, por isso fica para depois.</p>
@@ -1342,6 +1594,59 @@ details.how ul, details.how ol { margin-top: 6px; }
   var gds = persist('#gdsList input', 'plano-beu-gds');
   var proto = persist('#proto input', 'plano-beu-proto');
   persist('#trailerList input', 'plano-beu-trailer');
+  persist('#manualList input', 'plano-beu-manual');
+
+  /* Exemplos do manual de pixel art, desenhados pixel a pixel */
+  function hsl(h, s, l) { return 'hsl(' + h + ',' + s + '%,' + l + '%)'; }
+  function paint(cv, w, h, px) {
+    cv.width = w; cv.height = h; cv.style.width = (w * (w < 16 ? 10 : 6)) + 'px'; cv.style.maxWidth = '100%';
+    var c = cv.getContext('2d'); c.fillStyle = '#ffffff'; c.fillRect(0, 0, w, h);
+    px(function (x, y, col) { c.fillStyle = col; c.fillRect(x, y, 1, 1); });
+  }
+  function stairs(segs) {
+    var w = segs.reduce(function (a, b) { return a + b; }, 0) + 2, h = segs.length + 2;
+    return function (cv) { paint(cv, w, h, function (put) { var x = 1; segs.forEach(function (n, r) { for (var i = 0; i < n; i++) put(x++, r + 1, '#1d1a2b'); }); }); };
+  }
+  function ball(pillow) {
+    return function (cv) {
+      var tones = [hsl(250, 35, 22), hsl(220, 45, 38), hsl(200, 55, 55), hsl(185, 60, 72)];
+      paint(cv, 24, 24, function (put) {
+        for (var y = 0; y < 24; y++) for (var x = 0; x < 24; x++) {
+          var dx = (x - 11.5) / 10, dy = (y - 11.5) / 10, r = dx * dx + dy * dy;
+          if (r > 1) continue;
+          var t;
+          if (pillow) t = r > 0.75 ? 0 : r > 0.45 ? 1 : r > 0.15 ? 2 : 3;
+          else { var z = Math.sqrt(1 - r), d = -0.55 * dx - 0.55 * dy + 0.63 * z; t = d > 0.8 ? 3 : d > 0.45 ? 2 : d > 0.1 ? 1 : 0; }
+          put(x, y, tones[t]);
+        }
+      });
+    };
+  }
+  function ramp(shift) {
+    return function (cv) {
+      paint(cv, 20, 6, function (put) {
+        for (var i = 0; i < 5; i++) {
+          var col = shift ? hsl(250 - i * 55 < 0 ? 360 + 250 - i * 55 : 250 - i * 55, 45 + i * 6, 18 + i * 16) : hsl(5, 60, 18 + i * 16);
+          for (var x = 0; x < 4; x++) for (var y = 0; y < 6; y++) put(i * 4 + x, y, col);
+        }
+      });
+    };
+  }
+  var exs = {
+    'line-bad': stairs([3, 1, 2, 1, 3]), 'line-good': stairs([2, 2, 2, 2, 2]),
+    'curve-bad': stairs([4, 1, 3, 1, 2]), 'curve-good': stairs([4, 3, 2, 1, 1]),
+    'pillow': ball(true), 'light': ball(false), 'ramp-flat': ramp(false), 'ramp-hue': ramp(true),
+    'dither': function (cv) {
+      var a = hsl(250, 45, 22), b = hsl(320, 70, 60);
+      paint(cv, 30, 8, function (put) {
+        for (var x = 0; x < 30; x++) for (var y = 0; y < 8; y++) {
+          var band = Math.floor(x / 6), useB = band === 0 ? false : band === 1 ? (x % 2 === 0 && y % 2 === 0) : band === 2 ? ((x + y) % 2 === 0) : band === 3 ? !(x % 2 === 1 && y % 2 === 1) : true;
+          put(x, y, useB ? b : a);
+        }
+      });
+    }
+  };
+  document.querySelectorAll('canvas[data-ex]').forEach(function (cv) { if (exs[cv.dataset.ex]) exs[cv.dataset.ex](cv); });
   persist('#ladder input', 'plano-beu-escada');
   persist('#readyAI input', 'plano-beu-ia');
   var cronoBoxes = persist('#crono input', 'plano-beu-crono');
