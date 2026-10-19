@@ -270,8 +270,8 @@ details.how ul, details.how ol { margin-top: 6px; }
       <label class="task"><input type="checkbox" id="h-a1"><span><span class="t"><span>Estudo</span><span class="min">~20 min</span></span><span class="d" id="tdArte1">Uma aula do curso, em 1,5×.</span></span></label>
       <details class="how"><summary>Como fazer</summary>
         <ul>
-          <li>Assista uma aula do curso "Pixel Art do zero ao avançado" em velocidade 1,5× (o curso é lento, segundo os próprios alunos).</li>
-          <li>Pule as aulas repetidas. A aba <strong>Treino</strong> mostra o que ver e o que pular.</li>
+          <li>Assista a aula do curso indicada na <strong>etapa atual</strong> (aba <strong>Arte</strong>), em 1,5×: o curso é lento, segundo os próprios alunos.</li>
+          <li>Não entendeu? Veja o vídeo ⭐ da etapa, em português, que explica o mesmo assunto de outro jeito.</li>
           <li>Se a aula tiver exercício, faça. Só assistir quase não faz evoluir.</li>
         </ul>
       </details>
@@ -288,26 +288,26 @@ details.how ul, details.how ol { margin-top: 6px; }
       </details>
     </div>
     <div class="taskcard">
-      <label class="task"><input type="checkbox" id="h-a3"><span><span class="t"><span>Prática</span><span class="min">~25 min</span></span><span class="d" id="tdArte3">Aplique a aula num desenho seu.</span></span></label>
+      <label class="task"><input type="checkbox" id="h-a3"><span><span class="t"><span>Prática</span><span class="min">~25 min</span></span><span class="d" id="tdArte3">Faça o exercício da etapa atual.</span></span></label>
       <details class="how"><summary>Como fazer</summary>
         <ul>
-          <li>Faça um desenho <strong>seu</strong> usando o assunto da aula de hoje.</li>
-          <li>Concentre-se no <strong>foco do dia</strong>, um ponto fraco por vez.</li>
+          <li>Faça o <strong>exercício da etapa atual</strong> (aba <strong>Arte</strong>). Quando terminar o exercício, marque a etapa como concluída lá.</li>
+          <li>Antes de dar por pronto, passe a <strong>checklist de erros</strong> da aba Arte.</li>
           <li>Salve com a data no nome (ex.: <code>2026-10-18-pocao.aseprite</code>) para comparar depois.</li>
           <li>A partir de dezembro, coloque seus sprites no protótipo da Godot no lugar dos quadrados.</li>
         </ul>
       </details>
     </div>
     <div class="next" id="nextBox">
-      <span class="k">Próximo módulo do curso</span>
-      <span class="v" id="nextMod">1. Introdução ao Aseprite</span>
-      <span class="d" id="nextModD">Atenção a Camadas, Frames, Tags e Exportar frames.</span>
-      <button class="btn" type="button" data-go="treino">Ver no Treino</button>
+      <span class="k">Etapa atual da arte</span>
+      <span class="v" id="nextMod">Etapa 1 · A ferramenta</span>
+      <span class="d" id="nextModD"></span>
+      <button class="btn" type="button" id="arteBtn">Abrir a etapa</button>
     </div>
   </div>
 
   <div class="next" id="cronoBox">
-    <span class="k" id="cronoK">Cronograma deste mês</span>
+    <span class="k" id="cronoK">Cronograma deste mês (aba Plano)</span>
     <span class="v" id="cronoV">–</span>
     <span class="d" id="cronoD"></span>
     <button class="btn" type="button" id="cronoBtn">Ver o cronograma</button>
@@ -326,86 +326,46 @@ details.how ul, details.how ol { margin-top: 6px; }
     </ul>
   </details>
 
-  <details>
-    <summary>Plano mês a mês (rumo a nov/2027)</summary>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Quando</th><th>Pixel art</th><th>Godot</th></tr></thead>
-      <tbody>
-        <tr><td>Out–nov 2026</td><td>Módulos 1 e 2. Objetos 32×32 (maçã, poção, espada)</td><td>Fundamentos: minicurso e "Seu primeiro jogo 2D". Começar o protótipo: andar com Y-sort</td></tr>
-        <tr><td>Dez 2026</td><td>Módulos 3 e 4. Primeiro personagem de ~48 px em 3/4. Decidir tamanho e paleta</td><td>Protótipo com quadrados: soco, inimigo, máquina de estados</td></tr>
-        <tr><td>Jan–mar 2027</td><td>Módulo 5. Personagem principal: idle, andar, combo, dano, cair, levantar</td><td>Combo, dano e queda, ondas e câmera, HUD, modelo de chefe</td></tr>
-        <tr class="hl"><td>Abr 2027</td><td>Cenário e inimigos da fase 1. Encomendar a capa</td><td>Fase 1 completa. Página no Steam. Checkpoint em 30/04</td></tr>
-        <tr><td>Mai–ago 2027</td><td>Inimigos, efeitos de impacto (módulo 6), cenários</td><td>Fases 2–3, 2º chefe. Demo em agosto</td></tr>
-        <tr><td>Set–out 2027</td><td>Polimento e últimas animações</td><td>Fase 4, modo difícil, ajustes da demo. Next Fest</td></tr>
-        <tr class="hl"><td>Nov 2027</td><td colspan="2">Lançamento</td></tr>
-      </tbody>
-    </table></div>
-    <p class="muted">Com 2 h por dia o prazo fica apertado. Quando der, faça 3–4 h (ou mais nos fins de semana). O checkpoint de abril diz se segue para 2027 ou passa para 2028.</p>
-  </details>
   <p class="muted">As marcações ficam salvas só neste aparelho. As tarefas de hoje recomeçam a cada dia.</p>
 </section>
 
-<!-- TREINO -->
-<section class="panel" id="treino" role="tabpanel" aria-labelledby="tab-treino" hidden>
-  <h2><small>Pixel art · curso comprado</small>Pixel Art do zero ao avançado</h2>
-  <div class="group">
-    <p>São 204 aulas e 49 h. Para um beat 'em up, o essencial são umas 30 h, ou umas 20 h assistindo em 1,5×. Com ~20 min de aula por dia, dá uns 2–3 meses: os módulos 1–4 até dezembro e o 5 em janeiro–fevereiro. Marque cada módulo ao terminar.</p>
-    <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
-    <p class="progress" id="prog">0 de 6 módulos essenciais concluídos</p>
-    <div class="check" id="mods">
-      <label><input type="checkbox" id="m1" data-ess><span><span class="t">1. Introdução ao Aseprite<span class="h">2h21</span></span><span class="d">Veja tudo. Atenção a Camadas, Frames, Tags e Exportar frames: você vai usar em toda animação.</span></span></label>
-      <label><input type="checkbox" id="m2" data-ess><span><span class="t">2. Técnicas básicas<span class="h">9h29</span></span><span class="d">Veja tudo. Luz e sombra, Materiais, Dithering e Anti-aliasing são a base do visual do SoR2. Faça os 4 exercícios do pirata: é aqui que a evolução aparece.</span></span></label>
-      <label><input type="checkbox" id="m3" data-ess><span><span class="t">3. Desenho em pixel art<span class="h">4h17</span></span><span class="d">Veja tudo. Proporção, volume, silhueta, ação, boneco de palito e Perspectiva em jogos 2D (a pose 3/4 do beat 'em up).</span></span></label>
-      <label><input type="checkbox" id="m4" data-ess><span><span class="t">4. Design de personagem<span class="h">4h25</span></span><span class="d">Resolução do jogo, tamanho do personagem e paleta limitada. As aulas 11–15 repetem silhueta do módulo 3: dá para acelerar.</span></span></label>
-      <label><input type="checkbox" id="m5" data-ess><span><span class="t">5. Animação<span class="h">8h36</span></span><span class="d">O mais importante para beat 'em up. Aulas 1–5 (quadros-chave, interpolação), 12–24 (idle, pulo, corrida), 25–29 (espada e smear = socos com impacto). A 11 é um bom bônus.</span></span></label>
-      <label><input type="checkbox" id="m6" data-ess><span><span class="t">6. Animação de efeitos<span class="h">~1h15</span></span><span class="d">Só as aulas 1, 7, 8 e 9: faíscas de impacto e poeira quando o inimigo cai.</span></span></label>
-      <label class="skip"><input type="checkbox" id="m7"><span><span class="t">Background <span class="tag later">abril</span><span class="h">1h47</span></span><span class="d">Cidade com prédios, como os cenários do SoR2. Entra em abril de 2027, para o cenário da fase 1.</span></span></label>
-      <label class="skip"><input type="checkbox" id="m8"><span><span class="t">Tilesets e Top Down <span class="tag no">pular</span><span class="h">13h02</span></span><span class="d">Beat 'em up usa cenário de fundo, não tiles, e a vista de cima não serve para o gênero.</span></span></label>
-    </div>
-  </div>
-
-  <div class="group">
-    <h3>Rumo ao estilo SoR2</h3>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Fase</th><th>Quando</th><th>Meta</th></tr></thead>
-      <tbody>
-        <tr><td>1. Base</td><td>Out–nov 2026</td><td>Objetos 32×32, luz e sombra, idle e caminhada simples</td></tr>
-        <tr><td>2. Personagem</td><td>Dez 2026</td><td>Personagem de ~48 px em 3/4, com roupa e sombra estilo Mega Drive. Decidir tamanho e paleta</td></tr>
-        <tr><td>3. Luta</td><td>Jan–mar 2027</td><td>Idle, andar, combo de 3 com peso, dano, cair e levantar (~30–40 quadros)</td></tr>
-        <tr class="hl"><td>4. Fase 1</td><td>Abr 2027</td><td>Cenário e 2–3 inimigos da fase 1, para a página e o trailer</td></tr>
-        <tr><td>5. Jogo</td><td>Mai–out 2027</td><td>Mais inimigos, efeitos, chefes, cenários e polimento</td></tr>
-      </tbody>
-    </table></div>
-    <div class="callout"><strong>Tamanho para 2027: ~48 px de altura</strong>, num quadro de 64×64 com espaço para os golpes. É menor que o SoR2, mas cada quadro leva bem menos tempo, e é isso que cabe no prazo. Confirme em dezembro desenhando o personagem parado e um soco. Se o lançamento for para 2028, dá para crescer para ~58 px.</div>
-    <ul>
-      <li>Fique em 32×32 até novembro: com poucos pixels se aprende cor, luz e sombra mais rápido.</li>
-      <li>Paleta do Mega Drive: 15 cores mais transparência por personagem.</li>
-      <li>Resolução do jogo: 320×180, com personagens de ~48 px de altura.</li>
-      <li>Golpes pedem antecipação, quadro de impacto mais longo e smear.</li>
-      <li>Estude quadro a quadro no YouTube: <code>.</code> avança e <code>,</code> volta um quadro.</li>
-      <li>Arquivo de estudo de mãos: <code>Documentos\pixel-art\estudo-maos.aseprite</code> (para janeiro de 2027).</li>
-    </ul>
-  </div>
-
+<!-- ARTE -->
+<section class="panel" id="arte" role="tabpanel" aria-labelledby="tab-arte" hidden>
+  <h2><small>Pixel art</small>Trilha de arte</h2>
 <style>
-#manual .lvl > summary { font-weight: 700; }
-#manual .lvl .meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
-#manual .ex { display: flex; flex-wrap: wrap; gap: 16px; margin: 10px 0; }
-#manual .ex figure { margin: 0; text-align: center; }
-#manual .ex canvas { image-rendering: pixelated; image-rendering: crisp-edges; height: auto; border: 1px solid var(--line); background: #fff; border-radius: 4px; }
-#manual .ex figcaption { font-size: 13px; margin-top: 4px; }
-#manual .ex .bad { color: var(--bad); font-weight: 700; } #manual .ex .good { color: var(--good); font-weight: 700; }
-#manual h4 { margin: 14px 0 4px; font-size: 15px; }
+#trilha .lvl > summary { font-weight: 700; }
+#trilha .lvl .meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+#trilha .ex { display: flex; flex-wrap: wrap; gap: 16px; margin: 10px 0; }
+#trilha .ex figure { margin: 0; text-align: center; }
+#trilha .ex canvas { image-rendering: pixelated; image-rendering: crisp-edges; height: auto; border: 1px solid var(--line); background: #fff; border-radius: 4px; }
+#trilha .ex figcaption { font-size: 13px; margin-top: 4px; }
+#trilha .ex .bad { color: var(--bad); font-weight: 700; } #trilha .ex .good { color: var(--good); font-weight: 700; }
+#trilha h4 { margin: 14px 0 4px; font-size: 15px; }
+#trilha .etapa h4 { margin: 16px 0 4px; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--accent); }
+#trilha .vids { padding-left: 18px; } #trilha .vids li { margin: 4px 0; }
+#trilha details.etapa.now > summary { color: var(--accent); }
+#trilha details.etapa.done > summary { opacity: .65; }
 </style>
-  <div class="group" id="manual">
-    <h3>Manual de pixel art, do simples ao complexo</h3>
-    <p>Um manual em português, montado a partir das referências sérias (<em>Pixel Logic</em>, os tutoriais do Pedro Medeiros, o tutorial do cure no Pixel Joint, o Pixelblog do Slynyrd) e ligado ao seu curso e ao cronograma. <strong>Um nível por vez</strong>: leia, faça o exercício, confira os erros e marque.</p>
-    <p class="muted">Tutoriais do Pedro: <a href="https://saint11.art/blog/pixel-art-tutorials/">saint11.art/blog/pixel-art-tutorials</a> (GIFs, quase sem texto). Em português: o seu curso, o canal Interprete Pixel e o tutorial do Dado Almeida no site do Clip Studio. Páginas em inglês: botão direito → "Traduzir para o português".</p>
+  <div class="group">
+    <p>Uma trilha só, em <strong>14 etapas</strong>, do mais simples ao personagem animado no jogo. Cada etapa junta quatro coisas:</p>
+    <ol>
+      <li><strong>No seu curso:</strong> a aula do "Pixel Art do zero ao avançado" para assistir (a base de tudo).</li>
+      <li><strong>Entenda:</strong> a explicação em português, com exemplos e os erros comuns.</li>
+      <li><strong>Vídeos em português:</strong> se não entendeu no curso, o vídeo ⭐ explica de outro jeito.</li>
+      <li><strong>Exercício:</strong> o que fazer na tarefa "Prática". Marque para concluir a etapa.</li>
+    </ol>
+    <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
+    <p class="progress" id="prog">0 de 14 etapas concluídas</p>
+  </div>
 
-    <div id="manualList">
-
-    <details class="lvl"><summary>Nível 0 · A ferramenta</summary>
-      <p class="meta">Outubro · Curso: módulo 1 · ~1 semana</p>
+  <div class="group" id="trilha">
+    <h3>Trilha de pixel art</h3>
+    <div id="arteList">
+    <details class="lvl etapa" data-n="1">
+      <summary>Etapa 1 · A ferramenta <span class="pill">outubro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 1, Introdução ao Aseprite</strong> (2h21). Veja tudo, com atenção a Camadas, Frames, Tags e Exportar frames.</p>
+      <h4>2 · Entenda</h4>
       <p>Antes de desenhar, deixe o Aseprite pronto para pixel art:</p>
       <ul>
         <li><strong>Lápis (B)</strong> com a opção <strong>Pixel-perfect</strong> ligada na barra de cima: ao desenhar à mão, ela tira os "cantinhos" em L das linhas.</li>
@@ -415,13 +375,41 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Quadros (frames)</strong> e <strong>tags</strong> para animação; <strong>Enter</strong> toca a animação; <strong>F3</strong> liga a "casca de cebola", que mostra o quadro anterior por baixo.</li>
         <li>Desenhe com zoom alto, mas <strong>deixe a pré-visualização aberta em 100% ou 200%</strong> (menu View → Preview): é no tamanho real que o desenho tem de funcionar.</li>
       </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn0"><span><span class="t">Exercício: um quadrado 16×16 com uma letra sua</span><span class="d">Use lápis, borracha, balde e conta-gotas, e salve como .aseprite com a data no nome.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/WxPhLQAPy6w">Tutorial de Aseprite: como utilizar</a> · Dininho · 28 min</li><li><a href="https://youtu.be/Kwsr2nAo-iU">Conhecendo o Aseprite (aula 1)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/dblTP0RSDes">Fundamentos da pixel art (aula 2)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/fkqUErsXRpg">Guia Completo #01: Aseprite</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/CX-6OOLlxTQ">Guia Completo #03: Lápis e conta-gotas</a> · Capitão Dinossauro</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e1"><span><span class="t">Um quadrado 16×16 com uma letra sua</span><span class="d">Use lápis, borracha, balde e conta-gotas, e salve como .aseprite com a data no nome.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 1 · O pixel e a linha</summary>
-      <p class="meta">Outubro–novembro · Curso: módulo 2 · Pedro: Fundamentals, Outlines · ~2 semanas</p>
+    <details class="lvl etapa" data-n="2">
+      <summary>Etapa 2 · O que é pixel art e os erros de iniciante <span class="pill">outubro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p>Começo do <strong>módulo 2, Técnicas básicas</strong>.</p>
+      <h4>2 · Entenda</h4>
+<p><strong>Pixel art</strong> é desenhar colocando cada pixel de propósito, numa resolução pequena e com poucas cores. Não é um desenho comum reduzido: em 48 px, cada pixel é uma decisão.</p>
+      <p>Os erros que todo iniciante comete, e que as próximas etapas ensinam a evitar:</p>
+      <ul>
+        <li><strong>Jaggies:</strong> linhas tortas, sem ritmo (etapa 3).</li>
+        <li><strong>Pixels órfãos:</strong> pixels soltos que viram sujeira (etapa 3).</li>
+        <li><strong>Cores demais e sem variação de matiz</strong> (etapa 4).</li>
+        <li><strong>Pillow shading e banding:</strong> sombra sem direção, faixas de cor (etapa 5).</li>
+        <li><strong>Contorno pesado e dithering como ruído</strong> (etapa 6).</li>
+        <li><strong>Pouco contraste:</strong> o desenho se perde no fundo (etapas 4 e 14).</li>
+      </ul>
+      <p>A <strong>checklist de erros</strong>, no fim desta aba, junta tudo para você conferir cada desenho.</p>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/BT-PadfxAZU">Aprenda pixel art do zero #01: Introdução</a> · NextIndie</li><li><a href="https://youtu.be/vT_yg0Z7_mE">Aprenda pixel art do zero #02: Cores e software</a> · NextIndie</li><li><a href="https://youtu.be/3G8jpTduUlU">8 dicas de pixel art para iniciantes</a> · Crie Seus Jogos</li><li><a href="https://youtu.be/69HvD0Ue-Rs">6 erros de iniciantes em pixel art</a> · Crie Seus Jogos</li><li><a href="https://youtu.be/OSYiLKAESHs">Guia Completo #04: O que é pixel art?</a> · Capitão Dinossauro</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e2"><span><span class="t">Analisar 3 sprites do SoR2</span><span class="d">No The Spriters Resource: conte as cores de um personagem, veja de onde vem a luz e procure um exemplo de anti-aliasing. Anote o que achou.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+    </details>
+    <details class="lvl etapa" data-n="3">
+      <summary>Etapa 3 · Linhas e curvas <span class="pill">outubro–novembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 2</strong>, as aulas de linhas.</p>
+      <h4>2 · Entenda</h4>
       <p>Em pixel art, a linha é feita de <strong>segmentos</strong> (trechos retos de pixels). O segredo é o <strong>ritmo</strong>:</p>
       <ul>
         <li><strong>Linha reta inclinada:</strong> todos os segmentos com o mesmo tamanho (2-2-2-2), ou um padrão que se repete (2-1-2-1).</li>
@@ -435,26 +423,18 @@ details.how ul, details.how ol { margin-top: 6px; }
         <figure><canvas data-ex="curve-bad"></canvas><figcaption class="bad">Curva ruim: 4-1-3-1-2</figcaption></figure>
         <figure><canvas data-ex="curve-good"></canvas><figcaption class="good">Curva boa: 4-3-2-1-1</figcaption></figure>
       </div>
-      <div class="check">
-      <label><input type="checkbox" id="mn1"><span><span class="t">Exercício: linhas, círculo e 3 frutas 16×16</span><span class="d">Linhas em 5 inclinações, um círculo de 16 px e maçã, pera e banana só com contorno. Conte os segmentos de cada curva.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/xlXDGwSHT8U">Aprenda pixel art do zero #04: Linhas e curvas</a> · NextIndie</li><li><a href="https://youtu.be/JMWcyEDb0cg">Guia Completo #06: Como fazer linhas retas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/rbE8n62MqLA">Guia Completo #07: Treinando linhas retas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/BFEPCGRZR6I">Guia Completo #08: Como fazer curvas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/SEGeGQlawJU">Guia Completo #09: Jaggies e doubles</a> · Capitão Dinossauro</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e3"><span><span class="t">Linhas, círculo e 3 frutas 16×16</span><span class="d">Linhas em 5 inclinações, um círculo de 16 px e maçã, pera e banana só com contorno. Conte os segmentos de cada curva.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 2 · Forma e silhueta</summary>
-      <p class="meta">Novembro · Curso: módulo 3 · Pedro: Silhouette · ~1 semana</p>
-      <ul>
-        <li>Comece sempre pela <strong>forma grande</strong>, pintada de uma cor só. Detalhe vem por último.</li>
-        <li><strong>Teste da silhueta:</strong> pinte tudo de preto. Se ainda der para saber o que é (e para onde está virado), a forma está boa.</li>
-        <li>Em jogo, a silhueta é o que o jogador lê no meio da briga. A Luana e o Tonho precisam ser reconhecíveis <strong>só pela sombra preta</strong>: ela fina e ágil, ele largo e pesado.</li>
-        <li>Exagere: ombros maiores, cabeça um pouco maior, pose mais aberta. Em 48 px, o realismo some; o exagero fica.</li>
-      </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn2"><span><span class="t">Exercício: 10 silhuetas 32×32</span><span class="d">Espada, poção, cadeira, Kombi, orelhão, robô, chapéu, coxinha, guitarra e um personagem. Mostre a alguém e veja se adivinha cada uma.</span></span></label>
-      </div>
-    </details>
-
-    <details class="lvl"><summary>Nível 3 · Cor e paleta</summary>
-      <p class="meta">Novembro · Curso: módulo 2 · Lospec (paletas) · ~2 semanas</p>
+    <details class="lvl etapa" data-n="4">
+      <summary>Etapa 4 · Cor e paleta <span class="pill">novembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 2</strong> (cores) e, no <strong>módulo 4</strong>, as aulas de paleta limitada.</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Poucas cores.</strong> Uma paleta limitada deixa o visual coeso. O Mega Drive usa 15 cores (mais a transparência) por personagem: é a sua regra.</li>
         <li><strong>Rampa de cor:</strong> 3 a 5 tons de cada material (pele, roupa, metal), do mais escuro ao mais claro.</li>
@@ -466,13 +446,18 @@ details.how ul, details.how ol { margin-top: 6px; }
         <figure><canvas data-ex="ramp-flat"></canvas><figcaption class="bad">Só escurecer</figcaption></figure>
         <figure><canvas data-ex="ramp-hue"></canvas><figcaption class="good">Com mudança de matiz</figcaption></figure>
       </div>
-      <div class="check">
-      <label><input type="checkbox" id="mn3"><span><span class="t">Exercício: 4 rampas de cor</span><span class="d">Pele, tecido vermelho, metal azulado e neon, com 4–5 tons cada e mudança de matiz. Teste no cinza.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/dwfqbVVXizU">Como criar sua paleta de cores</a> · Como fazer pixel art · 23 min</li><li><a href="https://youtu.be/0h6uFXKkAN4">Aprenda a escolher cores melhores (H, S, L)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/hlhKzxMdZ_0">Como criar sua primeira paleta de cores</a> · Capitão Dinossauro</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e4"><span><span class="t">4 rampas de cor</span><span class="d">Pele, tecido vermelho, metal azulado e neon, com 4–5 tons cada e mudança de matiz. Teste no cinza.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 4 · Luz e volume</summary>
-      <p class="meta">Novembro–dezembro · Curso: módulo 2 (Luz e sombra, Materiais) · Pedro: Shading, Metal, Fabric · ~2 semanas</p>
+    <details class="lvl etapa" data-n="5">
+      <summary>Etapa 5 · Luz e volume <span class="pill">novembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 2</strong>, as aulas de Luz e sombra e de Materiais.</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Uma fonte de luz só</strong>, sempre do mesmo lado (em beat 'em up, de cima e um pouco da frente).</li>
         <li><strong>Sombra própria</strong> (o lado do objeto longe da luz) e <strong>sombra projetada</strong> (a que cai no chão). No beat 'em up, a sombra no chão é uma elipse nos pés.</li>
@@ -484,13 +469,18 @@ details.how ul, details.how ol { margin-top: 6px; }
         <figure><canvas data-ex="pillow"></canvas><figcaption class="bad">Pillow shading</figcaption></figure>
         <figure><canvas data-ex="light"></canvas><figcaption class="good">Luz de um lado</figcaption></figure>
       </div>
-      <div class="check">
-      <label><input type="checkbox" id="mn4"><span><span class="t">Exercício: esfera, cubo e cilindro 32×32; depois uma poção e uma lata</span><span class="d">Luz do mesmo lado em todos, com sombra no chão. Faça a lata em metal.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/lg-YiFzrlNE">Aprenda pixel art do zero #05: Luz e sombra</a> · NextIndie</li><li><a href="https://youtu.be/G90PWq87ysQ">Luz e sombra de forma correta</a> · Como fazer pixel art · 19 min</li><li><a href="https://youtu.be/ZoEhS54jIRQ">Luz e sombra</a> · Dininho</li><li><a href="https://youtu.be/g5WJ6O3_3O0">Técnicas de sombras e iluminação #04</a> · Sharpax</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e5"><span><span class="t">Esfera, cubo e cilindro 32×32; depois uma poção e uma lata</span><span class="d">Luz do mesmo lado em todos, com sombra no chão. Faça a lata em metal.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 5 · Acabamento: contorno, anti-aliasing e dithering</summary>
-      <p class="meta">Dezembro · Curso: módulo 2 (Dithering, Anti-aliasing) · Pedro: Outlines, Subpixel · ~1 semana</p>
+    <details class="lvl etapa" data-n="6">
+      <summary>Etapa 6 · Acabamento: contorno, anti-aliasing e dithering <span class="pill">novembro–dezembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 2</strong>, as aulas de Dithering e Anti-aliasing, e os <strong>4 exercícios do pirata</strong>: é ali que a evolução aparece.</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Contorno:</strong> preto em tudo pesa. O <strong>contorno seletivo</strong> (<em>selout</em>) usa uma cor mais escura do próprio material, e fica mais claro do lado da luz. Para personagem de jogo, mantenha o contorno de fora escuro (legibilidade) e suavize os de dentro.</li>
         <li><strong>Anti-aliasing (AA):</strong> pixels de tom intermediário nos "degraus" das curvas, para suavizar. Use pouco e só por dentro: AA na borda de fora do sprite fica sujo sobre o fundo do jogo.</li>
@@ -500,13 +490,36 @@ details.how ul, details.how ol { margin-top: 6px; }
       <div class="ex">
         <figure><canvas data-ex="dither"></canvas><figcaption>Transição com dithering</figcaption></figure>
       </div>
-      <div class="check">
-      <label><input type="checkbox" id="mn5"><span><span class="t">Exercício: refazer a poção e a lata do nível 4</span><span class="d">Com contorno seletivo e um pouco de AA nas curvas. Compare as duas versões lado a lado.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/vshqajHhFVw">Aprenda pixel art do zero #06: Resoluções e dithering</a> · NextIndie</li><li><a href="https://youtu.be/5xGucaFO7Co">Como fazer anti-aliasing</a> · Como fazer pixel art</li><li><a href="https://youtu.be/GGDcS-XEFC8">Anti-aliasing e dithering com Lucas Melo</a> · Adobe Brasil · 6 min</li><li><a href="https://youtu.be/sJFus6QGcQg">Os segredos dos contornos (aula 38)</a> · Dominando Pixel Art</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e6"><span><span class="t">Refazer a poção e a lata da etapa 5</span><span class="d">Com contorno seletivo e um pouco de AA nas curvas. Compare as duas versões lado a lado.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 6 · Personagem de beat 'em up</summary>
-      <p class="meta">Dezembro · Curso: módulos 3 e 4 · Pedro: characterIdle, Portrait, Cuteness · ~3 semanas</p>
+    <details class="lvl etapa" data-n="7">
+      <summary>Etapa 7 · Objetos e silhueta <span class="pill">dezembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p>Os exercícios do <strong>módulo 2</strong>.</p>
+      <h4>2 · Entenda</h4>
+      <ul>
+        <li>Comece sempre pela <strong>forma grande</strong>, pintada de uma cor só. Detalhe vem por último.</li>
+        <li><strong>Teste da silhueta:</strong> pinte tudo de preto. Se ainda der para saber o que é (e para onde está virado), a forma está boa.</li>
+        <li>Em jogo, a silhueta é o que o jogador lê no meio da briga. A Luana e o Tonho precisam ser reconhecíveis <strong>só pela sombra preta</strong>: ela fina e ágil, ele largo e pesado.</li>
+        <li>Exagere: ombros maiores, cabeça um pouco maior, pose mais aberta. Em 48 px, o realismo some; o exagero fica.</li>
+      </ul>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/tt_slswqx8E">Aprenda pixel art do zero #07: Cereja</a> · NextIndie</li><li><a href="https://youtu.be/AcQJL6q9UXY">Aprenda pixel art do zero #08: Moedas</a> · NextIndie</li><li><a href="https://youtu.be/JsaH-htYPG4">Aprenda pixel art do zero #10: Espada e escudo</a> · NextIndie</li><li><a href="https://youtu.be/v7Hbz1zvX_Y">Dicas para criar objetos</a> · Sharpax</li><li><a href="https://youtu.be/2mkxInXt5Rk">Pixel art para iniciantes #03: Silhuetas</a> · Canal do Gus</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e7"><span><span class="t">10 silhuetas 32×32</span><span class="d">Espada, poção, cadeira, Kombi, orelhão, robô, chapéu, coxinha, guitarra e um personagem. Mostre a alguém e veja se adivinha cada uma.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+    </details>
+    <details class="lvl etapa" data-n="8">
+      <summary>Etapa 8 · Personagem: proporção e pose <span class="pill">dezembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 3, Desenho em pixel art</strong> (4h17): proporção, volume, silhueta, ação, boneco de palito e Perspectiva em jogos 2D (a pose 3/4 do beat 'em up).</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Tamanho:</strong> ~48 px de altura, num quadro de 64×64 com espaço para os golpes. Proporção de ~6 cabeças (cabeça com ~7–8 px).</li>
         <li><strong>A pose 3/4:</strong> corpo meio de lado e meio para a câmera, pés desencontrados, braço e perna de trás mais escuros. É a pose de todo beat 'em up.</li>
@@ -515,13 +528,43 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Leitura:</strong> o rosto é quase nada (2–3 pixels de olho e boca). Quem conta quem é o personagem é a silhueta, o cabelo e as cores da roupa.</li>
         <li><strong>Paleta do personagem:</strong> até 15 cores. Guarde-a no Aseprite: as versões de inimigo com outra cor saem trocando a paleta.</li>
       </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn6"><span><span class="t">Exercício: Luana e Tonho parados, em 3/4</span><span class="d">Primeiro as silhuetas pretas lado a lado, depois a cor, depois a luz. Confira o teste do cinza e o tamanho real.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/gOPnvgFLFzU">Aprenda pixel art do zero #12: Personagens</a> · NextIndie</li><li>⭐ <a href="https://youtu.be/dJUb3R36_Lo">Personagens em 3 passos</a> · Sharpax</li><li><a href="https://youtu.be/Pvx7pojwNkY">Como criar personagens para jogos: método completo</a> · NextIndie</li><li><a href="https://youtu.be/1gf7bmHHJhs">Como criar personagens em 16, 32 e 64 pixels</a> · Sharpax</li><li><a href="https://youtu.be/MmWJDisIChI">EP1: Proporção do personagem</a> · Welsiton Ferreira</li><li><a href="https://youtu.be/s7oPWmQFFWg">Como fazer anatomia em personagem pixel art</a> · Como fazer pixel art · 31 min</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e8"><span><span class="t">Boneco de palito e silhuetas</span><span class="d">5 poses de boneco de palito em 48 px (parado, andando, soco, chute, caindo) e as silhuetas pretas da Luana e do Tonho lado a lado.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 7 · Animação básica</summary>
-      <p class="meta">Janeiro · Curso: módulo 5 (aulas 1–5 e 12–24) · Pedro: Walk, RunCycleSimple, Easings, Squash, loop · ~3 semanas</p>
+    <details class="lvl etapa" data-n="9">
+      <summary>Etapa 9 · Personagem completo <span class="pill">dezembro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 4, Design de personagem</strong> (4h25): tamanho do personagem e paleta limitada. As aulas 11–15 repetem a silhueta do módulo 3: dá para acelerar.</p>
+      <h4>2 · Entenda</h4>
+<p>A ordem de trabalho de todo personagem:</p>
+      <ol>
+        <li><strong>Silhueta</strong> pintada de uma cor só (etapa 8).</li>
+        <li><strong>Blocos de cor:</strong> pele, cabelo, roupa, cada um de uma cor chapada.</li>
+        <li><strong>Luz e sombra</strong>, com a luz sempre do mesmo lado (etapa 5).</li>
+        <li><strong>Contorno:</strong> escuro por fora, mais suave por dentro (etapa 6).</li>
+        <li><strong>Detalhes por último:</strong> olhos e boca com 2–3 pixels, cabelo em massas grandes (não fio a fio), dobras de roupa só onde o corpo dobra.</li>
+      </ol>
+      <ul>
+        <li>Confira no <strong>cinza</strong> e no <strong>tamanho real</strong> (100%).</li>
+        <li><strong>Guarde a paleta</strong> de cada personagem: as versões de inimigo com outra cor saem trocando a paleta.</li>
+        <li>As aulas do dbr usam retratos maiores que o seu sprite, mas a técnica de rosto, cabelo e sombra é a mesma.</li>
+      </ul>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/JfcJ6AH71pQ">Criação de personagens 1/6</a> · dbr · 46 min</li><li>⭐ <a href="https://youtu.be/aBXNHcW8pB4">Criação de personagens 2/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/s3cjmG-ydiE">Criação de personagens 3/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/HXRoe_SuUm8">Criação de personagens 4/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/eUXFBglZMt0">Criação de personagens 5/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/6LK0a-lCJ2o">Criação de personagens 6/6</a> · dbr</li><li><a href="https://youtu.be/sF19tcGWmqc">Como fazer personagem pixel art (na prática)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/uAsbvozTcig">Luz e sombra em personagens (na prática)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/nggRYRrdGQ0">Guia Completo #11: Personagem do zero até o final</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/ldQbi9t_C5k">Como melhorar seus personagens (exercício)</a> · Baú Maker · 3 min</li><li><a href="https://youtu.be/hqbohVUzpiI">Aula 1: Base de rosto e olhos</a> · dbr</li><li><a href="https://youtu.be/xcngD-2OpTo">Aula 2: Rosto, cabelos e olhar</a> · dbr</li><li><a href="https://youtu.be/sZYL5Mua2lQ">Aula 6: Cabelos com 2 ou mais cores</a> · dbr</li><li><a href="https://youtu.be/NdLsrgFK12g">Aula 7: Sombras</a> · dbr</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e9"><span><span class="t">Luana e Tonho parados, em 3/4</span><span class="d">Primeiro as silhuetas pretas lado a lado, depois a cor, depois a luz. Confira o teste do cinza e o tamanho real.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+    </details>
+    <details class="lvl etapa" data-n="10">
+      <summary>Etapa 10 · Animação básica e levar para o jogo <span class="pill">janeiro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 5, Animação</strong>, aulas 1–5 (quadros-chave e interpolação) e a aula 11 de bônus.</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Quadros-chave primeiro:</strong> desenhe as poses principais e só depois os quadros do meio (interpolação).</li>
         <li><strong>Tempo é tudo:</strong> no Aseprite, cada quadro tem uma duração (clique duas vezes no quadro). O mesmo desenho parece pesado ou leve só mudando o tempo.</li>
@@ -531,13 +574,45 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Casca de cebola (F3)</strong> para ver o quadro anterior e manter o volume igual.</li>
         <li><strong>Loop:</strong> o último quadro tem que encaixar no primeiro sem "pulo".</li>
       </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn7"><span><span class="t">Exercício: idle e andar da Luana e do Tonho</span><span class="d">Teste no jogo, no lugar dos quadrados. Se o personagem parecer "patinar", ajuste a velocidade do código ao passo do desenho.</span></span></label>
-      </div>
+<h4>Para levar ao jogo</h4>
+      <ul>
+        <li><strong>Quadro do mesmo tamanho</strong> para todas as animações de um personagem (64×64), com os pés sempre na mesma altura.</li>
+        <li><strong>O ponto de origem nos pés</strong>, no centro: é ele que a Godot usa para o Y-sort e para a sombra.</li>
+        <li><strong>Uma tag por animação</strong> (idle, andar, soco1...) e exportação como sprite sheet (File → Export Sprite Sheet).</li>
+        <li><strong>Nomes sem acento nem espaço:</strong> luana_idle.png, tonho_soco1.png.</li>
+        <li><strong>Guia de estilo:</strong> uma folha com as paletas, o tamanho, a direção da luz e o tipo de contorno. Consulte antes de cada desenho novo para o jogo inteiro ficar igual.</li>
+      </ul>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/Bqccn2_BDj0">Como fazer animação no Aseprite</a> · Dininho · 15 min</li><li><a href="https://youtu.be/H40BkNNkgOs">Os 12 princípios da animação</a> · SantaMary · 4 min</li><li><a href="https://youtu.be/XwDN0sZBu1M">Animação em pixel art para iniciantes</a> · Como fazer pixel art</li><li><a href="https://youtu.be/PMeIsUtrUXg">Animando sua pixel art (aula 17)</a> · Dominando Pixel Art</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e10"><span><span class="t">Idle dos dois tocando na Godot</span><span class="d">A ginga da Luana e a respiração do Tonho, exportadas como sprite sheet (com a origem nos pés) e no lugar dos quadrados do protótipo.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 8 · Animação de luta</summary>
-      <p class="meta">Fevereiro · Curso: módulo 5 (aulas 25–29) · Pedro: AttackSheet, Impact, MotionBlur, Jump, Slide-Roll, Defend, Death · ~4 semanas</p>
+    <details class="lvl etapa" data-n="11">
+      <summary>Etapa 11 · Andar, correr e dash <span class="pill">janeiro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 5</strong>, aulas 12–24 (idle, pulo e corrida).</p>
+      <h4>2 · Entenda</h4>
+<ul>
+        <li><strong>Andar (6–8 quadros, ~100 ms):</strong> contato (o pé da frente toca o chão), descida (o corpo abaixa e recebe o peso), passagem (as pernas se cruzam e o corpo fica mais alto) e subida. Braços sempre ao contrário das pernas.</li>
+        <li><strong>Correr (6–8 quadros, ~80 ms):</strong> corpo inclinado para a frente, passos mais longos, braços dobrados e um quadro com os dois pés fora do chão.</li>
+        <li><strong>Dash (2–3 quadros):</strong> uma pose esticada e rápida, com um rastro ou poeira. Para a Luana, pode ser o aú (a estrela da capoeira).</li>
+        <li><strong>Beat 'em up:</strong> andar "para dentro" e "para fora" da tela usa o mesmo ciclo de lado. Não precisa desenhar outro.</li>
+        <li><strong>No jogo:</strong> ajuste a velocidade do código ao tamanho do passo do desenho, senão o personagem parece "patinar".</li>
+      </ul>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/M-ozjTe8TyM">Animação de andar super fácil</a> · Dininho</li><li><a href="https://youtu.be/bG-osWMvuJ8">Conceitos de personagens caminhando</a> · Pixel Perfeito</li><li><a href="https://youtu.be/O_1NMvJ6R0s">Aula 13: Animação do personagem andando</a> · Sharpax · 21 min</li><li><a href="https://youtu.be/0mM4ucIrvho">Como animar sprites correndo (8 quadros)</a> · Raveninha 2D</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e11"><span><span class="t">Andar e dash dos dois</span><span class="d">Andar da Luana e do Tonho (pesado, mais lento) e o dash de cada um, testados no protótipo.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+    </details>
+    <details class="lvl etapa" data-n="12">
+      <summary>Etapa 12 · Golpes e animação de luta <span class="pill">fevereiro</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 5</strong>, aulas 25–29: espada e smear. É a mesma técnica do soco com impacto.</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Antecipação → golpe → recuperação.</strong> Antecipação: o corpo vai para trás (1–2 quadros, ~80–100 ms). Golpe: rápido (1 quadro). <strong>Quadro de impacto:</strong> fica mais tempo (~100–150 ms), e a Godot ainda congela o jogo uns quadros (hit stop). Recuperação: volta à guarda.</li>
         <li><strong>Smear:</strong> um quadro com o membro "esticado" ou borrado no meio do golpe. Dá velocidade sem desenhar quadros a mais.</li>
@@ -571,26 +646,36 @@ details.how ul, details.how ol { margin-top: 6px; }
           <tr><td>Soco do braço biônico</td><td>Especial</td></tr>
         </tbody>
       </table></div>
-      <div class="check">
-      <label><input type="checkbox" id="mn8"><span><span class="t">Exercício: combo de 3 dos dois, com smear e impacto</span><span class="d">Depois: levar dano, cair e levantar. Teste no jogo com o hit stop ligado.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/_lnQOdZbLj0">Aula 24: Criando animação do personagem atacando</a> · Sharpax</li><li><a href="https://youtu.be/IldKq38aVJk">Fazendo borrões (smear), aula 66</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/CVjUTROpoBY">Animações suaves (aula 59)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/uVZa8bwSwB8">Criando um inimigo completo</a> · O Poder do Pixel · 48 min</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e12"><span><span class="t">Combo de 3 dos dois, com smear e impacto</span><span class="d">Depois: levar dano, cair e levantar. Teste no jogo com o hit stop ligado.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 9 · Efeitos</summary>
-      <p class="meta">Março · Curso: módulo 6 (aulas 1, 7, 8 e 9) · Pedro: Impact, Blood, Explosion, Electric, SmokeSheet, Breaking · ~2 semanas</p>
+    <details class="lvl etapa" data-n="13">
+      <summary>Etapa 13 · Efeitos <span class="pill">março</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo 6, Animação de efeitos</strong>, só as aulas 1, 7, 8 e 9.</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Efeito começa forte e some devagar:</strong> o primeiro quadro é o maior e mais claro; os seguintes encolhem e escurecem.</li>
         <li><strong>Poucos quadros, rápidos:</strong> faísca de impacto com 3–4 quadros de ~50 ms.</li>
         <li><strong>Cor mais clara que tudo na tela</strong> no primeiro quadro (quase branco), para o olho ir direto ao golpe.</li>
         <li><strong>Para o jogo:</strong> faísca de impacto, poeira da queda, respingo curto de sangue (humanos), óleo e peças (robôs), explosão de robô, choque elétrico do drone, objeto quebrando.</li>
       </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn9"><span><span class="t">Exercício: faísca, poeira e explosão de robô</span><span class="d">Teste no jogo junto com o golpe e a tremida de tela.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/jLKwL1OCvuY">Criando uma explosão em pixel art</a> · Sharpax</li><li><a href="https://youtu.be/fUztwHq8HaA">Como fazer um efeito épico</a> · O Poder do Pixel</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e13"><span><span class="t">Faísca, poeira e explosão de robô</span><span class="d">Teste no jogo junto com o golpe e a tremida de tela.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 10 · Cenário</summary>
-      <p class="meta">Abril · Curso: módulo Background · Pedro: City, Parallax, Tech, Holograms-Ghosts, Shine · ~3 semanas</p>
+    <details class="lvl etapa" data-n="14">
+      <summary>Etapa 14 · Cenário <span class="pill">abril</span></summary>
+      <h4>1 · No seu curso</h4>
+      <p><strong>Módulo Background</strong> (1h47).</p>
+      <h4>2 · Entenda</h4>
       <ul>
         <li><strong>Perspectiva de beat 'em up:</strong> o chão ocupa a parte de baixo da tela (onde se anda), as paredes e prédios ficam atrás, e o horizonte fica alto.</li>
         <li><strong>Parallax:</strong> camadas que se movem em velocidades diferentes. O fundo distante (céu, prédios) anda devagar; o da frente, rápido. Dá profundidade com pouco desenho.</li>
@@ -599,27 +684,41 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Neon:</strong> o tubo de luz é quase branco no centro, com a cor forte em volta e um halo escuro e pouco saturado ao redor. O brilho vem do contraste, não de muitas cores.</li>
         <li>Para referência real, use fotos de feiras, orelhões, Kombis e calçadões. Os 20% de futuro vêm por cima.</li>
       </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn10"><span><span class="t">Exercício: a feira da Vila Esperança em 3 camadas</span><span class="d">Céu e prédios ao fundo, barracas no meio e o chão onde se luta. Teste com a Luana na frente e confira se ela se destaca.</span></span></label>
-      </div>
+      <h4>3 · Vídeos em português</h4>
+      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/7YQXFT2GA_c">Como fazer cenários e backgrounds para jogos</a> · Dininho</li></ul>
+      <h4>4 · Exercício</h4>
+      <div class="check"><label><input type="checkbox" id="e14"><span><span class="t">A feira da Vila Esperança em 3 camadas</span><span class="d">Céu e prédios ao fundo, barracas no meio e o chão onde se luta. Teste com a Luana na frente e confira se ela se destaca.</span></span></label></div>
+      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
     </details>
-
-    <details class="lvl"><summary>Nível 11 · Do Aseprite para o jogo</summary>
-      <p class="meta">Janeiro em diante, sempre · Curso: módulo 1 (Exportar)</p>
-      <ul>
-        <li><strong>Quadro do mesmo tamanho</strong> para todas as animações de um personagem (64×64), com os pés sempre na mesma altura.</li>
-        <li><strong>O ponto de origem nos pés</strong>, no centro: é ele que a Godot usa para o Y-sort e para a sombra.</li>
-        <li><strong>Uma tag por animação</strong> (idle, andar, soco1...) e exportação como sprite sheet (File → Export Sprite Sheet).</li>
-        <li><strong>Nomes sem acento nem espaço:</strong> luana_idle.png, tonho_soco1.png.</li>
-        <li><strong>Guia de estilo:</strong> uma folha com as paletas, o tamanho, a direção da luz e o tipo de contorno. Consulte antes de cada desenho novo para o jogo inteiro ficar igual.</li>
-      </ul>
-      <div class="check">
-      <label><input type="checkbox" id="mn11"><span><span class="t">Exercício: guia de estilo do GINGA 2034</span><span class="d">Paletas da Luana, do Tonho e de um robô; direção da luz; contorno; o tamanho com uma régua de 48 px.</span></span></label>
-      </div>
-    </details>
-
     </div>
+  </div>
 
+<div class="group">
+    <h3>O estilo do GINGA 2034</h3>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Fase</th><th>Quando</th><th>Meta</th></tr></thead>
+      <tbody>
+        <tr><td>1. Base</td><td>Out–nov 2026</td><td>Objetos 32×32, luz e sombra, idle e caminhada simples</td></tr>
+        <tr><td>2. Personagem</td><td>Dez 2026</td><td>Personagem de ~48 px em 3/4, com roupa e sombra estilo Mega Drive. Decidir tamanho e paleta</td></tr>
+        <tr><td>3. Luta</td><td>Jan–mar 2027</td><td>Idle, andar, combo de 3 com peso, dano, cair e levantar (~30–40 quadros)</td></tr>
+        <tr class="hl"><td>4. Fase 1</td><td>Abr 2027</td><td>Cenário e 2–3 inimigos da fase 1, para a página e o trailer</td></tr>
+        <tr><td>5. Jogo</td><td>Mai–out 2027</td><td>Mais inimigos, efeitos, chefes, cenários e polimento</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><strong>Tamanho para 2027: ~48 px de altura</strong>, num quadro de 64×64 com espaço para os golpes. É menor que o SoR2, mas cada quadro leva bem menos tempo, e é isso que cabe no prazo. Confirme em dezembro desenhando o personagem parado e um soco. Se o lançamento for para 2028, dá para crescer para ~58 px.</div>
+    <ul>
+      <li>Fique em 32×32 até novembro: com poucos pixels se aprende cor, luz e sombra mais rápido.</li>
+      <li>Paleta do Mega Drive: 15 cores mais transparência por personagem.</li>
+      <li>Resolução do jogo: 320×180, com personagens de ~48 px de altura.</li>
+      <li>Golpes pedem antecipação, quadro de impacto mais longo e smear.</li>
+      <li>Estude quadro a quadro no YouTube: <code>.</code> avança e <code>,</code> volta um quadro.</li>
+      <li>Arquivo de estudo de mãos: <code>Documentos\pixel-art\estudo-maos.aseprite</code> (para janeiro de 2027).</li>
+    </ul>
+  </div>
+
+  <div class="group">
+    <h3>Ferramentas de estudo</h3>
     <details>
       <summary>Checklist de erros (use no domingo, antes de postar)</summary>
       <ul>
@@ -635,16 +734,32 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Animação:</strong> o loop encaixa? O impacto fica tempo suficiente na tela?</li>
       </ul>
     </details>
-  </div>
 
+    <details>
+      <summary>O seu curso: o que ver e o que pular</summary>
+      <p>São 204 aulas e 49 h. Para um beat 'em up, o essencial são umas 30 h, ou ~20 h em 1,5×. A trilha acima já diz qual módulo usar em cada etapa.</p>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Módulo</th><th class="num">Duração</th><th>O que fazer</th></tr></thead>
+        <tbody><tr><td>1. Introdução ao Aseprite</td><td class="num">2h21</td><td>Veja tudo. Atenção a Camadas, Frames, Tags e Exportar frames: você vai usar em toda animação.</td></tr><tr><td>2. Técnicas básicas</td><td class="num">9h29</td><td>Veja tudo. Luz e sombra, Materiais, Dithering e Anti-aliasing são a base do visual do SoR2. Faça os 4 exercícios do pirata: é aqui que a evolução aparece.</td></tr><tr><td>3. Desenho em pixel art</td><td class="num">4h17</td><td>Veja tudo. Proporção, volume, silhueta, ação, boneco de palito e Perspectiva em jogos 2D (a pose 3/4 do beat 'em up).</td></tr><tr><td>4. Design de personagem</td><td class="num">4h25</td><td>Resolução do jogo, tamanho do personagem e paleta limitada. As aulas 11–15 repetem silhueta do módulo 3: dá para acelerar.</td></tr><tr><td>5. Animação</td><td class="num">8h36</td><td>O mais importante para beat 'em up. Aulas 1–5 (quadros-chave, interpolação), 12–24 (idle, pulo, corrida), 25–29 (espada e smear = socos com impacto). A 11 é um bom bônus.</td></tr><tr><td>6. Animação de efeitos</td><td class="num">~1h15</td><td>Só as aulas 1, 7, 8 e 9: faíscas de impacto e poeira quando o inimigo cai.</td></tr><tr><td>Background</td><td class="num">1h47</td><td>Cidade com prédios, como os cenários do SoR2. Entra em abril de 2027, para o cenário da fase 1.</td></tr><tr><td>Tilesets e Top Down</td><td class="num">13h02</td><td>Beat 'em up usa cenário de fundo, não tiles, e a vista de cima não serve para o gênero.</td></tr></tbody>
+      </table></div>
+    </details>
 
+    <details>
+      <summary>Referências extras (em inglês)</summary>
+      <p class="muted">Opcionais. Páginas: botão direito no Chrome → "Traduzir para o português". Vídeos: Legendas → Tradução automática → Português.</p>
+      <ul>
+        <li><a href="https://saint11.art/blog/pixel-art-tutorials/">Tutoriais do Pedro Medeiros</a>: 80 GIFs grátis, quase sem texto. Por etapa: 3 Fundamentals, Outlines · 5 Shading · 8–9 Silhouette, characterIdle · 10 Easings, Squash · 11 Walk, RunCycleSimple · 12 AttackSheet, Impact, MotionBlur · 13 Blood, Explosion, Electric, SmokeSheet · 14 City, Parallax, Holograms-Ghosts, Metal, Tech, Shine.</li>
+        <li><a href="https://pixeljoint.com/forum/forum_posts.asp?TID=11299">The Pixel Art Tutorial, do cure</a>: a base, numa página só (etapas 2–6).</li>
+        <li><a href="https://web.cs.wpi.edu/~claypool/courses/frontiers-06/samples/pixel-artist/faq.htm">So You Want To Be A Pixel Artist?, do Tsugumo</a>: termina animando um lutador (etapa 12).</li>
+        <li><a href="https://www.derekyu.com/makegames/pixelart.html">The Pixel Art Tutorial, do Derek Yu</a>: um personagem do esboço ao fim (etapa 9).</li>
+        <li><a href="https://michafrar.gumroad.com/l/pixel-logic">Pixel Logic</a> (livro em PDF, ~US$ 9): a referência mais completa, quase toda em imagens. Opcional.</li>
+        <li><a href="https://www.spriters-resource.com/">The Spriters Resource</a>: as folhas de sprites do SoR2 e do Final Fight, para estudar quadro a quadro.</li>
+        <li><a href="https://lospec.com/palette-list">Lospec</a>: banco de paletas (procure as de Mega Drive).</li>
+      </ul>
+      <p>Depois deste curso: <a href="https://www.udemy.com/course/pixel-art-e-animacao-2d-com-aseprite/">Pixel Art e Animação 2D com Aseprite</a> (Udemy, em português, ~R$ 28 em promoção), focado em animação de personagem.</p>
+    </details>
 
-  <div class="group">
-    <h3>Depois deste curso</h3>
-    <p><a href="https://www.udemy.com/course/pixel-art-e-animacao-2d-com-aseprite/">Pixel Art e Animação 2D com Aseprite</a>, por ~R$ 27,90 e nota 4,6. Direto e focado em personagem, nos 12 princípios da animação e em sprite sheets. É rápido para iniciante, por isso fica para depois.</p>
-  </div>
-
-  <details>
+<details>
     <summary>O que é cada coisa (pixel art)</summary>
     <dl class="glossary">
       <div><dt>3/4 (três quartos)</dt><dd>Corpo virado meio de lado e meio para a câmera. É a pose do beat 'em up: pés desencontrados, braço e perna de trás mais escuros e uma sombra oval no chão.</dd></div>
@@ -662,7 +777,7 @@ details.how ul, details.how ol { margin-top: 6px; }
     </dl>
   </details>
 
-  <details>
+<details>
     <summary>Por que a rotina é assim</summary>
     <ul>
       <li><strong>Prática com foco vale mais que horas.</strong> A prática deliberada explica 18%–26% das diferenças de desempenho (Macnamara et al., 2014).</li>
@@ -673,6 +788,7 @@ details.how ul, details.how ol { margin-top: 6px; }
       <li><strong>Desenhar observando melhora a precisão</strong> (Vodyanyk e Jaeggi, 2025, estudo pequeno).</li>
     </ul>
   </details>
+  </div>
 </section>
 
 <!-- GODOT -->
@@ -731,7 +847,7 @@ details.how ul, details.how ol { margin-top: 6px; }
       <label><input type="checkbox" id="p10" data-ess><span><span class="t">10. Fase 1 completa <span class="pill">abr · checkpoint</span></span><span class="d">Do começo ao chefe, com sua arte, menu e co-op local para 2. É a "fatia vertical": se estiver pronta em 30 de abril, o lançamento em 2027 segue.</span></span></label>
     </div>
     <div class="callout"><strong>Tutorial de apoio:</strong> a série <a href="https://www.youtube.com/watch?v=Y5i42mZTO4M">Create a Beat 'em up game in Godot</a> (The GameDev Tavern, 20 episódios, ~10 h, Godot 4). Regra: <strong>tente o passo sozinho por 1–2 sessões, depois assista o episódio com o PRIMM</strong> e melhore o seu código digitando você mesmo. A arte do curso serve para estudar, não vai para o seu jogo.</div>
-    <p class="muted">Depois de abril: fases 2–4, novos inimigos, demo (agosto) e modo difícil. Veja a programação na aba Jogo.</p>
+    <p class="muted">Depois de abril: fases 2–4, novos inimigos, demo (agosto) e modo difícil. Veja o cronograma na aba Plano.</p>
   </div>
 
   <details>
@@ -807,18 +923,7 @@ details.how ul, details.how ol { margin-top: 6px; }
 
 <!-- JOGO -->
 <section class="panel" id="jogo" role="tabpanel" aria-labelledby="tab-jogo" hidden>
-  <h2><small>Seu jogo</small>Rumo a novembro de 2027</h2>
-
-  <div class="group">
-    <h3>Metas</h3>
-    <div class="stats">
-      <div class="stat"><span class="k">Lançar</span><span class="v">nov/27</span><span class="s">checkpoint em abril</span></div>
-      <div class="stat"><span class="k">Preço</span><span class="v">$9,99</span><span class="s">−20% no lançamento</span></div>
-      <div class="stat"><span class="k">Wishlists</span><span class="v">3.000</span><span class="s">no lançamento</span></div>
-    </div>
-    <div class="callout" id="checkpointBox"><strong>Checkpoint de 30 de abril de 2027:</strong> se a fase 1 não estiver completa e jogável, o lançamento vai para 2028. Nada se perde, o trabalho continua valendo.</div>
-  </div>
-
+  <h2><small>O jogo</small>GINGA 2034</h2>
   <div class="group" id="docjogo">
     <h3>Documento do jogo</h3>
     <p class="muted">Nome provisório: <strong>GINGA 2034</strong> (alternativas: Neo Guanabara, Bairro Brasa). Pesquisar os três no Steam, no Google e no INPI em novembro.</p>
@@ -943,25 +1048,124 @@ details.how ul, details.how ol { margin-top: 6px; }
     </details>
   </div>
 
-  <details>
-    <summary>Segurança: contas, golpes e backup</summary>
+  <div class="group">
+    <h3>Escopo para 2027</h3>
     <ul>
-      <li><strong>Pirataria:</strong> vai acontecer e quase não muda as vendas de um jogo de US$ 9,99. Não gaste tempo com DRM. Preço justo e promoções convertem mais.</li>
-      <li><strong>Hack dentro do jogo:</strong> só afeta quem usa. Sem ranking online no lançamento, não há o que proteger.</li>
-      <li><strong>Clones:</strong> guarde os .aseprite com data e o histórico do Git, que provam a autoria. Steam, Google e Apple têm formulários de denúncia.</li>
-      <li><strong>Contas:</strong> Steam Guard no celular e telefone no Steam; e-mail com senha só dele e verificação em duas etapas; GitHub com verificação em duas etapas e repositório privado; uma senha por conta (Bitwarden é grátis).</li>
-      <li><strong>Golpe do falso criador:</strong> confira se o e-mail bate com o do canal. Use o Keymailer e mande 1 chave por pessoa.</li>
-      <li><strong>"Testa meu jogo?" no Discord:</strong> nunca rode .exe de desconhecidos.</li>
-      <li><strong>Falsa publisher ou investidor:</strong> nunca pague adiantado nem dê acesso ao Steamworks.</li>
-      <li><strong>E-mail falso "da Valve":</strong> entre sempre digitando partner.steamgames.com, nunca pelo link.</li>
-      <li><strong>Backup:</strong> commit no fim de cada sessão, e uma cópia extra por mês (pendrive ou Google Drive).</li>
+      <li><strong>2 personagens jogáveis bem diferentes</strong> (Luana, rápida, e Tonho, forte), mais chefes desbloqueáveis. Se abril apertar, o 2º vai para a atualização de dezembro.</li>
+      <li><strong>Sem armas para pegar</strong>: agarrar e arremessar inimigos no lugar.</li>
+      <li><strong>Sprites com ~48 px de altura</strong>, mais rápidos de animar. Resolução do jogo 320×180.</li>
+      <li><strong>4 fases + um modo difícil ou arcade</strong>, que muda inimigos e chefes sem desenhar arte nova.</li>
+      <li><strong>5–8 tipos de inimigo</strong>, combinados de jeitos diferentes em cada fase.</li>
+      <li><strong>Co-op local para 2</strong>, que vira online pelo Remote Play Together sem programar rede.</li>
+      <li><strong>Zerar em ~3 h</strong> no normal, contando as mortes. Nunca menos de 2 h.</li>
     </ul>
-  </details>
+    <div class="callout"><strong>Regra das 2 horas:</strong> o Steam reembolsa quem jogou menos de 2 h e pede em até 14 dias. O tempo de jogo vem de desafio e replay, não de corredores longos com o mesmo inimigo.</div>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Referência</th><th class="num">Zerar</th><th class="num">Preço</th></tr></thead>
+      <tbody>
+        <tr><td>Streets of Rage 4</td><td class="num">~3h</td><td class="num">US$ 24,99</td></tr>
+        <tr><td>TMNT: Shredder's Revenge</td><td class="num">2h30–3h30</td><td class="num">US$ 24,99</td></tr>
+        <tr><td>Fight'N Rage (tempo médio jogado)</td><td class="num">5,8h</td><td class="num">US$ 19,99</td></tr>
+        <tr class="hl"><td>Seu jogo</td><td class="num">~3h</td><td class="num">US$ 9,99</td></tr>
+      </tbody>
+    </table></div>
+  </div>
 
+<div class="group" id="refs">
+    <h3>Jogos de referência: estude e evite</h3>
+    <p>Feito a partir de <strong>8.602 avaliações do Steam</strong> (em inglês) de 24 beat 'em ups, em outubro de 2026. A % é: das avaliações que falam daquele assunto, quantas recomendam o jogo.</p>
+    <div class="callout"><strong>48% das avaliações negativas são escritas com menos de 2 h de jogo</strong> (contra 20% das positivas). Metade de quem reclama decide dentro do prazo de reembolso. A fase 1, que também é a demo, precisa ser a mais caprichada.</div>
+    <p class="muted">Como estudar: busque "nome do jogo longplay" no YouTube (o jogo inteiro, sem narração). Nos golpes, use <code>,</code> e <code>.</code> para voltar e avançar um quadro.</p>
 
+    <h3>Combate e jogo</h3>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Assunto</th><th>Estude</th><th>O que observar</th><th>Evite</th><th>O que deu errado</th></tr></thead>
+      <tbody>
+        <tr><td>Combate e impacto</td><td>Streets of Rage 4 (88%), Fight'N Rage (91%), SoR2</td><td>Pausa no impacto, inimigo que quica na parede, especial que custa vida e volta batendo (SoR4); parry e combos (Fight'N Rage)</td><td>99Vidas (57%), Fist Puncher (42%)</td><td>Ataques inimigos que não dá para interromper, poucos golpes, "andar e socar"</td></tr>
+        <tr><td>Controles</td><td>Shredder's Revenge (86%)</td><td>O golpe sai na hora, dash fácil, poucos botões</td><td>Nitro Express, Final Knight</td><td>Atraso no botão, 30 fps, sem trocar teclas no controle; dash sem explicação</td></tr>
+        <tr><td>Velocidade e ritmo</td><td>Shredder's Revenge</td><td>Correr é natural, fases curtas</td><td>Mother Russia Bleeds (33%), Ninja Saviors</td><td>Fases que se arrastam; não dá para correr. No SoR4, só uma personagem corre, e isso é reclamado</td></tr>
+        <tr><td>Dificuldade justa</td><td>Shredder's Revenge (83%)</td><td>Vários níveis; no co-op, um revive o outro</td><td>99Vidas (21%), Final Vendetta</td><td>Inimigos que encadeiam golpes sem parar; sem continues, até no fácil</td></tr>
+        <tr><td>Ficar cercado e travado</td><td>Shredder's Revenge (86%)</td><td>Inimigos se revezam, dá para escapar</td><td>Scott Pilgrim (33%), Mother Russia Bleeds, River City Girls</td><td>Apanhar em sequência sem reagir; no SoR4, inimigos que ignoram o soco e batem de volta</td></tr>
+        <tr><td>Hitbox e profundidade</td><td>Fight'N Rage (93%)</td><td>Acerta quem está "na mesma linha", com tolerância</td><td>Power Rangers (45%), Mother Russia Bleeds</td><td>Golpe que passa reto em quem está um pouco acima ou abaixo</td></tr>
+        <tr><td>Personagens diferentes</td><td>Double Dragon Gaiden, Shredder's Revenge (93%), Ninja Saviors</td><td>Velocidade, alcance e força diferentes; trocar de dupla no meio da luta (Double Dragon Gaiden)</td><td>Power Rangers (58%)</td><td>"1 personagem com 6 cores": todos jogam igual</td></tr>
+        <tr><td>Variedade</td><td>Shredder's Revenge (77%), Marvel Cosmic Invasion</td><td>Cada fase tem uma novidade: veículo, cenário que muda, inimigo novo</td><td>G.I. Joe (9%), Power Rangers, Slaps and Beans</td><td>Mesmos inimigos o jogo inteiro; minigames que cansam</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Estrutura e conteúdo</h3>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Assunto</th><th>Estude</th><th>O que observar</th><th>Evite</th><th>O que deu errado</th></tr></thead>
+      <tbody>
+        <tr><td>Fases</td><td>SoR4, Shredder's Revenge</td><td>Lineares, curtas e densas</td><td>River City Girls 1 e 2</td><td>Mapa, ir e voltar, missões de "ache 22 itens"</td></tr>
+        <tr><td>Rejogar</td><td>SoR4, Fight'N Rage, Double Dragon Gaiden</td><td>Nota por fase (rank S), caminhos diferentes, desbloqueáveis, partidas que mudam</td><td>Marvel Cosmic Invasion, Scott Pilgrim EX, G.I. Joe</td><td>"Curto e sem nada depois de zerar"</td></tr>
+        <tr><td>Vidas, continues e save</td><td>Shredder's Revenge (95%)</td><td>Modo história que salva e modo arcade para o desafio</td><td>Final Vendetta, Power Rangers</td><td>Sem continues; atualização que apagou o save</td></tr>
+        <tr><td>Preço x duração</td><td>SoR4 (87%), Fight'N Rage (86%)</td><td>Vistos como "vale o preço"</td><td>Kung Fury, Marvel Cosmic Invasion</td><td>Preço subiu de US$ 2 para US$ 20; US$ 29,99 e curto</td></tr>
+        <tr><td>Co-op</td><td>Shredder's Revenge</td><td>Reviver o amigo, vidas separadas</td><td>Ninja Saviors, Power Rangers, Scott Pilgrim</td><td>Vida dividida; online anunciado que não existia; exigir conta da Ubisoft</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Visual, som e identidade</h3>
+    <div class="table-wrap"><table class="stack">
+      <thead><tr><th>Assunto</th><th>Estude</th><th>O que observar</th><th>Evite</th><th>O que deu errado</th></tr></thead>
+      <tbody>
+        <tr><td>Pixel art</td><td>Ninja Saviors (93%), Shredder's Revenge, SoR2</td><td>Personagens legíveis, animação com peso</td><td>Nitro Express, Power Rangers (fases dos Zords)</td><td>Tudo com o mesmo brilho; não dá para ver inimigos e tiros</td></tr>
+        <tr><td>Música</td><td>Ninja Saviors (95%), Fight'N Rage (40+ faixas), SoR2</td><td>Energia e uma música por fase</td><td>G.I. Joe, Fist Puncher</td><td>Trilha genérica, citada como ponto fraco</td></tr>
+        <tr><td>Desempenho</td><td>Fight'N Rage (97%, feito por uma pessoa)</td><td>Liso, sem travar</td><td>Double Dragon Gaiden, River City Girls 2</td><td>Tela tremendo ao rolar; fps baixo</td></tr>
+        <tr><td>Acessibilidade</td><td>Shredder's Revenge</td><td>Opções simples</td><td>Fight'N Rage, Shredder's Revenge</td><td>Fase piscando sem opção de desligar; trocar teclas só no teclado</td></tr>
+        <tr><td>Identidade e tema</td><td>Tonight We Riot (96%), Mother Russia Bleeds, Slaps and Beans</td><td>Um tema forte que se vê de longe</td><td>Pulling No Punches (brasileiro)</td><td>Piadas que só brasileiros entendem</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Por onde começar</h3>
+    <ol>
+      <li><strong>Streets of Rage 2:</strong> a base. Ritmo, inimigos e música.</li>
+      <li><strong>Streets of Rage 4:</strong> o combate moderno com os mesmos inimigos.</li>
+      <li><strong>Shredder's Revenge:</strong> o que mais aparece como "faz bem": controles, ritmo, dificuldade, co-op e variedade.</li>
+      <li><strong>Fight'N Rage:</strong> feito por uma pessoa só. Mostra até onde um dev solo chega.</li>
+    </ol>
+    <p><strong>Anti-referências:</strong> <strong>99Vidas</strong> (brasileiro, com carinho pelo gênero, mas o combate injusto derrubou as avaliações) e <strong>Power Rangers: Rita's Rewind</strong> (personagens iguais e promessa falsa na página: 66%, mesmo com a marca famosa).</p>
+    <p class="muted">O mesmo jogo pode aparecer dos dois lados: estude o que cada um faz bem, não o jogo inteiro.</p>
+
+    <details>
+      <summary>O que mais faz o jogador reclamar</summary>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Assunto</th><th class="num">Vezes mais nas negativas</th></tr></thead>
+        <tbody>
+          <tr><td>Repetitivo, chato</td><td class="num">4,1×</td></tr>
+          <tr><td>Difícil ou injusto</td><td class="num">3,3×</td></tr>
+          <tr><td>Lento, ritmo arrastado</td><td class="num">3,3×</td></tr>
+          <tr><td>Ficar cercado e travado</td><td class="num">3,0×</td></tr>
+          <tr><td>Bugs e desempenho</td><td class="num">2,9×</td></tr>
+          <tr><td>Mapa, ir e voltar</td><td class="num">2,8×</td></tr>
+          <tr><td>Vidas e continues</td><td class="num">2,7×</td></tr>
+          <tr><td>Preço</td><td class="num">2,4×</td></tr>
+          <tr><td>Controles</td><td class="num">2,3×</td></tr>
+          <tr><td>Hitbox e profundidade</td><td class="num">2,1×</td></tr>
+          <tr class="hl"><td>Nostalgia e anos 90 (aparece mais nas positivas)</td><td class="num">0,8×</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Contagem por palavras-chave, por isso os números são aproximados. Música e co-op aparecem igual nos dois lados: o jogador espera que sejam bons, mas eles não diferenciam o jogo.</p>
+    </details>
+  </div>
+</section>
+
+<!-- PLANO -->
+<section class="panel" id="plano" role="tabpanel" aria-labelledby="tab-plano" hidden>
+  <h2><small>Plano</small>Rumo a novembro de 2027</h2>
+  <div class="group">
+    <h3>Metas</h3>
+    <div class="stats">
+      <div class="stat"><span class="k">Lançar</span><span class="v">nov/27</span><span class="s">checkpoint em abril</span></div>
+      <div class="stat"><span class="k">Preço</span><span class="v">$9,99</span><span class="s">−20% no lançamento</span></div>
+      <div class="stat"><span class="k">Wishlists</span><span class="v">3.000</span><span class="s">no lançamento</span></div>
+    </div>
+    <div class="callout" id="checkpointBox"><strong>Checkpoint de 30 de abril de 2027:</strong> se a fase 1 não estiver completa e jogável, o lançamento vai para 2028. Nada se perde, o trabalho continua valendo.</div>
+  </div>
+
+<!--DOC-->
 
   <div class="group">
-    <h3>Programação até o lançamento</h3>
+    <h3>Resumo da programação</h3>
     <div class="table-wrap"><table class="stack">
       <thead><tr><th>Quando</th><th>Godot</th><th>Pixel art</th><th>Marketing</th></tr></thead>
       <tbody>
@@ -977,6 +1181,8 @@ details.how ul, details.how ol { margin-top: 6px; }
     </table></div>
     <p class="muted">Para caber em 2027: ~3–4 h por dia quando possível (ou 2 h nos dias úteis e mais nos fins de semana). Evite lançar na semana de uma grande promoção do Steam ou de um jogo grande.</p>
   </div>
+
+<!--CRONO-->
 
 <style>
 #crono details.month { margin: 8px 0; }
@@ -1152,224 +1358,269 @@ details.how ul, details.how ol { margin-top: 6px; }
     </details>
   </div>
 
-
-  <details>
-    <summary>Orçamento: só os US$ 100 da taxa</summary>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Item</th><th>Como fica de graça</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td>Taxa do Steam</td><td>US$ 100 no cartão internacional, ~R$ 560–600 com IOF. É o único gasto.</td></tr>
-        <tr><td>Efeitos sonoros</td><td>Você gera no jsfxr ou no ChipTone (grátis, no navegador), ou baixa no Freesound com licença CC0.</td></tr>
-        <tr><td>Música</td><td>Pacotes grátis com uso comercial no itch.io e no OpenGameArt. Só CC0 ou CC-BY, com print da licença.</td></tr>
-        <tr><td>Capa</td><td>Você faz em pixel art. Teste em miniatura e peça opinião no r/IndieDev.</td></tr>
-        <tr><td>Backup</td><td>Git e GitHub.</td></tr>
-        <tr><td>Tradução</td><td>Planilha da Godot + DeepL ou IA + revisão de um jogador nativo.</td></tr>
-        <tr><td>Trailer</td><td>OBS para gravar e Shotcut para editar.</td></tr>
-        <tr><td>Criadores</td><td>Plano grátis do Keymailer e e-mails.</td></tr>
-        <tr><td>Testes</td><td>Amigos e o Steam Playtest.</td></tr>
-      </tbody>
-    </table></div>
-    <p class="muted">Se sobrar dinheiro em 2027, o primeiro lugar para gastar é a capa.</p>
-  </details>
-
-  <details>
-    <summary>Regras e leis para não esquecer</summary>
-    <ul>
-      <li><strong>Prazos do Steam:</strong> 30 dias entre pagar a taxa e lançar; página "Em breve" no ar pelo menos 2 semanas antes; revisão da página em 3–5 dias úteis; a revisão do jogo vem depois da página; a data trava 14 dias antes; a demo tem revisão própria.</li>
-      <li><strong>Next Fest:</strong> cada jogo entra em um só, na vida. O seu é o de outubro de 2027.</li>
-      <li><strong>Classificação indicativa:</strong> sai do questionário de conteúdo do Steam. Sem ela, o jogo pode sumir na Alemanha e no Brasil.</li>
-      <li><strong>ECA Digital (Lei 15.211):</strong> nada de compra de itens aleatórios (loot box) e nada de chat online. Assim o jogo fica fora das obrigações da lei.</li>
-      <li><strong>Pessoas e marcas reais:</strong> nada de personagem reconhecível de alguém real (art. 20 do Código Civil) nem logotipos de verdade nos cenários.</li>
-      <li><strong>Licenças:</strong> o texto da licença da Godot vai nos créditos, e cada música, som e fonte baixados vão no licencas.txt.</li>
-      <li><strong>IA:</strong> conteúdo que o jogador vê feito por IA (inclusive tradução) precisa ser declarado no Steam.</li>
-      <li><strong>Antivírus:</strong> se puser a demo no itch.io, desligue "Embed PCK" na exportação.</li>
-    </ul>
-  </details>
-
   <div class="group">
-    <h3>Escopo para 2027</h3>
-    <ul>
-      <li><strong>2 personagens jogáveis bem diferentes</strong> (Luana, rápida, e Tonho, forte), mais chefes desbloqueáveis. Se abril apertar, o 2º vai para a atualização de dezembro.</li>
-      <li><strong>Sem armas para pegar</strong>: agarrar e arremessar inimigos no lugar.</li>
-      <li><strong>Sprites com ~48 px de altura</strong>, mais rápidos de animar. Resolução do jogo 320×180.</li>
-      <li><strong>4 fases + um modo difícil ou arcade</strong>, que muda inimigos e chefes sem desenhar arte nova.</li>
-      <li><strong>5–8 tipos de inimigo</strong>, combinados de jeitos diferentes em cada fase.</li>
-      <li><strong>Co-op local para 2</strong>, que vira online pelo Remote Play Together sem programar rede.</li>
-      <li><strong>Zerar em ~3 h</strong> no normal, contando as mortes. Nunca menos de 2 h.</li>
-    </ul>
-    <div class="callout"><strong>Regra das 2 horas:</strong> o Steam reembolsa quem jogou menos de 2 h e pede em até 14 dias. O tempo de jogo vem de desafio e replay, não de corredores longos com o mesmo inimigo.</div>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Referência</th><th class="num">Zerar</th><th class="num">Preço</th></tr></thead>
-      <tbody>
-        <tr><td>Streets of Rage 4</td><td class="num">~3h</td><td class="num">US$ 24,99</td></tr>
-        <tr><td>TMNT: Shredder's Revenge</td><td class="num">2h30–3h30</td><td class="num">US$ 24,99</td></tr>
-        <tr><td>Fight'N Rage (tempo médio jogado)</td><td class="num">5,8h</td><td class="num">US$ 19,99</td></tr>
-        <tr class="hl"><td>Seu jogo</td><td class="num">~3h</td><td class="num">US$ 9,99</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="group">
-    <h3>Preço e descontos</h3>
-    <p><strong>Preço base US$ 9,99, com 20% de desconto no lançamento (US$ 7,99).</strong> Subir preço depois pega mal e bloqueia descontos por 30 dias; baixar é livre. Cada promoção futura parte de US$ 9,99.</p>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Quando</th><th class="num">Desconto</th><th class="num">Preço</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td>Lançamento (1ª semana)</td><td class="num">20%</td><td class="num">US$ 7,99</td></tr>
-        <tr><td>~2–3 meses depois (promoção grande do Steam)</td><td class="num">20–25%</td><td class="num">US$ 7,99–7,49</td></tr>
-        <tr><td>~6 meses depois</td><td class="num">30–35%</td><td class="num">~US$ 6,99–6,49</td></tr>
-        <tr><td>1 ano depois</td><td class="num">40–50%</td><td class="num">~US$ 5,99–4,99</td></tr>
-      </tbody>
-    </table></div>
-    <ul class="muted">
-      <li>30 dias de intervalo entre descontos (as promoções sazonais do Steam são exceção).</li>
-      <li>Nada de desconto nos 30 dias após o lançamento, exceto o de lançamento, que se configura antes.</li>
-      <li>Nada de desconto por 30 dias depois de subir o preço.</li>
-      <li>Aceite o preço regional que o Steam sugere. US$ 9,99 costuma virar perto de R$ 29,99.</li>
-      <li>Confirme o preço com a demo: pergunte a quem testou "quanto você pagaria?".</li>
-    </ul>
-  </div>
-
-  <div class="group">
-    <h3>Margem: quanto fica com você</h3>
-    <p>Por cópia, na média da vida do jogo, com US$ 9,99, −20% no lançamento, descontos graduais, ~3 h de jogo + demo e recebimento pela Wise ou C6. Dólar a ~R$ 5,50.</p>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Etapa</th><th class="num">Baixo</th><th class="num">Central</th><th class="num">Alto</th></tr></thead>
-      <tbody>
-        <tr><td>Desconto médio nas promoções</td><td class="num">−30%</td><td class="num">−25%</td><td class="num">−20%</td></tr>
-        <tr><td>Preço regional</td><td class="num">−15%</td><td class="num">−12%</td><td class="num">−10%</td></tr>
-        <tr><td>Impostos embutidos no preço (Europa etc.)</td><td class="num">−7%</td><td class="num">−6%</td><td class="num">−5%</td></tr>
-        <tr><td>Reembolsos</td><td class="num">−10%</td><td class="num">−8%</td><td class="num">−7%</td></tr>
-        <tr><td>Steam</td><td class="num">−30%</td><td class="num">−30%</td><td class="num">−30%</td></tr>
-        <tr><td>Retenção dos EUA (30% só da fatia vendida nos EUA)</td><td class="num">−10,5%</td><td class="num">−9%</td><td class="num">−7,5%</td></tr>
-        <tr><td>Receber e converter</td><td class="num">−2%</td><td class="num">−1,5%</td><td class="num">−1,2%</td></tr>
-        <tr class="hl"><td>Margem final</td><td class="num">~30%</td><td class="num">~36%</td><td class="num">~41%</td></tr>
-        <tr class="hl"><td>Por cópia</td><td class="num">~R$ 17</td><td class="num">~R$ 19,70</td><td class="num">~R$ 22</td></tr>
-      </tbody>
-    </table></div>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Vendas</th><th class="num">Total (36%)</th></tr></thead>
-      <tbody>
-        <tr><td>~209 (passar de US$ 1.000)</td><td class="num">~R$ 4.100 + taxa devolvida</td></tr>
-        <tr><td>500</td><td class="num">~R$ 9.850</td></tr>
-        <tr><td>1.000</td><td class="num">~R$ 19.700</td></tr>
-      </tbody>
-    </table></div>
-    <p class="muted">Para planejar use ~36%; para ser conservador, ~30%. Depois de ~3 meses de vendas, os relatórios do Steam (por país, reembolsos e o formulário 1042-S) dão a margem real. O imposto de renda brasileiro não está na conta: isento até R$ 5 mil por mês.</p>
+    <h3>Dinheiro</h3>
+    <p class="muted">Quanto custa, quanto cobrar, quanto fica com você e como receber.</p>
     <details>
-      <summary>Onde dá para ganhar margem</summary>
-      <ol>
-        <li><strong>Descontos com moderação:</strong> é a alavanca mais forte (mas desconto também traz vendas).</li>
-        <li><strong>Menos reembolsos:</strong> ~3 h de jogo, demo e página honesta.</li>
-        <li><strong>Receber pelo caminho barato:</strong> Wise ou C6 em vez de banco tradicional.</li>
-        <li><strong>Quando pagar imposto no Brasil:</strong> descontar o que os EUA retiveram (reciprocidade, ADI SRF 28/2000).</li>
-        <li><strong>Se vender bem:</strong> CNPJ no Simples Nacional (exportação sem PIS, Cofins e ISS; alíquota a partir de 6% com Fator R). MEI não serve para software.</li>
-        <li><strong>itch.io:</strong> você escolhe a parte da loja (padrão 10%), mas o volume é pequeno.</li>
-      </ol>
-      <p class="muted">Não muda: os 30% do Steam (25% só acima de US$ 10 milhões) e os impostos embutidos no preço.</p>
+      <summary>Orçamento: só os US$ 100 da taxa</summary>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Item</th><th>Como fica de graça</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Taxa do Steam</td><td>US$ 100 no cartão internacional, ~R$ 560–600 com IOF. É o único gasto.</td></tr>
+          <tr><td>Efeitos sonoros</td><td>Você gera no jsfxr ou no ChipTone (grátis, no navegador), ou baixa no Freesound com licença CC0.</td></tr>
+          <tr><td>Música</td><td>Pacotes grátis com uso comercial no itch.io e no OpenGameArt. Só CC0 ou CC-BY, com print da licença.</td></tr>
+          <tr><td>Capa</td><td>Você faz em pixel art. Teste em miniatura e peça opinião no r/IndieDev.</td></tr>
+          <tr><td>Backup</td><td>Git e GitHub.</td></tr>
+          <tr><td>Tradução</td><td>Planilha da Godot + DeepL ou IA + revisão de um jogador nativo.</td></tr>
+          <tr><td>Trailer</td><td>OBS para gravar e Shotcut para editar.</td></tr>
+          <tr><td>Criadores</td><td>Plano grátis do Keymailer e e-mails.</td></tr>
+          <tr><td>Testes</td><td>Amigos e o Steam Playtest.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Se sobrar dinheiro em 2027, o primeiro lugar para gastar é a capa.</p>
+    </details>
+    <details>
+      <summary>Preço e descontos</summary>
+      <p><strong>Preço base US$ 9,99, com 20% de desconto no lançamento (US$ 7,99).</strong> Subir preço depois pega mal e bloqueia descontos por 30 dias; baixar é livre. Cada promoção futura parte de US$ 9,99.</p>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Quando</th><th class="num">Desconto</th><th class="num">Preço</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Lançamento (1ª semana)</td><td class="num">20%</td><td class="num">US$ 7,99</td></tr>
+          <tr><td>~2–3 meses depois (promoção grande do Steam)</td><td class="num">20–25%</td><td class="num">US$ 7,99–7,49</td></tr>
+          <tr><td>~6 meses depois</td><td class="num">30–35%</td><td class="num">~US$ 6,99–6,49</td></tr>
+          <tr><td>1 ano depois</td><td class="num">40–50%</td><td class="num">~US$ 5,99–4,99</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="muted">
+        <li>30 dias de intervalo entre descontos (as promoções sazonais do Steam são exceção).</li>
+        <li>Nada de desconto nos 30 dias após o lançamento, exceto o de lançamento, que se configura antes.</li>
+        <li>Nada de desconto por 30 dias depois de subir o preço.</li>
+        <li>Aceite o preço regional que o Steam sugere. US$ 9,99 costuma virar perto de R$ 29,99.</li>
+        <li>Confirme o preço com a demo: pergunte a quem testou "quanto você pagaria?".</li>
+      </ul>
+      </details>
+    <details>
+      <summary>Margem: quanto fica com você</summary>
+      <p>Por cópia, na média da vida do jogo, com US$ 9,99, −20% no lançamento, descontos graduais, ~3 h de jogo + demo e recebimento pela Wise ou C6. Dólar a ~R$ 5,50.</p>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Etapa</th><th class="num">Baixo</th><th class="num">Central</th><th class="num">Alto</th></tr></thead>
+        <tbody>
+          <tr><td>Desconto médio nas promoções</td><td class="num">−30%</td><td class="num">−25%</td><td class="num">−20%</td></tr>
+          <tr><td>Preço regional</td><td class="num">−15%</td><td class="num">−12%</td><td class="num">−10%</td></tr>
+          <tr><td>Impostos embutidos no preço (Europa etc.)</td><td class="num">−7%</td><td class="num">−6%</td><td class="num">−5%</td></tr>
+          <tr><td>Reembolsos</td><td class="num">−10%</td><td class="num">−8%</td><td class="num">−7%</td></tr>
+          <tr><td>Steam</td><td class="num">−30%</td><td class="num">−30%</td><td class="num">−30%</td></tr>
+          <tr><td>Retenção dos EUA (30% só da fatia vendida nos EUA)</td><td class="num">−10,5%</td><td class="num">−9%</td><td class="num">−7,5%</td></tr>
+          <tr><td>Receber e converter</td><td class="num">−2%</td><td class="num">−1,5%</td><td class="num">−1,2%</td></tr>
+          <tr class="hl"><td>Margem final</td><td class="num">~30%</td><td class="num">~36%</td><td class="num">~41%</td></tr>
+          <tr class="hl"><td>Por cópia</td><td class="num">~R$ 17</td><td class="num">~R$ 19,70</td><td class="num">~R$ 22</td></tr>
+        </tbody>
+      </table></div>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Vendas</th><th class="num">Total (36%)</th></tr></thead>
+        <tbody>
+          <tr><td>~209 (passar de US$ 1.000)</td><td class="num">~R$ 4.100 + taxa devolvida</td></tr>
+          <tr><td>500</td><td class="num">~R$ 9.850</td></tr>
+          <tr><td>1.000</td><td class="num">~R$ 19.700</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Para planejar use ~36%; para ser conservador, ~30%. Depois de ~3 meses de vendas, os relatórios do Steam (por país, reembolsos e o formulário 1042-S) dão a margem real. O imposto de renda brasileiro não está na conta: isento até R$ 5 mil por mês.</p>
+      <details>
+        <summary>Onde dá para ganhar margem</summary>
+        <ol>
+          <li><strong>Descontos com moderação:</strong> é a alavanca mais forte (mas desconto também traz vendas).</li>
+          <li><strong>Menos reembolsos:</strong> ~3 h de jogo, demo e página honesta.</li>
+          <li><strong>Receber pelo caminho barato:</strong> Wise ou C6 em vez de banco tradicional.</li>
+          <li><strong>Quando pagar imposto no Brasil:</strong> descontar o que os EUA retiveram (reciprocidade, ADI SRF 28/2000).</li>
+          <li><strong>Se vender bem:</strong> CNPJ no Simples Nacional (exportação sem PIS, Cofins e ISS; alíquota a partir de 6% com Fator R). MEI não serve para software.</li>
+          <li><strong>itch.io:</strong> você escolhe a parte da loja (padrão 10%), mas o volume é pequeno.</li>
+        </ol>
+        <p class="muted">Não muda: os 30% do Steam (25% só acima de US$ 10 milhões) e os impostos embutidos no preço.</p>
+      </details>
+      </details>
+    <details>
+      <summary>Receber o dinheiro: bancos e Steam</summary>
+      <p>O Steam paga uma vez por mês, a partir de US$ 100 a receber, sempre em dólar: <strong>ACH</strong> para bancos nos EUA e <strong>SWIFT</strong> para bancos fora dos EUA.</p>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Opção</th><th>Receber</th><th>Converter</th><th>Total aprox.</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Wise</td><td>ACH grátis; SWIFT US$ 6,11</td><td>a partir de 0,78% + IOF</td><td>~1,2–1,9%</td></tr>
+          <tr><td>C6 Global</td><td>SWIFT US$ 10</td><td>0,75–0,90% + IOF 0,38%</td><td>~1,2–1,3% + US$ 10</td></tr>
+          <tr><td>Nomad</td><td>grátis (pode haver banco intermediário)</td><td>~1% + IOF 0,38%</td><td>~1,4–2%</td></tr>
+          <tr><td>Inter Global</td><td>a confirmar</td><td>até 0,99% + IOF 0,38%</td><td>~1,4%</td></tr>
+          <tr><td>Banco tradicional</td><td>tarifas</td><td>spread maior</td><td>geralmente mais caro</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li><strong>Recomendado:</strong> Wise, se o Steam pagar por ACH na conta americana da Wise (recebimento grátis). Se exigir SWIFT, C6 Global.</li>
+        <li><strong>Antes de cadastrar:</strong> mande um e-mail para <strong>financevalve@valvesoftware.com</strong> perguntando se eles pagam por ACH numa conta Wise. Há relatos de pagamentos de empresas devolvidos a contas Wise pessoais.</li>
+        <li>A taxa fixa pesa nos pagamentos pequenos: US$ 6,11 sobre US$ 150 são ~4%; sobre US$ 1.000, ~0,6%.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Impostos: EUA e Brasil</summary>
+      <ul>
+        <li><strong>Entrevista fiscal (W-8BEN):</strong> no Steamworks, como pessoa física. Pede nome, endereço, CPF (como número fiscal estrangeiro) e que você informe que não há tratado. Sem ela, o Steam não paga.</li>
+        <li><strong>Retenção dos EUA:</strong> 30% só sobre a parcela das vendas feitas nos EUA (FAQ oficial do Steamworks). Com ~30% das vendas lá, dá ~9% do total.</li>
+        <li><strong>Formulário 1042-S:</strong> o Steam envia todo ano até 15 de março, com o que foi retido. Guarde: serve para descontar no imposto brasileiro.</li>
+        <li><strong>Carnê-leão:</strong> o dinheiro vem do exterior, então você mesmo lança e paga, todo mês. Desde 2026, isento até R$ 5.000 por mês; transição até R$ 7.350; depois, até 27,5%. Mesmo isento, é preciso lançar.</li>
+        <li><strong>Outra renda</strong> (salário, estágio) entra na declaração anual e pode gerar imposto.</li>
+        <li><strong>Compensação:</strong> quando houver imposto brasileiro, dá para descontar o retido nos EUA (reciprocidade, ADI SRF 28/2000; só imposto federal americano). Confirme com um contador.</li>
+        <li><strong>Câmbio:</strong> IOF de 0,38% no recebimento do exterior, mais a taxa do banco.</li>
+        <li><strong>CNPJ:</strong> só quando vários meses passarem de R$ 5 mil. Simples Nacional, com contador (~R$ 150–400 por mês).</li>
+      </ul>
+      <p class="muted">Orientação geral, não consultoria. Confirme com um contador antes de receber.</p>
     </details>
   </div>
 
-  <details>
-    <summary>Receber o dinheiro: bancos e Steam</summary>
-    <p>O Steam paga uma vez por mês, a partir de US$ 100 a receber, sempre em dólar: <strong>ACH</strong> para bancos nos EUA e <strong>SWIFT</strong> para bancos fora dos EUA.</p>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Opção</th><th>Receber</th><th>Converter</th><th>Total aprox.</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td>Wise</td><td>ACH grátis; SWIFT US$ 6,11</td><td>a partir de 0,78% + IOF</td><td>~1,2–1,9%</td></tr>
-        <tr><td>C6 Global</td><td>SWIFT US$ 10</td><td>0,75–0,90% + IOF 0,38%</td><td>~1,2–1,3% + US$ 10</td></tr>
-        <tr><td>Nomad</td><td>grátis (pode haver banco intermediário)</td><td>~1% + IOF 0,38%</td><td>~1,4–2%</td></tr>
-        <tr><td>Inter Global</td><td>a confirmar</td><td>até 0,99% + IOF 0,38%</td><td>~1,4%</td></tr>
-        <tr><td>Banco tradicional</td><td>tarifas</td><td>spread maior</td><td>geralmente mais caro</td></tr>
-      </tbody>
-    </table></div>
-    <ul>
-      <li><strong>Recomendado:</strong> Wise, se o Steam pagar por ACH na conta americana da Wise (recebimento grátis). Se exigir SWIFT, C6 Global.</li>
-      <li><strong>Antes de cadastrar:</strong> mande um e-mail para <strong>financevalve@valvesoftware.com</strong> perguntando se eles pagam por ACH numa conta Wise. Há relatos de pagamentos de empresas devolvidos a contas Wise pessoais.</li>
-      <li>A taxa fixa pesa nos pagamentos pequenos: US$ 6,11 sobre US$ 150 são ~4%; sobre US$ 1.000, ~0,6%.</li>
-    </ul>
-  </details>
+  <div class="group">
+    <h3>Divulgar e vender</h3>
+    <p class="muted">Como fazer as pessoas acharem o jogo, e o que esperar.</p>
+    <details>
+      <summary>Marketing: o que funciona</summary>
+      <ol>
+        <li><strong>Festivais com demo:</strong> Next Fest (fevereiro, junho e outubro; cada jogo só entra em um) e festivais temáticos. O Couch Co-Op Fest de 2027 é em fevereiro, cedo demais; mire a próxima edição, depois do lançamento. Lance a demo semanas antes do Next Fest: ~2,5× mais wishlists.</li>
+        <li><strong>Criadores pequenos e médios</strong> de beat 'em up, retrô e co-op, incluindo brasileiros. E-mail pessoal com chave, link da demo e GIF. Keymailer tem plano grátis. Mandar chave não garante vídeo.</li>
+        <li><strong>Página "Em breve" com capa forte:</strong> de 68% a 88% das wishlists do Next Fest vêm de quem nem baixou a demo. Sem orçamento, você mesmo faz a capa, com muito cuidado.</li>
+        <li><strong>Vídeos curtos</strong> (TikTok, Shorts, Reels): ~2–7 wishlists por 1.000 visualizações. 10 segundos de um combo com impacto. Link do Steam na bio.</li>
+        <li><strong>Reddit, uma vez por mês:</strong> r/beatemups, r/PixelArt, r/IndieGaming, r/IndieDev, r/godot. GIF com história pessoal, não anúncio.</li>
+        <li><strong>Discord e lista de e-mails</strong> desde ~12 meses antes. Só abra o Discord quando já houver gente vindo de outros lugares.</li>
+        <li><strong>Por último ou nunca:</strong> anúncios pagos (US$ 0,20–4 por wishlist), imprensa e sorteios.</li>
+      </ol>
+      <ul>
+        <li><strong>Steam 2026:</strong> a lista "Populares em breve" passou a exigir ~80–100 mil wishlists. O que conta agora é o Calendário Pessoal, que mostra o jogo de 2 meses antes a 1 mês depois do lançamento, para quem tem gosto parecido. Tags certas e capa forte pesam mais.</li>
+        <li><strong>Vantagem brasileira:</strong> português (~4% do Steam) de graça, espanhol (~4,6%) e chinês (~24%) baratos de traduzir, BIG Festival (grátis, inscrição em janeiro, seleção BIG Starter para jogos brasileiros) e a publisher QUByte para levar a consoles depois.</li>
+        <li><strong>Gancho:</strong> considere um beat 'em up ambientado no Brasil. Teste a reação cedo.</li>
+        <li><strong>Avaliações:</strong> com menos de 10, o Steam não mostra nota. ~1 avaliação a cada 30–50 cópias. Chaves grátis não contam para a nota. Nunca ofereça nada em troca de avaliação.</li>
+      </ul>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Checkpoint</th><th>Meta</th></tr></thead>
+        <tbody>
+          <tr><td>2 semanas de página</td><td>100 bronze · 500 prata · 1.200 ouro</td></tr>
+          <tr><td>Demo</td><td>mais de 12% de quem joga põe na wishlist (mediana 16%)</td></tr>
+          <tr><td>Setembro de 2027</td><td>~1.500 wishlists</td></tr>
+          <tr><td>Lançamento</td><td>~3.000 wishlists</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <details>
+      <summary>Página da loja</summary>
+      <ul>
+        <li>Capa legível em miniatura (120×45 px).</li>
+        <li>Gênero nas 10 primeiras palavras: "Um beat 'em up em pixel art inspirado em Streets of Rage…"</li>
+        <li>Trailer com jogabilidade nos primeiros 5 segundos: combo, co-op e um chefe.</li>
+        <li>As 3–4 primeiras imagens de jogabilidade, nunca do menu.</li>
+        <li>Tags específicas: Beat 'em up, Local Co-Op, Side Scroller, Pixel Graphics.</li>
+        <li>IA: arte, música ou texto gerados por IA precisam ser declarados. Pixel art feita à mão é um diferencial.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>As contas das wishlists (cenário pessimista)</summary>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Cenário 2027–28</th><th class="num">Wishlists por venda</th><th class="num">Para US$ 1.000 a US$ 7,99</th></tr></thead>
+        <tbody>
+          <tr><td>Estável</td><td class="num">~4,5</td><td class="num">~950</td></tr>
+          <tr><td>Pessimista</td><td class="num">~9</td><td class="num">~1.900</td></tr>
+          <tr class="hl"><td>Muito pessimista (adotado)</td><td class="num">~13</td><td class="num">~2.800</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="muted">
+        <li>Wishlists por venda são do 1º mês, e o preço de lançamento é US$ 7,99 (US$ 9,99 com −20%).</li>
+        <li>A projeção supõe que a queda de 2020–22 para 2023–25 continua. O "muito pessimista" é um palpite usado como margem de segurança.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>O mercado de beat 'em up (dados do Steam)</summary>
 
-  <details>
-    <summary>Impostos: EUA e Brasil</summary>
-    <ul>
-      <li><strong>Entrevista fiscal (W-8BEN):</strong> no Steamworks, como pessoa física. Pede nome, endereço, CPF (como número fiscal estrangeiro) e que você informe que não há tratado. Sem ela, o Steam não paga.</li>
-      <li><strong>Retenção dos EUA:</strong> 30% só sobre a parcela das vendas feitas nos EUA (FAQ oficial do Steamworks). Com ~30% das vendas lá, dá ~9% do total.</li>
-      <li><strong>Formulário 1042-S:</strong> o Steam envia todo ano até 15 de março, com o que foi retido. Guarde: serve para descontar no imposto brasileiro.</li>
-      <li><strong>Carnê-leão:</strong> o dinheiro vem do exterior, então você mesmo lança e paga, todo mês. Desde 2026, isento até R$ 5.000 por mês; transição até R$ 7.350; depois, até 27,5%. Mesmo isento, é preciso lançar.</li>
-      <li><strong>Outra renda</strong> (salário, estágio) entra na declaração anual e pode gerar imposto.</li>
-      <li><strong>Compensação:</strong> quando houver imposto brasileiro, dá para descontar o retido nos EUA (reciprocidade, ADI SRF 28/2000; só imposto federal americano). Confirme com um contador.</li>
-      <li><strong>Câmbio:</strong> IOF de 0,38% no recebimento do exterior, mais a taxa do banco.</li>
-      <li><strong>CNPJ:</strong> só quando vários meses passarem de R$ 5 mil. Simples Nacional, com contador (~R$ 150–400 por mês).</li>
-    </ul>
-    <p class="muted">Orientação geral, não consultoria. Confirme com um contador antes de receber.</p>
-  </details>
+      <p>Lançados em 2025 que passaram de US$ 1.000:</p>
+      <div class="bars" role="img" aria-label="Beat 'em up em pixel art: 39%; plataforma 2D em pixel art: 36%">
+        <div class="bar"><span>Beat 'em up</span><span class="track"><span class="fill" style="width:39%"></span></span><span class="v">39%</span></div>
+        <div class="bar"><span>Plataforma 2D</span><span class="track"><span class="fill alt" style="width:36%"></span></span><span class="v">36%</span></div>
+      </div>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Lançados em 2025</th><th class="num">Beat 'em up</th><th class="num">Plataforma 2D</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Jogos pagos lançados</td><td class="num">80</td><td class="num">790</td></tr>
+          <tr><td>Passaram de US$ 1.000</td><td class="num">39%</td><td class="num">36%</td></tr>
+          <tr><td>Passaram de US$ 10.000</td><td class="num">22%</td><td class="num">15%</td></tr>
+          <tr><td>Passaram de US$ 100.000</td><td class="num">8%</td><td class="num">5%</td></tr>
+          <tr><td>Preço mediano</td><td class="num">US$ 5,99</td><td class="num">US$ 4,99</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">Tags beat 'em up + pixel art e plataforma 2D + pixel art, com receita estimada por avaliações × 30 × preço. Em 2024: 53% contra 38%. A amostra de beat 'em up é pequena.</p>
+  
+      <h4>Desenvolvedores sozinhos</h4>
 
-  <details>
-    <summary>Marketing: o que funciona</summary>
-    <ol>
-      <li><strong>Festivais com demo:</strong> Next Fest (fevereiro, junho e outubro; cada jogo só entra em um) e festivais temáticos. O Couch Co-Op Fest de 2027 é em fevereiro, cedo demais; mire a próxima edição, depois do lançamento. Lance a demo semanas antes do Next Fest: ~2,5× mais wishlists.</li>
-      <li><strong>Criadores pequenos e médios</strong> de beat 'em up, retrô e co-op, incluindo brasileiros. E-mail pessoal com chave, link da demo e GIF. Keymailer tem plano grátis. Mandar chave não garante vídeo.</li>
-      <li><strong>Página "Em breve" com capa forte:</strong> de 68% a 88% das wishlists do Next Fest vêm de quem nem baixou a demo. Sem orçamento, você mesmo faz a capa, com muito cuidado.</li>
-      <li><strong>Vídeos curtos</strong> (TikTok, Shorts, Reels): ~2–7 wishlists por 1.000 visualizações. 10 segundos de um combo com impacto. Link do Steam na bio.</li>
-      <li><strong>Reddit, uma vez por mês:</strong> r/beatemups, r/PixelArt, r/IndieGaming, r/IndieDev, r/godot. GIF com história pessoal, não anúncio.</li>
-      <li><strong>Discord e lista de e-mails</strong> desde ~12 meses antes. Só abra o Discord quando já houver gente vindo de outros lugares.</li>
-      <li><strong>Por último ou nunca:</strong> anúncios pagos (US$ 0,20–4 por wishlist), imprensa e sorteios.</li>
-    </ol>
-    <ul>
-      <li><strong>Steam 2026:</strong> a lista "Populares em breve" passou a exigir ~80–100 mil wishlists. O que conta agora é o Calendário Pessoal, que mostra o jogo de 2 meses antes a 1 mês depois do lançamento, para quem tem gosto parecido. Tags certas e capa forte pesam mais.</li>
-      <li><strong>Vantagem brasileira:</strong> português (~4% do Steam) de graça, espanhol (~4,6%) e chinês (~24%) baratos de traduzir, BIG Festival (grátis, inscrição em janeiro, seleção BIG Starter para jogos brasileiros) e a publisher QUByte para levar a consoles depois.</li>
-      <li><strong>Gancho:</strong> considere um beat 'em up ambientado no Brasil. Teste a reação cedo.</li>
-      <li><strong>Avaliações:</strong> com menos de 10, o Steam não mostra nota. ~1 avaliação a cada 30–50 cópias. Chaves grátis não contam para a nota. Nunca ofereça nada em troca de avaliação.</li>
-    </ul>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Checkpoint</th><th>Meta</th></tr></thead>
-      <tbody>
-        <tr><td>2 semanas de página</td><td>100 bronze · 500 prata · 1.200 ouro</td></tr>
-        <tr><td>Demo</td><td>mais de 12% de quem joga põe na wishlist (mediana 16%)</td></tr>
-        <tr><td>Setembro de 2027</td><td>~1.500 wishlists</td></tr>
-        <tr><td>Lançamento</td><td>~3.000 wishlists</td></tr>
-      </tbody>
-    </table></div>
-  </details>
-
-  <details>
-    <summary>Página da loja</summary>
-    <ul>
-      <li>Capa legível em miniatura (120×45 px).</li>
-      <li>Gênero nas 10 primeiras palavras: "Um beat 'em up em pixel art inspirado em Streets of Rage…"</li>
-      <li>Trailer com jogabilidade nos primeiros 5 segundos: combo, co-op e um chefe.</li>
-      <li>As 3–4 primeiras imagens de jogabilidade, nunca do menu.</li>
-      <li>Tags específicas: Beat 'em up, Local Co-Op, Side Scroller, Pixel Graphics.</li>
-      <li>IA: arte, música ou texto gerados por IA precisam ser declarados. Pixel art feita à mão é um diferencial.</li>
-    </ul>
-  </details>
-
-  <details>
-    <summary>As contas das wishlists (cenário pessimista)</summary>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Cenário 2027–28</th><th class="num">Wishlists por venda</th><th class="num">Para US$ 1.000 a US$ 7,99</th></tr></thead>
-      <tbody>
-        <tr><td>Estável</td><td class="num">~4,5</td><td class="num">~950</td></tr>
-        <tr><td>Pessimista</td><td class="num">~9</td><td class="num">~1.900</td></tr>
-        <tr class="hl"><td>Muito pessimista (adotado)</td><td class="num">~13</td><td class="num">~2.800</td></tr>
-      </tbody>
-    </table></div>
-    <ul class="muted">
-      <li>Wishlists por venda são do 1º mês, e o preço de lançamento é US$ 7,99 (US$ 9,99 com −20%).</li>
-      <li>A projeção supõe que a queda de 2020–22 para 2023–25 continua. O "muito pessimista" é um palpite usado como margem de segurança.</li>
-    </ul>
-  </details>
+    
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Jogo</th><th class="num">Ano</th><th class="num">Cópias</th><th class="num">Preço</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://gamalytic.com/game/674520">Fight'N Rage</a>, feito em 3,5 anos</td><td class="num">2017</td><td class="num">~80 mil</td><td class="num">US$ 19,99</td></tr>
+          <tr><td><a href="https://gamalytic.com/game/1687000">Fading Afternoon</a></td><td class="num">2023</td><td class="num">~57 mil</td><td class="num">US$ 19,99</td></tr>
+        </tbody>
+      </table></div>
+      <p>Em comum: visual marcante, homenagem clara aos anos 90 e jogabilidade polida.</p>
+  
+    <details>
+      <summary>Mediana de receita por tag (Gamalytic)</summary>
+      <div class="table-wrap"><table class="stack">
+        <thead><tr><th>Tag</th><th class="num">Jogos</th><th class="num">Mediana</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Co-op (qualquer)</td><td class="num">5,6 mil</td><td class="num">US$ 7.500</td></tr>
+          <tr><td>Roguelike Deckbuilder</td><td class="num">831</td><td class="num">US$ 5.700</td></tr>
+          <tr><td>Metroidvania</td><td class="num">1,7 mil</td><td class="num">US$ 2.800</td></tr>
+          <tr><td>Hack and Slash</td><td class="num">4,2 mil</td><td class="num">US$ 1.200</td></tr>
+          <tr><td>Roguelite</td><td class="num">8 mil</td><td class="num">US$ 1.100</td></tr>
+          <tr><td>Horror</td><td class="num">14 mil</td><td class="num">US$ 1.100</td></tr>
+          <tr><td>Pixel Graphics</td><td class="num">21,3 mil</td><td class="num">US$ 484</td></tr>
+          <tr><td>Plataforma 2D</td><td class="num">10,9 mil</td><td class="num">US$ 176</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    </details>
+    <details open>
+      <summary>O que é sucesso no primeiro jogo</summary>
+      <ol class="steps">
+        <li><span>Terminar e lançar, o que a maioria não consegue.</span></li>
+        <li><span>Recuperar os US$ 100 da taxa.</span></li>
+        <li><span>Passar de US$ 1.000 e ter a taxa devolvida.</span></li>
+      </ol>
+      </details>
+  </div>
 
   <div class="group">
-    <h3>O que é sucesso no primeiro jogo</h3>
-    <ol class="steps">
-      <li><span>Terminar e lançar, o que a maioria não consegue.</span></li>
-      <li><span>Recuperar os US$ 100 da taxa.</span></li>
-      <li><span>Passar de US$ 1.000 e ter a taxa devolvida.</span></li>
-    </ol>
+    <h3>Regras e segurança</h3>
+    <p class="muted">Prazos do Steam, leis, licenças, contas e golpes.</p>
+    <details>
+      <summary>Regras e leis para não esquecer</summary>
+      <ul>
+        <li><strong>Prazos do Steam:</strong> 30 dias entre pagar a taxa e lançar; página "Em breve" no ar pelo menos 2 semanas antes; revisão da página em 3–5 dias úteis; a revisão do jogo vem depois da página; a data trava 14 dias antes; a demo tem revisão própria.</li>
+        <li><strong>Next Fest:</strong> cada jogo entra em um só, na vida. O seu é o de outubro de 2027.</li>
+        <li><strong>Classificação indicativa:</strong> sai do questionário de conteúdo do Steam. Sem ela, o jogo pode sumir na Alemanha e no Brasil.</li>
+        <li><strong>ECA Digital (Lei 15.211):</strong> nada de compra de itens aleatórios (loot box) e nada de chat online. Assim o jogo fica fora das obrigações da lei.</li>
+        <li><strong>Pessoas e marcas reais:</strong> nada de personagem reconhecível de alguém real (art. 20 do Código Civil) nem logotipos de verdade nos cenários.</li>
+        <li><strong>Licenças:</strong> o texto da licença da Godot vai nos créditos, e cada música, som e fonte baixados vão no licencas.txt.</li>
+        <li><strong>IA:</strong> conteúdo que o jogador vê feito por IA (inclusive tradução) precisa ser declarado no Steam.</li>
+        <li><strong>Antivírus:</strong> se puser a demo no itch.io, desligue "Embed PCK" na exportação.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Segurança: contas, golpes e backup</summary>
+      <ul>
+        <li><strong>Pirataria:</strong> vai acontecer e quase não muda as vendas de um jogo de US$ 9,99. Não gaste tempo com DRM. Preço justo e promoções convertem mais.</li>
+        <li><strong>Hack dentro do jogo:</strong> só afeta quem usa. Sem ranking online no lançamento, não há o que proteger.</li>
+        <li><strong>Clones:</strong> guarde os .aseprite com data e o histórico do Git, que provam a autoria. Steam, Google e Apple têm formulários de denúncia.</li>
+        <li><strong>Contas:</strong> Steam Guard no celular e telefone no Steam; e-mail com senha só dele e verificação em duas etapas; GitHub com verificação em duas etapas e repositório privado; uma senha por conta (Bitwarden é grátis).</li>
+        <li><strong>Golpe do falso criador:</strong> confira se o e-mail bate com o do canal. Use o Keymailer e mande 1 chave por pessoa.</li>
+        <li><strong>"Testa meu jogo?" no Discord:</strong> nunca rode .exe de desconhecidos.</li>
+        <li><strong>Falsa publisher ou investidor:</strong> nunca pague adiantado nem dê acesso ao Steamworks.</li>
+        <li><strong>E-mail falso "da Valve":</strong> entre sempre digitando partner.steamgames.com, nunca pelo link.</li>
+        <li><strong>Backup:</strong> commit no fim de cada sessão, e uma cópia extra por mês (pendrive ou Google Drive).</li>
+      </ul>
+    </details>
   </div>
-  <details>
+
+<details>
     <summary>O que é cada coisa (lançamento)</summary>
     <dl class="glossary">
       <div><dt>Wishlist (lista de desejos)</dt><dd>Quando alguém marca o jogo para comprar depois no Steam. É o número que mais prevê as vendas no lançamento.</dd></div>
@@ -1391,135 +1642,23 @@ details.how ul, details.how ol { margin-top: 6px; }
       <div><dt>Regra das 2 horas</dt><dd>O Steam reembolsa quem jogou menos de 2 h e pede em até 14 dias. Por isso a meta é zerar em ~3 h.</dd></div>
     </dl>
   </details>
-</section>
-
-<!-- MERCADO -->
-<section class="panel" id="mercado" role="tabpanel" aria-labelledby="tab-mercado" hidden>
-  <h2><small>Dados do Steam</small>O mercado de beat 'em up</h2>
-  <div class="group">
-    <p>Lançados em 2025 que passaram de US$ 1.000:</p>
-    <div class="bars" role="img" aria-label="Beat 'em up em pixel art: 39%; plataforma 2D em pixel art: 36%">
-      <div class="bar"><span>Beat 'em up</span><span class="track"><span class="fill" style="width:39%"></span></span><span class="v">39%</span></div>
-      <div class="bar"><span>Plataforma 2D</span><span class="track"><span class="fill alt" style="width:36%"></span></span><span class="v">36%</span></div>
-    </div>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Lançados em 2025</th><th class="num">Beat 'em up</th><th class="num">Plataforma 2D</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td>Jogos pagos lançados</td><td class="num">80</td><td class="num">790</td></tr>
-        <tr><td>Passaram de US$ 1.000</td><td class="num">39%</td><td class="num">36%</td></tr>
-        <tr><td>Passaram de US$ 10.000</td><td class="num">22%</td><td class="num">15%</td></tr>
-        <tr><td>Passaram de US$ 100.000</td><td class="num">8%</td><td class="num">5%</td></tr>
-        <tr><td>Preço mediano</td><td class="num">US$ 5,99</td><td class="num">US$ 4,99</td></tr>
-      </tbody>
-    </table></div>
-    <p class="muted">Tags beat 'em up + pixel art e plataforma 2D + pixel art, com receita estimada por avaliações × 30 × preço. Em 2024: 53% contra 38%. A amostra de beat 'em up é pequena.</p>
-  </div>
-
-  <div class="group">
-    <h3>Desenvolvedores sozinhos</h3>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Jogo</th><th class="num">Ano</th><th class="num">Cópias</th><th class="num">Preço</th></tr></thead>
-      <tbody>
-        <tr><td><a href="https://gamalytic.com/game/674520">Fight'N Rage</a>, feito em 3,5 anos</td><td class="num">2017</td><td class="num">~80 mil</td><td class="num">US$ 19,99</td></tr>
-        <tr><td><a href="https://gamalytic.com/game/1687000">Fading Afternoon</a></td><td class="num">2023</td><td class="num">~57 mil</td><td class="num">US$ 19,99</td></tr>
-      </tbody>
-    </table></div>
-    <p>Em comum: visual marcante, homenagem clara aos anos 90 e jogabilidade polida.</p>
-  </div>
 
   <details>
-    <summary>Mediana de receita por tag (Gamalytic)</summary>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Tag</th><th class="num">Jogos</th><th class="num">Mediana</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td>Co-op (qualquer)</td><td class="num">5,6 mil</td><td class="num">US$ 7.500</td></tr>
-        <tr><td>Roguelike Deckbuilder</td><td class="num">831</td><td class="num">US$ 5.700</td></tr>
-        <tr><td>Metroidvania</td><td class="num">1,7 mil</td><td class="num">US$ 2.800</td></tr>
-        <tr><td>Hack and Slash</td><td class="num">4,2 mil</td><td class="num">US$ 1.200</td></tr>
-        <tr><td>Roguelite</td><td class="num">8 mil</td><td class="num">US$ 1.100</td></tr>
-        <tr><td>Horror</td><td class="num">14 mil</td><td class="num">US$ 1.100</td></tr>
-        <tr><td>Pixel Graphics</td><td class="num">21,3 mil</td><td class="num">US$ 484</td></tr>
-        <tr><td>Plataforma 2D</td><td class="num">10,9 mil</td><td class="num">US$ 176</td></tr>
-      </tbody>
-    </table></div>
+    <summary>Fontes</summary>
+    <ul class="muted">
+      <li><a href="https://partner.steamgames.com/doc/gettingstarted/appfee">Steamworks: taxa do Steam Direct</a></li>
+      <li><a href="https://gamalytic.com/genres">Gamalytic: receita por gênero e tag</a></li>
+      <li><a href="https://dev.to/indietooling/your-steam-wishlists-may-be-worth-half-what-they-were-bbm">Queda no valor das wishlists</a></li>
+      <li><a href="https://gameworldobserver.com/2026/10/15/steam-is-experiencing-wishlist-inflation-but-they-are-still-important-analysis">"Inflação de wishlists" no Steam</a></li>
+      <li><a href="https://howtomarketagame.com/2026/04/13/making-sense-of-the-february-2026-steam-next-fest/">Next Fest de fevereiro de 2026</a></li>
+      <li><a href="https://fragwyz.substack.com/p/three-years-of-ai-on-steam">Três anos de IA no Steam</a></li>
+      <li><a href="https://presskit.gg/field-guides/steam-page-optimization-guide">Guia de página do Steam</a></li>
+      <li><a href="https://www.dexerto.com/gaming/developer-claims-55000-steam-players-refunded-game-after-beating-it-too-fast-3383390/">Reembolsos em jogos curtos</a></li>
+      <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4101876/">Macnamara et al., 2014</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16719566/">Cepeda et al., 2006</a> · <a href="https://www.springermedizin.de/article/10.3758/s13421-012-0272-7">Kornell e Bjork, 2008</a></li>
+      <li><a href="https://www.gbl.uzh.ch/quartz/references/Wisniewski-et-al.-(2020)">Wisniewski et al., 2020</a> · <a href="https://doi.org/10.1177/01640275251321813">Vodyanyk e Jaeggi, 2025</a></li>
+    </ul>
   </details>
-
-  <div class="group" id="refs">
-    <h3>Jogos de referência: estude e evite</h3>
-    <p>Feito a partir de <strong>8.602 avaliações do Steam</strong> (em inglês) de 24 beat 'em ups, em outubro de 2026. A % é: das avaliações que falam daquele assunto, quantas recomendam o jogo.</p>
-    <div class="callout"><strong>48% das avaliações negativas são escritas com menos de 2 h de jogo</strong> (contra 20% das positivas). Metade de quem reclama decide dentro do prazo de reembolso. A fase 1, que também é a demo, precisa ser a mais caprichada.</div>
-    <p class="muted">Como estudar: busque "nome do jogo longplay" no YouTube (o jogo inteiro, sem narração). Nos golpes, use <code>,</code> e <code>.</code> para voltar e avançar um quadro.</p>
-
-    <h3>Combate e jogo</h3>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Assunto</th><th>Estude</th><th>O que observar</th><th>Evite</th><th>O que deu errado</th></tr></thead>
-      <tbody>
-        <tr><td>Combate e impacto</td><td>Streets of Rage 4 (88%), Fight'N Rage (91%), SoR2</td><td>Pausa no impacto, inimigo que quica na parede, especial que custa vida e volta batendo (SoR4); parry e combos (Fight'N Rage)</td><td>99Vidas (57%), Fist Puncher (42%)</td><td>Ataques inimigos que não dá para interromper, poucos golpes, "andar e socar"</td></tr>
-        <tr><td>Controles</td><td>Shredder's Revenge (86%)</td><td>O golpe sai na hora, dash fácil, poucos botões</td><td>Nitro Express, Final Knight</td><td>Atraso no botão, 30 fps, sem trocar teclas no controle; dash sem explicação</td></tr>
-        <tr><td>Velocidade e ritmo</td><td>Shredder's Revenge</td><td>Correr é natural, fases curtas</td><td>Mother Russia Bleeds (33%), Ninja Saviors</td><td>Fases que se arrastam; não dá para correr. No SoR4, só uma personagem corre, e isso é reclamado</td></tr>
-        <tr><td>Dificuldade justa</td><td>Shredder's Revenge (83%)</td><td>Vários níveis; no co-op, um revive o outro</td><td>99Vidas (21%), Final Vendetta</td><td>Inimigos que encadeiam golpes sem parar; sem continues, até no fácil</td></tr>
-        <tr><td>Ficar cercado e travado</td><td>Shredder's Revenge (86%)</td><td>Inimigos se revezam, dá para escapar</td><td>Scott Pilgrim (33%), Mother Russia Bleeds, River City Girls</td><td>Apanhar em sequência sem reagir; no SoR4, inimigos que ignoram o soco e batem de volta</td></tr>
-        <tr><td>Hitbox e profundidade</td><td>Fight'N Rage (93%)</td><td>Acerta quem está "na mesma linha", com tolerância</td><td>Power Rangers (45%), Mother Russia Bleeds</td><td>Golpe que passa reto em quem está um pouco acima ou abaixo</td></tr>
-        <tr><td>Personagens diferentes</td><td>Double Dragon Gaiden, Shredder's Revenge (93%), Ninja Saviors</td><td>Velocidade, alcance e força diferentes; trocar de dupla no meio da luta (Double Dragon Gaiden)</td><td>Power Rangers (58%)</td><td>"1 personagem com 6 cores": todos jogam igual</td></tr>
-        <tr><td>Variedade</td><td>Shredder's Revenge (77%), Marvel Cosmic Invasion</td><td>Cada fase tem uma novidade: veículo, cenário que muda, inimigo novo</td><td>G.I. Joe (9%), Power Rangers, Slaps and Beans</td><td>Mesmos inimigos o jogo inteiro; minigames que cansam</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3>Estrutura e conteúdo</h3>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Assunto</th><th>Estude</th><th>O que observar</th><th>Evite</th><th>O que deu errado</th></tr></thead>
-      <tbody>
-        <tr><td>Fases</td><td>SoR4, Shredder's Revenge</td><td>Lineares, curtas e densas</td><td>River City Girls 1 e 2</td><td>Mapa, ir e voltar, missões de "ache 22 itens"</td></tr>
-        <tr><td>Rejogar</td><td>SoR4, Fight'N Rage, Double Dragon Gaiden</td><td>Nota por fase (rank S), caminhos diferentes, desbloqueáveis, partidas que mudam</td><td>Marvel Cosmic Invasion, Scott Pilgrim EX, G.I. Joe</td><td>"Curto e sem nada depois de zerar"</td></tr>
-        <tr><td>Vidas, continues e save</td><td>Shredder's Revenge (95%)</td><td>Modo história que salva e modo arcade para o desafio</td><td>Final Vendetta, Power Rangers</td><td>Sem continues; atualização que apagou o save</td></tr>
-        <tr><td>Preço x duração</td><td>SoR4 (87%), Fight'N Rage (86%)</td><td>Vistos como "vale o preço"</td><td>Kung Fury, Marvel Cosmic Invasion</td><td>Preço subiu de US$ 2 para US$ 20; US$ 29,99 e curto</td></tr>
-        <tr><td>Co-op</td><td>Shredder's Revenge</td><td>Reviver o amigo, vidas separadas</td><td>Ninja Saviors, Power Rangers, Scott Pilgrim</td><td>Vida dividida; online anunciado que não existia; exigir conta da Ubisoft</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3>Visual, som e identidade</h3>
-    <div class="table-wrap"><table class="stack">
-      <thead><tr><th>Assunto</th><th>Estude</th><th>O que observar</th><th>Evite</th><th>O que deu errado</th></tr></thead>
-      <tbody>
-        <tr><td>Pixel art</td><td>Ninja Saviors (93%), Shredder's Revenge, SoR2</td><td>Personagens legíveis, animação com peso</td><td>Nitro Express, Power Rangers (fases dos Zords)</td><td>Tudo com o mesmo brilho; não dá para ver inimigos e tiros</td></tr>
-        <tr><td>Música</td><td>Ninja Saviors (95%), Fight'N Rage (40+ faixas), SoR2</td><td>Energia e uma música por fase</td><td>G.I. Joe, Fist Puncher</td><td>Trilha genérica, citada como ponto fraco</td></tr>
-        <tr><td>Desempenho</td><td>Fight'N Rage (97%, feito por uma pessoa)</td><td>Liso, sem travar</td><td>Double Dragon Gaiden, River City Girls 2</td><td>Tela tremendo ao rolar; fps baixo</td></tr>
-        <tr><td>Acessibilidade</td><td>Shredder's Revenge</td><td>Opções simples</td><td>Fight'N Rage, Shredder's Revenge</td><td>Fase piscando sem opção de desligar; trocar teclas só no teclado</td></tr>
-        <tr><td>Identidade e tema</td><td>Tonight We Riot (96%), Mother Russia Bleeds, Slaps and Beans</td><td>Um tema forte que se vê de longe</td><td>Pulling No Punches (brasileiro)</td><td>Piadas que só brasileiros entendem</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3>Por onde começar</h3>
-    <ol>
-      <li><strong>Streets of Rage 2:</strong> a base. Ritmo, inimigos e música.</li>
-      <li><strong>Streets of Rage 4:</strong> o combate moderno com os mesmos inimigos.</li>
-      <li><strong>Shredder's Revenge:</strong> o que mais aparece como "faz bem": controles, ritmo, dificuldade, co-op e variedade.</li>
-      <li><strong>Fight'N Rage:</strong> feito por uma pessoa só. Mostra até onde um dev solo chega.</li>
-    </ol>
-    <p><strong>Anti-referências:</strong> <strong>99Vidas</strong> (brasileiro, com carinho pelo gênero, mas o combate injusto derrubou as avaliações) e <strong>Power Rangers: Rita's Rewind</strong> (personagens iguais e promessa falsa na página: 66%, mesmo com a marca famosa).</p>
-    <p class="muted">O mesmo jogo pode aparecer dos dois lados: estude o que cada um faz bem, não o jogo inteiro.</p>
-
-    <details>
-      <summary>O que mais faz o jogador reclamar</summary>
-      <div class="table-wrap"><table class="stack">
-        <thead><tr><th>Assunto</th><th class="num">Vezes mais nas negativas</th></tr></thead>
-        <tbody>
-          <tr><td>Repetitivo, chato</td><td class="num">4,1×</td></tr>
-          <tr><td>Difícil ou injusto</td><td class="num">3,3×</td></tr>
-          <tr><td>Lento, ritmo arrastado</td><td class="num">3,3×</td></tr>
-          <tr><td>Ficar cercado e travado</td><td class="num">3,0×</td></tr>
-          <tr><td>Bugs e desempenho</td><td class="num">2,9×</td></tr>
-          <tr><td>Mapa, ir e voltar</td><td class="num">2,8×</td></tr>
-          <tr><td>Vidas e continues</td><td class="num">2,7×</td></tr>
-          <tr><td>Preço</td><td class="num">2,4×</td></tr>
-          <tr><td>Controles</td><td class="num">2,3×</td></tr>
-          <tr><td>Hitbox e profundidade</td><td class="num">2,1×</td></tr>
-          <tr class="hl"><td>Nostalgia e anos 90 (aparece mais nas positivas)</td><td class="num">0,8×</td></tr>
-        </tbody>
-      </table></div>
-      <p class="muted">Contagem por palavras-chave, por isso os números são aproximados. Música e co-op aparecem igual nos dois lados: o jogador espera que sejam bons, mas eles não diferenciam o jogo.</p>
-    </details>
-  </div>
+  <p class="muted">Montado em outubro de 2026. Preços e números de mercado mudam; confira antes de decidir.</p>
 
   <details>
     <summary>Fontes</summary>
@@ -1545,10 +1684,10 @@ details.how ul, details.how ol { margin-top: 6px; }
 <nav class="tabbar" aria-label="Abas">
   <div class="row" role="tablist">
     <button role="tab" id="tab-hoje" data-tab="hoje" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 5-5"/></svg>Hoje</button>
-    <button role="tab" id="tab-treino" data-tab="treino" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>Treino</button>
+    <button role="tab" id="tab-arte" data-tab="arte" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>Arte</button>
     <button role="tab" id="tab-godot" data-tab="godot" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></svg>Godot</button>
     <button role="tab" id="tab-jogo" data-tab="jogo" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7.5 10.5v4M5.5 12.5h4M15.5 11.5h.01M18 13.5h.01"/></svg>Jogo</button>
-    <button role="tab" id="tab-mercado" data-tab="mercado" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Mercado</button>
+    <button role="tab" id="tab-plano" data-tab="plano" aria-selected="false"><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg>Plano</button>
   </div>
 </nav>
 
@@ -1559,44 +1698,57 @@ details.how ul, details.how ol { margin-top: 6px; }
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   };
   function $(id) { return document.getElementById(id); }
+  function arr(list) { return Array.prototype.slice.call(list); }
 
-  /* Abas */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tab]'));
-  var panels = ['hoje', 'treino', 'godot', 'jogo', 'mercado'];
+  /* ---------- Abas ---------- */
+  var tabs = arr(document.querySelectorAll('[data-tab]'));
+  var panels = ['hoje', 'arte', 'godot', 'jogo', 'plano'];
+  var antigas = { treino: 'arte', mercado: 'plano' };
   function show(id, keepScroll) {
+    id = antigas[id] || id;
     if (panels.indexOf(id) < 0) id = 'hoje';
     panels.forEach(function (p) { $(p).hidden = p !== id; });
     tabs.forEach(function (b) { b.setAttribute('aria-selected', b.dataset.tab === id ? 'true' : 'false'); });
     if (!keepScroll) window.scrollTo(0, 0);
   }
+  function goTo(tab, el) {
+    show(tab);
+    if (el) setTimeout(function () { el.scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }, 0);
+  }
   tabs.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.tab); }); });
-  document.querySelectorAll('[data-go]').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.go); }); });
-  var fromHash = (location.hash || '').replace('#', '');
-  show(panels.indexOf(fromHash) >= 0 ? fromHash : 'hoje', true);
+  arr(document.querySelectorAll('[data-go]')).forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.go); }); });
+  show((location.hash || '').replace('#', ''), true);
 
-  /* Rótulos das tabelas empilhadas */
-  document.querySelectorAll('table.stack').forEach(function (t) {
-    var heads = Array.prototype.map.call(t.querySelectorAll('thead th'), function (th) { return th.textContent; });
-    t.querySelectorAll('tbody tr').forEach(function (tr) {
-      Array.prototype.forEach.call(tr.children, function (td, i) { if (!td.dataset.label) td.dataset.label = heads[i] || ''; });
+  /* ---------- Tabelas que viram cartões no celular ---------- */
+  arr(document.querySelectorAll('table.stack')).forEach(function (t) {
+    var heads = arr(t.querySelectorAll('thead th')).map(function (th) { return th.textContent; });
+    arr(t.querySelectorAll('tbody tr')).forEach(function (tr) {
+      arr(tr.children).forEach(function (td, i) { if (!td.dataset.label) td.dataset.label = heads[i] || ''; });
     });
   });
 
-  /* Checklists persistentes */
+  /* ---------- Caixas de marcar que ficam salvas ---------- */
   function persist(selector, key) {
     var saved = store.get(key, {});
-    var boxes = Array.prototype.slice.call(document.querySelectorAll(selector));
-    boxes.forEach(function (b) { if (saved[b.id]) b.checked = true; b.addEventListener('change', function () { saved[b.id] = b.checked; store.set(key, saved); refresh(); }); });
+    var boxes = arr(document.querySelectorAll(selector));
+    boxes.forEach(function (b) {
+      if (saved[b.id]) b.checked = true;
+      b.addEventListener('change', function () { saved[b.id] = b.checked; store.set(key, saved); refresh(); });
+    });
     return boxes;
   }
-  var mods = persist('#mods input', 'plano-beu-modulos');
-  var godotSteps = persist('#godotSteps input', 'plano-beu-godot');
-  var gds = persist('#gdsList input', 'plano-beu-gds');
-  var proto = persist('#proto input', 'plano-beu-proto');
-  persist('#trailerList input', 'plano-beu-trailer');
-  persist('#manualList input', 'plano-beu-manual');
+  var etapas = persist('#arteList input', 'plano-arte');           /* Arte: 14 etapas */
+  var godotSteps = persist('#godotSteps input', 'plano-beu-godot');  /* Godot: fundamentos */
+  var gds = persist('#gdsList input', 'plano-beu-gds');              /* Godot: GDScript */
+  var proto = persist('#proto input', 'plano-beu-proto');            /* Godot: protótipo */
+  persist('#ladder input', 'plano-beu-escada');
+  persist('#readyAI input', 'plano-beu-ia');
+  persist('#trailerList input', 'plano-beu-trailer');                /* Jogo: trailer */
+  persist('#crono input', 'plano-beu-crono');                        /* Plano: cronograma */
+  var monthsEls = arr(document.querySelectorAll('#crono details.month'));
+  var etapaEls = arr(document.querySelectorAll('#arteList details.etapa'));
 
-  /* Exemplos do manual de pixel art, desenhados pixel a pixel */
+  /* ---------- Exemplos desenhados pixel a pixel (trilha de arte) ---------- */
   function hsl(h, s, l) { return 'hsl(' + h + ',' + s + '%,' + l + '%)'; }
   function paint(cv, w, h, px) {
     cv.width = w; cv.height = h; cv.style.width = (w * (w < 16 ? 10 : 6)) + 'px'; cv.style.maxWidth = '100%';
@@ -1612,9 +1764,8 @@ details.how ul, details.how ol { margin-top: 6px; }
       var tones = [hsl(250, 35, 22), hsl(220, 45, 38), hsl(200, 55, 55), hsl(185, 60, 72)];
       paint(cv, 24, 24, function (put) {
         for (var y = 0; y < 24; y++) for (var x = 0; x < 24; x++) {
-          var dx = (x - 11.5) / 10, dy = (y - 11.5) / 10, r = dx * dx + dy * dy;
+          var dx = (x - 11.5) / 10, dy = (y - 11.5) / 10, r = dx * dx + dy * dy, t;
           if (r > 1) continue;
-          var t;
           if (pillow) t = r > 0.75 ? 0 : r > 0.45 ? 1 : r > 0.15 ? 2 : 3;
           else { var z = Math.sqrt(1 - r), d = -0.55 * dx - 0.55 * dy + 0.63 * z; t = d > 0.8 ? 3 : d > 0.45 ? 2 : d > 0.1 ? 1 : 0; }
           put(x, y, tones[t]);
@@ -1626,7 +1777,8 @@ details.how ul, details.how ol { margin-top: 6px; }
     return function (cv) {
       paint(cv, 20, 6, function (put) {
         for (var i = 0; i < 5; i++) {
-          var col = shift ? hsl(250 - i * 55 < 0 ? 360 + 250 - i * 55 : 250 - i * 55, 45 + i * 6, 18 + i * 16) : hsl(5, 60, 18 + i * 16);
+          var h = 250 - i * 55; if (h < 0) h += 360;
+          var col = shift ? hsl(h, 45 + i * 6, 18 + i * 16) : hsl(5, 60, 18 + i * 16);
           for (var x = 0; x < 4; x++) for (var y = 0; y < 6; y++) put(i * 4 + x, y, col);
         }
       });
@@ -1640,31 +1792,26 @@ details.how ul, details.how ol { margin-top: 6px; }
       var a = hsl(250, 45, 22), b = hsl(320, 70, 60);
       paint(cv, 30, 8, function (put) {
         for (var x = 0; x < 30; x++) for (var y = 0; y < 8; y++) {
-          var band = Math.floor(x / 6), useB = band === 0 ? false : band === 1 ? (x % 2 === 0 && y % 2 === 0) : band === 2 ? ((x + y) % 2 === 0) : band === 3 ? !(x % 2 === 1 && y % 2 === 1) : true;
+          var band = Math.floor(x / 6);
+          var useB = band === 0 ? false : band === 1 ? (x % 2 === 0 && y % 2 === 0) : band === 2 ? ((x + y) % 2 === 0) : band === 3 ? !(x % 2 === 1 && y % 2 === 1) : true;
           put(x, y, useB ? b : a);
         }
       });
     }
   };
-  document.querySelectorAll('canvas[data-ex]').forEach(function (cv) { if (exs[cv.dataset.ex]) exs[cv.dataset.ex](cv); });
-  persist('#ladder input', 'plano-beu-escada');
-  persist('#readyAI input', 'plano-beu-ia');
-  var cronoBoxes = persist('#crono input', 'plano-beu-crono');
-  var monthsEls = Array.prototype.slice.call(document.querySelectorAll('#crono details.month'));
+  arr(document.querySelectorAll('canvas[data-ex]')).forEach(function (cv) { if (exs[cv.dataset.ex]) exs[cv.dataset.ex](cv); });
 
-  /* Datas */
+  /* ---------- Datas ---------- */
   function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
   var now = new Date(), todayKey = ymd(now);
   var start = store.get('plano-inicio', null);
   if (!start) { start = todayKey; store.set('plano-inicio', start); }
-  var startDate = new Date(start + 'T00:00:00');
-  var dayN = Math.max(1, Math.floor((new Date(todayKey + 'T00:00:00') - startDate) / 86400000) + 1);
-  /* Etapa pelo calendário (ano * 12 + mês, com janeiro = 0) */
-  var stages = [[2026 * 12 + 0, 'Fundamentos'], [2026 * 12 + 11, 'Protótipo'], [2027 * 12 + 0, 'Núcleo do jogo'], [2027 * 12 + 3, 'Fase 1 e página'], [2027 * 12 + 4, 'Fases 2–3 e demo'], [2027 * 12 + 8, 'Criadores'], [2027 * 12 + 9, 'Next Fest'], [2027 * 12 + 10, 'Lançamento'], [2027 * 12 + 11, 'Pós-lançamento']];
-  var mIdx = now.getFullYear() * 12 + now.getMonth();
-  var stageName = stages[0][1];
-  stages.forEach(function (s) { if (mIdx >= s[0]) stageName = s[1]; });
+  var dayN = Math.max(1, Math.floor((new Date(todayKey + 'T00:00:00') - new Date(start + 'T00:00:00')) / 86400000) + 1);
   function daysUntil(iso) { return Math.round((new Date(iso + 'T00:00:00') - new Date(todayKey + 'T00:00:00')) / 86400000); }
+  /* Fase do plano pelo calendário (ano * 12 + mês, janeiro = 0) */
+  var stages = [[2026 * 12 + 0, 'Fundamentos'], [2026 * 12 + 11, 'Protótipo'], [2027 * 12 + 0, 'Núcleo do jogo'], [2027 * 12 + 3, 'Fase 1 e página'], [2027 * 12 + 4, 'Fases 2–3 e demo'], [2027 * 12 + 8, 'Criadores'], [2027 * 12 + 9, 'Next Fest'], [2027 * 12 + 10, 'Lançamento'], [2027 * 12 + 11, 'Pós-lançamento']];
+  var mIdx = now.getFullYear() * 12 + now.getMonth(), stageName = stages[0][1];
+  stages.forEach(function (s) { if (mIdx >= s[0]) stageName = s[1]; });
 
   var weekdays = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
   var months = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
@@ -1681,8 +1828,7 @@ details.how ul, details.how ol { margin-top: 6px; }
     $('sCountS').textContent = toLaunch > 0 ? 'dias até nov/27' : 'lançou!';
   }
 
-  /* Sugestões do dia */
-  /* Jogo do dia e o que observar nele (da tabela de referências da aba Mercado) */
+  /* ---------- Referência do dia (da tabela da aba Jogo) ---------- */
   var refs = [
     ['Streets of Rage 2', 'como os inimigos cercam e se revezam para atacar'],
     ['Streets of Rage 4', 'a pausa no impacto e o inimigo quicando na parede'],
@@ -1692,20 +1838,17 @@ details.how ul, details.how ol { margin-top: 6px; }
     ['Double Dragon Gaiden', 'como cada personagem anda e bate diferente'],
     ['Final Fight', 'o tamanho dos personagens e o quadro de impacto']
   ];
-  var focos = ['luz e sombra', 'proporção', 'paleta com poucas cores', 'silhueta legível', 'contorno e anti-aliasing', 'pose de ação', 'animação (tempo dos quadros)'];
   var ref = refs[(dayN - 1) % refs.length];
   $('tdArte2').innerHTML = 'Jogo de hoje: <strong>' + ref[0] + '</strong>. Copie olhando, analise e desenhe de memória. No vídeo, repare em ' + ref[1] + '.';
-  $('tdArte3').innerHTML = 'Aplique a aula num desenho seu. Foco de hoje: <strong>' + focos[(dayN - 1) % focos.length] + '</strong>.';
 
-  /* Lembretes */
+  /* ---------- Lembretes ---------- */
   var note = $('todayNote');
-  var nextFirst = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-  var daysToFirst = Math.round((nextFirst - new Date(todayKey + 'T00:00:00')) / 86400000);
+  var daysToFirst = Math.round((new Date(now.getFullYear(), now.getMonth() + 1, 1) - new Date(todayKey + 'T00:00:00')) / 86400000);
   if (now.getDate() === 1) note.innerHTML = '<strong>Hoje é dia de medição.</strong> Pixel art: desenhe o mesmo personagem de sempre e compare com o mês passado. Godot: recrie do zero a mecânica principal do mês e cronometre.';
-  else if (now.getDay() === 0) note.innerHTML = '<strong>Domingo.</strong> Pixel art: poste um desenho no r/PixelArt e peça uma crítica específica. Godot: refaça de memória, numa cena nova, a mecânica principal da semana.';
+  else if (now.getDay() === 0) note.innerHTML = '<strong>Domingo.</strong> Pixel art: passe a checklist de erros e poste um desenho no r/PixelArt pedindo uma crítica específica. Godot: refaça de memória, numa cena nova, a mecânica principal da semana.';
   else note.innerHTML = 'Próxima medição mensal em <strong>' + daysToFirst + (daysToFirst === 1 ? ' dia' : ' dias') + '</strong>, no dia 1. Domingo é dia de crítica no r/PixelArt e de revisão de memória na Godot.';
 
-  /* Tarefas de hoje (6: 3 de Godot e 3 de pixel art) */
+  /* ---------- Tarefas de hoje (3 de Godot e 3 de pixel art) ---------- */
   var taskIds = ['h-g1', 'h-g2', 'h-g3', 'h-a1', 'h-a2', 'h-a3'];
   var log = store.get('plano-dias2', {});
   var today = log[todayKey] || {};
@@ -1721,27 +1864,39 @@ details.how ul, details.how ol { margin-top: 6px; }
     while (complete(log[ymd(d)])) { n++; d.setDate(d.getDate() - 1); }
     return n;
   }
-  function titleOf(input) { var l = input.closest('label'); return l.querySelector('.t').firstChild.textContent.trim(); }
+  function titleOf(input) { return input.closest('label').querySelector('.t').firstChild.textContent.trim(); }
   function descOf(input) { return input.closest('label').querySelector('.d').textContent; }
 
+  var curEtapa = null;
   function refresh() {
-    /* Pixel art */
-    var ess = mods.filter(function (b) { return b.hasAttribute('data-ess'); });
-    var done = ess.filter(function (b) { return b.checked; }).length;
-    $('prog').textContent = done + ' de ' + ess.length + ' módulos essenciais concluídos';
-    $('meterFill').style.width = (100 * done / ess.length) + '%';
-    var next = ess.filter(function (b) { return !b.checked; })[0];
-    $('nextMod').textContent = next ? titleOf(next) : 'Módulos essenciais concluídos';
-    $('nextModD').textContent = next ? descOf(next) : 'Hora do curso "Pixel Art e Animação 2D com Aseprite".';
-    $('tdArte1').innerHTML = next ? 'Uma aula de <strong>' + titleOf(next) + '</strong>, em 1,5×.' : 'Uma aula do próximo curso, em 1,5×.';
+    /* Arte: etapa atual = a primeira não concluída */
+    var done = etapas.filter(function (b) { return b.checked; }).length;
+    $('prog').textContent = done + ' de ' + etapas.length + ' etapas concluídas';
+    $('meterFill').style.width = (100 * done / etapas.length) + '%';
+    var next = etapas.filter(function (b) { return !b.checked; })[0];
+    etapaEls.forEach(function (el) { var box = el.querySelector('input'); el.classList.toggle('done', box.checked); el.classList.toggle('now', !!next && box === next); });
+    curEtapa = next ? next.closest('details') : null;
+    if (curEtapa) {
+      var name = curEtapa.querySelector('summary').firstChild.textContent.trim();
+      var curso = curEtapa.querySelector('h4 + p').innerHTML;
+      var star = curEtapa.querySelector('.vids a');
+      $('nextMod').textContent = name;
+      $('nextModD').innerHTML = 'No curso: ' + curso;
+      $('tdArte1').innerHTML = curso + (star ? ' Se não entender, veja <a href="' + star.href + '">' + star.textContent + '</a>.' : '');
+      $('tdArte3').innerHTML = 'Exercício da etapa: <strong>' + titleOf(next) + '</strong>. ' + descOf(next);
+    } else {
+      $('nextMod').textContent = 'Trilha de arte completa';
+      $('nextModD').textContent = 'Agora é arte do jogo: siga o cronograma da aba Plano.';
+      $('tdArte1').innerHTML = 'Estude o que o jogo pedir agora (cronograma da aba Plano), com o curso ou um vídeo da trilha.';
+      $('tdArte3').innerHTML = 'Avance a arte do jogo: personagens, inimigos, efeitos ou cenário.';
+    }
 
-    /* Godot */
+    /* Godot: fundamentos → GDScript → protótipo */
     var path = godotSteps.filter(function (b) { return b.hasAttribute('data-ess'); }).concat(gds, proto);
     var g = path.filter(function (b) { return !b.checked; })[0];
-    var inProto = g && proto.indexOf(g) >= 0;
-    var inGds = g && gds.indexOf(g) >= 0;
+    var inProto = g && proto.indexOf(g) >= 0, inGds = g && gds.indexOf(g) >= 0;
     $('nextGodot').textContent = g ? titleOf(g) : 'Fase 1 pronta: rumo às fases 2–4';
-    $('nextGodotD').textContent = g ? descOf(g) : 'Siga a programação da aba Jogo e o checklist "Pronto para usar IA".';
+    $('nextGodotD').textContent = g ? descOf(g) : 'Siga o cronograma da aba Plano e o checklist "Pronto para usar IA".';
     if (!g) {
       $('tdGodot1').innerHTML = 'Estude o problema da vez no seu jogo (documentação ou um vídeo curto), com PRIMM.';
       $('tdGodot2').innerHTML = 'Avance uma parte do seu beat \'em up.';
@@ -1760,12 +1915,11 @@ details.how ul, details.how ol { margin-top: 6px; }
     /* Cronograma: contagem por mês, item do mês atual e atrasados */
     var curKey = todayKey.slice(0, 7), late = 0, cur = null, curLeft = 0;
     monthsEls.forEach(function (m) {
-      var boxes = Array.prototype.slice.call(m.querySelectorAll('input'));
+      var boxes = arr(m.querySelectorAll('input'));
       var left = boxes.filter(function (b) { return !b.checked; });
       m.querySelector('.mcount').textContent = (boxes.length - left.length) + '/' + boxes.length;
-      var key = m.dataset.month;
-      if (key < curKey) late += left.length;
-      if (key === curKey) { cur = left[0] || null; curLeft = left.length; }
+      if (m.dataset.month < curKey) late += left.length;
+      if (m.dataset.month === curKey) { cur = left[0] || null; curLeft = left.length; }
     });
     if (cur) {
       $('cronoV').textContent = titleOf(cur);
@@ -1782,14 +1936,12 @@ details.how ul, details.how ol { margin-top: 6px; }
   }
   refresh();
 
-  /* Abre o mês atual do cronograma; o botão da aba Hoje leva até ele */
+  /* Abre o mês atual do cronograma e a etapa atual da arte; os botões da aba Hoje levam até eles */
   var curMonth = monthsEls.filter(function (m) { return m.dataset.month === todayKey.slice(0, 7); })[0];
   if (curMonth) { curMonth.open = true; curMonth.classList.add('now'); }
-  $('cronoBtn').addEventListener('click', function () {
-    show('jogo');
-    var target = curMonth || $('crono');
-    setTimeout(function () { target.scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }, 0);
-  });
+  if (curEtapa) curEtapa.open = true;
+  $('cronoBtn').addEventListener('click', function () { goTo('plano', curMonth || $('crono')); });
+  $('arteBtn').addEventListener('click', function () { if (curEtapa) curEtapa.open = true; goTo('arte', curEtapa || $('trilha')); });
 })();
 </script>
 <script>
