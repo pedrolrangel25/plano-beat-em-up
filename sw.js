@@ -1,5 +1,5 @@
 // Guarda o app no aparelho para abrir sem internet. Mude VERSAO a cada atualização.
-const VERSAO = 'plano-v14';
+const VERSAO = 'plano-v15';
 const ARQUIVOS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
