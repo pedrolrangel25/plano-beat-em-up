@@ -331,7 +331,7 @@ details.how ul, details.how ol { margin-top: 6px; }
 
 <!-- ARTE -->
 <section class="panel" id="arte" role="tabpanel" aria-labelledby="tab-arte" hidden>
-  <h2><small>Pixel art</small>Trilha de arte</h2>
+  <h2><small>Pixel art</small>Do zero ao profissional</h2>
 <style>
 #trilha .lvl > summary { font-weight: 700; }
 #trilha .lvl .meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
@@ -345,27 +345,55 @@ details.how ul, details.how ol { margin-top: 6px; }
 #trilha .vids { padding-left: 18px; } #trilha .vids li { margin: 4px 0; }
 #trilha details.etapa.now > summary { color: var(--accent); }
 #trilha details.etapa.done > summary { opacity: .65; }
+#trilha h3.fase { margin: 22px 0 8px; font-size: 16px; }
+#trilha .pronto { margin-top: 8px; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--card, transparent); }
+#trilha details.mais { margin: 4px 0 0 4px; } #trilha details.mais > summary { font-size: 14px; color: var(--muted); }
 </style>
   <div class="group">
-    <p>Uma trilha só, em <strong>14 etapas</strong>, do mais simples ao personagem animado no jogo. Cada etapa junta quatro coisas:</p>
+    <p>Um guia só, do zero ao profissional, em <strong>17 etapas</strong> e 5 fases. Ele junta tudo o que você tem: o seu curso, o livro <em>Pixel Logic</em>, os GIFs do Pedro Medeiros (o artista do Celeste), os vídeos em português e a paleta do VILA 2034.</p>
+    <div class="callout"><strong>Perdido? Olhe só a etapa destacada.</strong> Ignore todo o resto. Faça as 4 partes dela, marque, e a próxima abre sozinha.</div>
     <ol>
-      <li><strong>No seu curso:</strong> a aula do "Pixel Art do zero ao avançado" para assistir (a base de tudo).</li>
-      <li><strong>Entenda:</strong> a explicação em português, com exemplos e os erros comuns.</li>
-      <li><strong>Vídeos em português:</strong> se não entendeu no curso, o vídeo ⭐ explica de outro jeito.</li>
-      <li><strong>Exercício:</strong> o que fazer na tarefa "Prática". Marque para concluir a etapa.</li>
+      <li><strong>Assista:</strong> a aula do seu curso e o vídeo ⭐. Os outros vídeos ficam escondidos, só para quando travar.</li>
+      <li><strong>Leia:</strong> as páginas do Pixel Logic (já separadas por capítulo, para arrastar no Google Tradutor, aba Imagens) e os GIFs do Pedro.</li>
+      <li><strong>Entenda:</strong> a explicação em português, com os erros comuns.</li>
+      <li><strong>Faça:</strong> o exercício. A etapa acaba quando bater o <strong>"Pronto quando"</strong>, não quando o tempo passar.</li>
     </ol>
     <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
-    <p class="progress" id="prog">0 de 14 etapas concluídas</p>
+    <p class="progress" id="prog">0 de 17 etapas concluídas</p>
   </div>
 
   <div class="group" id="trilha">
-    <h3>Trilha de pixel art</h3>
+    <h3>Guia de pixel art, do zero ao profissional</h3>
     <div id="arteList">
+    <h3 class="fase">Fase 1 · Fundamentos <span class="muted">· outubro a novembro de 2026</span></h3>
+    <details class="lvl etapa" data-n="0">
+      <summary>Etapa 0 · Marco zero <span class="pill">hoje</span></summary>
+      <h4>1 · Assista</h4>
+      <p>Nenhuma aula. Hoje é só desenhar, do jeito que sair.</p>
+      <p class="muted">Sem vídeo nesta etapa.</p>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 101–103: proporção e silhueta <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li></ul>
+      <h4>3 · Entenda</h4>
+<p>Antes de estudar, registre <strong>onde você está agora</strong>. Esse desenho não precisa ficar bom: ele serve para comparar daqui a dois meses e ver quanto você evoluiu.</p>
+      <ol>
+        <li>Aseprite, arquivo novo de <strong>96×80</strong>, com a paleta <code>vila2034_paleta.gpl</code> carregada.</li>
+        <li>Uma foto de "armada capoeira" aberta do lado.</li>
+        <li>Boneco de palito com ~56 px de altura, depois formas de cor, depois contorno com o roxo mais escuro da paleta.</li>
+      </ol>
+      <p>Você vai refazer esse mesmo desenho na <strong>etapa 10</strong> e na <strong>etapa 16</strong>, para ver a diferença.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g0"><span><span class="t">Luana na armada, versão 1</span><span class="d">Salve como luana_armada_v1.aseprite e exporte um PNG. Feio vale.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> o arquivo está salvo. Qualidade não conta nesta etapa.</p>
+    </details>
     <details class="lvl etapa" data-n="1">
       <summary>Etapa 1 · A ferramenta <span class="pill">outubro</span></summary>
-      <h4>1 · No seu curso</h4>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 1, Introdução ao Aseprite</strong> (2h21). Veja tudo, com atenção a Camadas, Frames, Tags e Exportar frames.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/WxPhLQAPy6w">Tutorial de Aseprite: como utilizar</a> · Dininho · 28 min</li></ul>
+      <details class="mais"><summary>Se travar: mais 4 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/Kwsr2nAo-iU">Conhecendo o Aseprite (aula 1)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/dblTP0RSDes">Fundamentos da pixel art (aula 2)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/fkqUErsXRpg">Guia Completo #01: Aseprite</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/CX-6OOLlxTQ">Guia Completo #03: Lápis e conta-gotas</a> · Capitão Dinossauro</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 6–21: introdução: como começar e que programa usar <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\0_introducao</code>)</span></li></ul>
+      <h4>3 · Entenda</h4>
       <p>Antes de desenhar, deixe o Aseprite pronto para pixel art:</p>
       <ul>
         <li><strong>Lápis (B)</strong> com a opção <strong>Pixel-perfect</strong> ligada na barra de cima: ao desenhar à mão, ela tira os "cantinhos" em L das linhas.</li>
@@ -375,41 +403,43 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Quadros (frames)</strong> e <strong>tags</strong> para animação; <strong>Enter</strong> toca a animação; <strong>F3</strong> liga a "casca de cebola", que mostra o quadro anterior por baixo.</li>
         <li>Desenhe com zoom alto, mas <strong>deixe a pré-visualização aberta em 100% ou 200%</strong> (menu View → Preview): é no tamanho real que o desenho tem de funcionar.</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/WxPhLQAPy6w">Tutorial de Aseprite: como utilizar</a> · Dininho · 28 min</li><li><a href="https://youtu.be/Kwsr2nAo-iU">Conhecendo o Aseprite (aula 1)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/dblTP0RSDes">Fundamentos da pixel art (aula 2)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/fkqUErsXRpg">Guia Completo #01: Aseprite</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/CX-6OOLlxTQ">Guia Completo #03: Lápis e conta-gotas</a> · Capitão Dinossauro</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e1"><span><span class="t">Um quadrado 16×16 com uma letra sua</span><span class="d">Use lápis, borracha, balde e conta-gotas, e salve como .aseprite com a data no nome.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g1"><span><span class="t">Um quadrado 16×16 com uma letra sua</span><span class="d">Use lápis, borracha, balde e conta-gotas, e salve como .aseprite com a data no nome.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> você desenha sem procurar onde fica cada ferramenta.</p>
     </details>
     <details class="lvl etapa" data-n="2">
       <summary>Etapa 2 · O que é pixel art e os erros de iniciante <span class="pill">outubro</span></summary>
-      <h4>1 · No seu curso</h4>
+      <h4>1 · Assista</h4>
       <p>Começo do <strong>módulo 2, Técnicas básicas</strong>.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/BT-PadfxAZU">Aprenda pixel art do zero #01: Introdução</a> · NextIndie</li></ul>
+      <details class="mais"><summary>Se travar: mais 4 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/vT_yg0Z7_mE">Aprenda pixel art do zero #02: Cores e software</a> · NextIndie</li><li><a href="https://youtu.be/3G8jpTduUlU">8 dicas de pixel art para iniciantes</a> · Crie Seus Jogos</li><li><a href="https://youtu.be/69HvD0Ue-Rs">6 erros de iniciantes em pixel art</a> · Crie Seus Jogos</li><li><a href="https://youtu.be/OSYiLKAESHs">Guia Completo #04: O que é pixel art?</a> · Capitão Dinossauro</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 7–8: pixel art e os caminhos para começar <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\0_introducao</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Fundamentals</a></li></ul>
+      <h4>3 · Entenda</h4>
 <p><strong>Pixel art</strong> é desenhar colocando cada pixel de propósito, numa resolução pequena e com poucas cores. Não é um desenho comum reduzido: em ~56 px, cada pixel é uma decisão.</p>
       <p>Os erros que todo iniciante comete, e que as próximas etapas ensinam a evitar:</p>
       <ul>
         <li><strong>Jaggies:</strong> linhas tortas, sem ritmo (etapa 3).</li>
         <li><strong>Pixels órfãos:</strong> pixels soltos que viram sujeira (etapa 3).</li>
-        <li><strong>Cores demais e sem variação de matiz</strong> (etapa 4).</li>
-        <li><strong>Pillow shading e banding:</strong> sombra sem direção, faixas de cor (etapa 5).</li>
-        <li><strong>Contorno pesado e dithering como ruído</strong> (etapa 6).</li>
-        <li><strong>Pouco contraste:</strong> o desenho se perde no fundo (etapas 4 e 14).</li>
+        <li><strong>Cores demais e sem variação de matiz</strong> (etapa 5).</li>
+        <li><strong>Pillow shading e banding:</strong> sombra sem direção, faixas de cor (etapa 6).</li>
+        <li><strong>Contorno pesado e dithering como ruído</strong> (etapa 7).</li>
+        <li><strong>Pouco contraste:</strong> o desenho se perde no fundo (etapas 5 e 9).</li>
       </ul>
       <p>A <strong>checklist de erros</strong>, no fim desta aba, junta tudo para você conferir cada desenho.</p>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/BT-PadfxAZU">Aprenda pixel art do zero #01: Introdução</a> · NextIndie</li><li><a href="https://youtu.be/vT_yg0Z7_mE">Aprenda pixel art do zero #02: Cores e software</a> · NextIndie</li><li><a href="https://youtu.be/3G8jpTduUlU">8 dicas de pixel art para iniciantes</a> · Crie Seus Jogos</li><li><a href="https://youtu.be/69HvD0Ue-Rs">6 erros de iniciantes em pixel art</a> · Crie Seus Jogos</li><li><a href="https://youtu.be/OSYiLKAESHs">Guia Completo #04: O que é pixel art?</a> · Capitão Dinossauro</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e2"><span><span class="t">Analisar 3 sprites do SoR2</span><span class="d">No The Spriters Resource: conte as cores de um personagem, veja de onde vem a luz e procure um exemplo de anti-aliasing. Anote o que achou.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g2"><span><span class="t">Analisar 3 sprites do SoR2</span><span class="d">No The Spriters Resource: conte as cores de um personagem, veja de onde vem a luz e procure um exemplo de anti-aliasing. Anote o que achou.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> você consegue apontar 3 desses erros no seu marco zero.</p>
     </details>
     <details class="lvl etapa" data-n="3">
       <summary>Etapa 3 · Linhas e curvas <span class="pill">outubro–novembro</span></summary>
-      <h4>1 · No seu curso</h4>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 2</strong>, as aulas de linhas.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/xlXDGwSHT8U">Aprenda pixel art do zero #04: Linhas e curvas</a> · NextIndie</li></ul>
+      <details class="mais"><summary>Se travar: mais 4 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/JMWcyEDb0cg">Guia Completo #06: Como fazer linhas retas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/rbE8n62MqLA">Guia Completo #07: Treinando linhas retas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/BFEPCGRZR6I">Guia Completo #08: Como fazer curvas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/SEGeGQlawJU">Guia Completo #09: Jaggies e doubles</a> · Capitão Dinossauro</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 22–37: capítulo 1 inteiro: linhas, curvas e formas <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\1_linhas</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Fundamentals, Outlines</a></li></ul>
+      <h4>3 · Entenda</h4>
       <p>Em pixel art, a linha é feita de <strong>segmentos</strong> (trechos retos de pixels). O segredo é o <strong>ritmo</strong>:</p>
       <ul>
         <li><strong>Linha reta inclinada:</strong> todos os segmentos com o mesmo tamanho (2-2-2-2), ou um padrão que se repete (2-1-2-1).</li>
@@ -423,18 +453,38 @@ details.how ul, details.how ol { margin-top: 6px; }
         <figure><canvas data-ex="curve-bad"></canvas><figcaption class="bad">Curva ruim: 4-1-3-1-2</figcaption></figure>
         <figure><canvas data-ex="curve-good"></canvas><figcaption class="good">Curva boa: 4-3-2-1-1</figcaption></figure>
       </div>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/xlXDGwSHT8U">Aprenda pixel art do zero #04: Linhas e curvas</a> · NextIndie</li><li><a href="https://youtu.be/JMWcyEDb0cg">Guia Completo #06: Como fazer linhas retas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/rbE8n62MqLA">Guia Completo #07: Treinando linhas retas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/BFEPCGRZR6I">Guia Completo #08: Como fazer curvas</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/SEGeGQlawJU">Guia Completo #09: Jaggies e doubles</a> · Capitão Dinossauro</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e3"><span><span class="t">Linhas, círculo e 3 frutas 16×16</span><span class="d">Linhas em 5 inclinações, um círculo de 16 px e maçã, pera e banana só com contorno. Conte os segmentos de cada curva.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g3"><span><span class="t">Linhas, círculo e 3 frutas 16×16</span><span class="d">Linhas em 5 inclinações, um círculo de 16 px e maçã, pera e banana só com contorno. Conte os segmentos de cada curva.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> suas curvas seguem um ritmo (4-3-2-1) sem você precisar contar.</p>
     </details>
     <details class="lvl etapa" data-n="4">
-      <summary>Etapa 4 · Cor e paleta <span class="pill">novembro</span></summary>
-      <h4>1 · No seu curso</h4>
+      <summary>Etapa 4 · Forma e silhueta <span class="pill">novembro</span></summary>
+      <h4>1 · Assista</h4>
+      <p>Os exercícios do <strong>módulo 2</strong> e a aula de silhueta do <strong>módulo 3</strong>.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/2mkxInXt5Rk">Pixel art para iniciantes #03: Silhuetas</a> · Canal do Gus</li></ul>
+      <details class="mais"><summary>Se travar: mais 4 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/tt_slswqx8E">Aprenda pixel art do zero #07: Cereja</a> · NextIndie</li><li><a href="https://youtu.be/AcQJL6q9UXY">Aprenda pixel art do zero #08: Moedas</a> · NextIndie</li><li><a href="https://youtu.be/JsaH-htYPG4">Aprenda pixel art do zero #10: Espada e escudo</a> · NextIndie</li><li><a href="https://youtu.be/v7Hbz1zvX_Y">Dicas para criar objetos</a> · Sharpax</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 103: silhuetas <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 95–96: traços reconhecíveis <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Silhouette</a></li></ul>
+      <h4>3 · Entenda</h4>
+      <ul>
+        <li>Comece sempre pela <strong>forma grande</strong>, pintada de uma cor só. Detalhe vem por último.</li>
+        <li><strong>Teste da silhueta:</strong> pinte tudo de preto. Se ainda der para saber o que é (e para onde está virado), a forma está boa.</li>
+        <li>Em jogo, a silhueta é o que o jogador lê no meio da briga. A Luana e o Tonho precisam ser reconhecíveis <strong>só pela sombra preta</strong>: ela fina e ágil, ele largo e pesado.</li>
+        <li>Exagere: ombros maiores, cabeça um pouco maior, pose mais aberta. Em ~56 px, o realismo some; o exagero fica.</li>
+      </ul>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g4"><span><span class="t">10 silhuetas 32×32</span><span class="d">Espada, poção, cadeira, Kombi, orelhão, robô, chapéu, coxinha, guitarra e um personagem. Mostre a alguém e veja se adivinha cada uma.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> alguém adivinha pelo menos 8 das suas 10 silhuetas.</p>
+    </details>
+    <details class="lvl etapa" data-n="5">
+      <summary>Etapa 5 · Cor, valor e a paleta do VILA <span class="pill">novembro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 2</strong> (cores) e, no <strong>módulo 4</strong>, as aulas de paleta limitada.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/dwfqbVVXizU">Como criar sua paleta de cores</a> · Como fazer pixel art · 23 min</li></ul>
+      <details class="mais"><summary>Se travar: mais 2 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/0h6uFXKkAN4">Aprenda a escolher cores melhores (H, S, L)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/hlhKzxMdZ_0">Como criar sua primeira paleta de cores</a> · Capitão Dinossauro</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 60–85: capítulo 3 inteiro: cor e paleta <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\3_cor</code>)</span></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Poucas cores.</strong> Uma paleta limitada deixa o visual coeso. O Mega Drive usa 15 cores (mais a transparência) por personagem: é a sua regra.</li>
         <li><strong>Rampa de cor:</strong> 3 a 5 tons de cada material (pele, roupa, metal), do mais escuro ao mais claro.</li>
@@ -445,19 +495,27 @@ details.how ul, details.how ol { margin-top: 6px; }
       <div class="ex">
         <figure><canvas data-ex="ramp-flat"></canvas><figcaption class="bad">Só escurecer</figcaption></figure>
         <figure><canvas data-ex="ramp-hue"></canvas><figcaption class="good">Com mudança de matiz</figcaption></figure>
-      </div>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/dwfqbVVXizU">Como criar sua paleta de cores</a> · Como fazer pixel art · 23 min</li><li><a href="https://youtu.be/0h6uFXKkAN4">Aprenda a escolher cores melhores (H, S, L)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/hlhKzxMdZ_0">Como criar sua primeira paleta de cores</a> · Capitão Dinossauro</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e4"><span><span class="t">4 rampas de cor</span><span class="d">Pele, tecido vermelho, metal azulado e neon, com 4–5 tons cada e mudança de matiz. Teste no cinza.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      </div><h4>A paleta do VILA 2034</h4>
+      <ul>
+        <li>Arquivo: <code>Documentos\jogo\arte\paleta\vila2034_paleta.gpl</code>, com 33 cores, montada a partir das suas referências de neon.</li>
+        <li><strong>~40% da tela nos tons de Fundo</strong> (roxos quase pretos, nunca preto puro).</li>
+        <li><strong>Ciano e magenta são os neons principais</strong>; amarelo, laranja e vermelho só para destaque (vida, faísca, item).</li>
+        <li>Luz de borda <strong>ciano nos heróis</strong> e <strong>magenta nos inimigos</strong>: o jogador acha o próprio boneco num relance.</li>
+        <li>Referências: <code>Documentos\jogo\referencias\neon\</code> (as favoritas: Tales of the Neon Sea e Kung Fury: Street Rage).</li>
+      </ul>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g5"><span><span class="t">4 rampas de cor</span><span class="d">Pele, tecido vermelho, metal azulado e neon, com 4–5 tons cada e mudança de matiz. Teste no cinza.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> suas rampas funcionam no cinza e você usa a paleta do VILA sem pensar.</p>
     </details>
-    <details class="lvl etapa" data-n="5">
-      <summary>Etapa 5 · Luz e volume <span class="pill">novembro</span></summary>
-      <h4>1 · No seu curso</h4>
+    <details class="lvl etapa" data-n="6">
+      <summary>Etapa 6 · Luz e volume <span class="pill">novembro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 2</strong>, as aulas de Luz e sombra e de Materiais.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/lg-YiFzrlNE">Aprenda pixel art do zero #05: Luz e sombra</a> · NextIndie</li></ul>
+      <details class="mais"><summary>Se travar: mais 3 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/G90PWq87ysQ">Luz e sombra de forma correta</a> · Como fazer pixel art · 19 min</li><li><a href="https://youtu.be/ZoEhS54jIRQ">Luz e sombra</a> · Dininho</li><li><a href="https://youtu.be/g5WJ6O3_3O0">Técnicas de sombras e iluminação #04</a> · Sharpax</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 105: luz e sombra <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Shading, Metal, Fabric</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Uma fonte de luz só</strong>, sempre do mesmo lado (em beat 'em up, de cima e um pouco da frente).</li>
         <li><strong>Sombra própria</strong> (o lado do objeto longe da luz) e <strong>sombra projetada</strong> (a que cai no chão). No beat 'em up, a sombra no chão é uma elipse nos pés.</li>
@@ -469,18 +527,19 @@ details.how ul, details.how ol { margin-top: 6px; }
         <figure><canvas data-ex="pillow"></canvas><figcaption class="bad">Pillow shading</figcaption></figure>
         <figure><canvas data-ex="light"></canvas><figcaption class="good">Luz de um lado</figcaption></figure>
       </div>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/lg-YiFzrlNE">Aprenda pixel art do zero #05: Luz e sombra</a> · NextIndie</li><li><a href="https://youtu.be/G90PWq87ysQ">Luz e sombra de forma correta</a> · Como fazer pixel art · 19 min</li><li><a href="https://youtu.be/ZoEhS54jIRQ">Luz e sombra</a> · Dininho</li><li><a href="https://youtu.be/g5WJ6O3_3O0">Técnicas de sombras e iluminação #04</a> · Sharpax</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e5"><span><span class="t">Esfera, cubo e cilindro 32×32; depois uma poção e uma lata</span><span class="d">Luz do mesmo lado em todos, com sombra no chão. Faça a lata em metal.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g6"><span><span class="t">Esfera, cubo e cilindro 32×32; depois uma poção e uma lata</span><span class="d">Luz do mesmo lado em todos, com sombra no chão. Faça a lata em metal.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> a luz vem do mesmo lado em tudo e não tem pillow shading.</p>
     </details>
-    <details class="lvl etapa" data-n="6">
-      <summary>Etapa 6 · Acabamento: contorno, anti-aliasing e dithering <span class="pill">novembro–dezembro</span></summary>
-      <h4>1 · No seu curso</h4>
+    <details class="lvl etapa" data-n="7">
+      <summary>Etapa 7 · Acabamento: contorno, anti-aliasing e dithering <span class="pill">novembro–dezembro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 2</strong>, as aulas de Dithering e Anti-aliasing, e os <strong>4 exercícios do pirata</strong>: é ali que a evolução aparece.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/vshqajHhFVw">Aprenda pixel art do zero #06: Resoluções e dithering</a> · NextIndie</li></ul>
+      <details class="mais"><summary>Se travar: mais 3 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/5xGucaFO7Co">Como fazer anti-aliasing</a> · Como fazer pixel art</li><li><a href="https://youtu.be/GGDcS-XEFC8">Anti-aliasing e dithering com Lucas Melo</a> · Adobe Brasil · 6 min</li><li><a href="https://youtu.be/sJFus6QGcQg">Os segredos dos contornos (aula 38)</a> · Dominando Pixel Art</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 38–59: capítulo 2 inteiro: anti-aliasing <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\2_anti_aliasing</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 115–120: quando usar dithering <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\5_dithering</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Outlines</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Contorno:</strong> preto em tudo pesa. O <strong>contorno seletivo</strong> (<em>selout</em>) usa uma cor mais escura do próprio material, e fica mais claro do lado da luz. Para personagem de jogo, mantenha o contorno de fora escuro (legibilidade) e suavize os de dentro.</li>
         <li><strong>Anti-aliasing (AA):</strong> pixels de tom intermediário nos "degraus" das curvas, para suavizar. Use pouco e só por dentro: AA na borda de fora do sprite fica sujo sobre o fundo do jogo.</li>
@@ -490,36 +549,20 @@ details.how ul, details.how ol { margin-top: 6px; }
       <div class="ex">
         <figure><canvas data-ex="dither"></canvas><figcaption>Transição com dithering</figcaption></figure>
       </div>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/vshqajHhFVw">Aprenda pixel art do zero #06: Resoluções e dithering</a> · NextIndie</li><li><a href="https://youtu.be/5xGucaFO7Co">Como fazer anti-aliasing</a> · Como fazer pixel art</li><li><a href="https://youtu.be/GGDcS-XEFC8">Anti-aliasing e dithering com Lucas Melo</a> · Adobe Brasil · 6 min</li><li><a href="https://youtu.be/sJFus6QGcQg">Os segredos dos contornos (aula 38)</a> · Dominando Pixel Art</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e6"><span><span class="t">Refazer a poção e a lata da etapa 5</span><span class="d">Com contorno seletivo e um pouco de AA nas curvas. Compare as duas versões lado a lado.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g7"><span><span class="t">Refazer a poção e a lata da etapa 5</span><span class="d">Com contorno seletivo e um pouco de AA nas curvas. Compare as duas versões lado a lado.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> a versão nova da poção e da lata está visivelmente melhor que a da etapa 6.</p>
     </details>
-    <details class="lvl etapa" data-n="7">
-      <summary>Etapa 7 · Objetos e silhueta <span class="pill">dezembro</span></summary>
-      <h4>1 · No seu curso</h4>
-      <p>Os exercícios do <strong>módulo 2</strong>.</p>
-      <h4>2 · Entenda</h4>
-      <ul>
-        <li>Comece sempre pela <strong>forma grande</strong>, pintada de uma cor só. Detalhe vem por último.</li>
-        <li><strong>Teste da silhueta:</strong> pinte tudo de preto. Se ainda der para saber o que é (e para onde está virado), a forma está boa.</li>
-        <li>Em jogo, a silhueta é o que o jogador lê no meio da briga. A Luana e o Tonho precisam ser reconhecíveis <strong>só pela sombra preta</strong>: ela fina e ágil, ele largo e pesado.</li>
-        <li>Exagere: ombros maiores, cabeça um pouco maior, pose mais aberta. Em ~56 px, o realismo some; o exagero fica.</li>
-      </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/tt_slswqx8E">Aprenda pixel art do zero #07: Cereja</a> · NextIndie</li><li><a href="https://youtu.be/AcQJL6q9UXY">Aprenda pixel art do zero #08: Moedas</a> · NextIndie</li><li><a href="https://youtu.be/JsaH-htYPG4">Aprenda pixel art do zero #10: Espada e escudo</a> · NextIndie</li><li><a href="https://youtu.be/v7Hbz1zvX_Y">Dicas para criar objetos</a> · Sharpax</li><li><a href="https://youtu.be/2mkxInXt5Rk">Pixel art para iniciantes #03: Silhuetas</a> · Canal do Gus</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e7"><span><span class="t">10 silhuetas 32×32</span><span class="d">Espada, poção, cadeira, Kombi, orelhão, robô, chapéu, coxinha, guitarra e um personagem. Mostre a alguém e veja se adivinha cada uma.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
-    </details>
+    <h3 class="fase">Fase 2 · Personagem <span class="muted">· dezembro de 2026</span></h3>
     <details class="lvl etapa" data-n="8">
-      <summary>Etapa 8 · Personagem: proporção e pose <span class="pill">dezembro</span></summary>
-      <h4>1 · No seu curso</h4>
+      <summary>Etapa 8 · Proporção e pose <span class="pill">dezembro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 3, Desenho em pixel art</strong> (4h17): proporção, volume, silhueta, ação, boneco de palito e Perspectiva em jogos 2D (a pose 3/4 do beat 'em up).</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/gOPnvgFLFzU">Aprenda pixel art do zero #12: Personagens</a> · NextIndie</li></ul>
+      <details class="mais"><summary>Se travar: mais 5 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/dJUb3R36_Lo">Personagens em 3 passos</a> · Sharpax</li><li><a href="https://youtu.be/Pvx7pojwNkY">Como criar personagens para jogos: método completo</a> · NextIndie</li><li><a href="https://youtu.be/1gf7bmHHJhs">Como criar personagens em 16, 32 e 64 pixels</a> · Sharpax</li><li><a href="https://youtu.be/MmWJDisIChI">EP1: Proporção do personagem</a> · Welsiton Ferreira</li><li><a href="https://youtu.be/s7oPWmQFFWg">Como fazer anatomia em personagem pixel art</a> · Como fazer pixel art · 31 min</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 88–90: tamanho do sprite e o caso Cryamore <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 101–102: design de personagem e proporções <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">characterIdle, Cuteness</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Tamanho:</strong> Luana ~56 px e Tonho ~62 px de altura, num quadro de 96×80 com espaço para os chutes da capoeira. Proporção de ~6 cabeças (cabeça com ~9–10 px).</li>
         <li><strong>A pose 3/4:</strong> corpo meio de lado e meio para a câmera, pés desencontrados, braço e perna de trás mais escuros. É a pose de todo beat 'em up.</li>
@@ -528,43 +571,69 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Leitura:</strong> o rosto é quase nada (2–3 pixels de olho e boca). Quem conta quem é o personagem é a silhueta, o cabelo e as cores da roupa.</li>
         <li><strong>Paleta do personagem:</strong> até 15 cores. Guarde-a no Aseprite: as versões de inimigo com outra cor saem trocando a paleta.</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/gOPnvgFLFzU">Aprenda pixel art do zero #12: Personagens</a> · NextIndie</li><li>⭐ <a href="https://youtu.be/dJUb3R36_Lo">Personagens em 3 passos</a> · Sharpax</li><li><a href="https://youtu.be/Pvx7pojwNkY">Como criar personagens para jogos: método completo</a> · NextIndie</li><li><a href="https://youtu.be/1gf7bmHHJhs">Como criar personagens em 16, 32 e 64 pixels</a> · Sharpax</li><li><a href="https://youtu.be/MmWJDisIChI">EP1: Proporção do personagem</a> · Welsiton Ferreira</li><li><a href="https://youtu.be/s7oPWmQFFWg">Como fazer anatomia em personagem pixel art</a> · Como fazer pixel art · 31 min</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e8"><span><span class="t">Boneco de palito e silhuetas</span><span class="d">5 poses de boneco de palito em ~56 px (parado, andando, soco, chute, caindo) e as silhuetas pretas da Luana e do Tonho lado a lado.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g8"><span><span class="t">Boneco de palito e silhuetas</span><span class="d">5 poses de boneco de palito em ~56 px (parado, andando, soco, chute, caindo) e as silhuetas pretas da Luana e do Tonho lado a lado.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> dá para saber quem é a Luana e quem é o Tonho só pelas silhuetas pretas.</p>
     </details>
     <details class="lvl etapa" data-n="9">
-      <summary>Etapa 9 · Personagem completo <span class="pill">dezembro</span></summary>
-      <h4>1 · No seu curso</h4>
+      <summary>Etapa 9 · Legibilidade: mãos, olhos e o fundo neon <span class="pill">dezembro</span></summary>
+      <h4>1 · Assista</h4>
+      <p><strong>Módulo 4, Design de personagem</strong>: as aulas de tamanho do personagem.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/s7oPWmQFFWg">Como fazer anatomia em personagem pixel art</a> · Como fazer pixel art · 31 min</li></ul>
+      <details class="mais"><summary>Se travar: mais 1 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/ldQbi9t_C5k">Como melhorar seus personagens (exercício)</a> · Baú Maker · 3 min</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 91–94: cada pixel importa <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 97–100: mãos e olhos <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 104: cor do personagem <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 109–112: sprite contra o fundo e como achar problemas <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Portrait</a></li></ul>
+      <h4>3 · Entenda</h4>
+<p>Num sprite de ~56 px, o jogador lê o personagem em meio segundo, no meio da briga. Esta etapa é sobre fazer isso funcionar:</p>
+      <ul>
+        <li><strong>Mãos:</strong> blocos de 4–5 px. Comece pela forma (punho, mão aberta), como uma luva sem dedos; dedo só se sobrar espaço. Polegar e indicador definem a mão.</li>
+        <li><strong>Olhos:</strong> 1–2 pixels. Mudar um pixel muda a expressão inteira: teste versões.</li>
+        <li><strong>Sacrifique detalhe:</strong> se um detalhe não aparece em 100%, ele sai.</li>
+        <li><strong>O fundo do VILA é escuro e cheio de neon.</strong> O personagem precisa de contorno escuro por fora e da luz de borda (ciano nos heróis), senão some no cenário.</li>
+        <li><strong>Teste de verdade:</strong> cole o sprite na cena de teste (<code>Documentos\jogo\marketing\capa_mockup\cena_jogo_1920x1080.png</code>) e veja em tamanho real se ainda dá para ler.</li>
+      </ul>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g9"><span><span class="t">Mãos, olhos e o teste no fundo</span><span class="d">Mão fechada, mão aberta e 3 expressões da Luana em 56 px. Depois cole a Luana parada na cena de teste e ajuste até ela se destacar.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> a Luana se lê na cena de teste em 100%, sem zoom.</p>
+    </details>
+    <details class="lvl etapa" data-n="10">
+      <summary>Etapa 10 · Personagem completo <span class="pill">dezembro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 4, Design de personagem</strong> (4h25): tamanho do personagem e paleta limitada. As aulas 11–15 repetem a silhueta do módulo 3: dá para acelerar.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/JfcJ6AH71pQ">Criação de personagens 1/6</a> · dbr · 46 min</li><li>⭐ <a href="https://youtu.be/aBXNHcW8pB4">Criação de personagens 2/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/s3cjmG-ydiE">Criação de personagens 3/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/HXRoe_SuUm8">Criação de personagens 4/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/eUXFBglZMt0">Criação de personagens 5/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/6LK0a-lCJ2o">Criação de personagens 6/6</a> · dbr</li></ul>
+      <details class="mais"><summary>Se travar: mais 8 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/sF19tcGWmqc">Como fazer personagem pixel art (na prática)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/uAsbvozTcig">Luz e sombra em personagens (na prática)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/nggRYRrdGQ0">Guia Completo #11: Personagem do zero até o final</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/ldQbi9t_C5k">Como melhorar seus personagens (exercício)</a> · Baú Maker · 3 min</li><li><a href="https://youtu.be/hqbohVUzpiI">Aula 1: Base de rosto e olhos</a> · dbr</li><li><a href="https://youtu.be/xcngD-2OpTo">Aula 2: Rosto, cabelos e olhar</a> · dbr</li><li><a href="https://youtu.be/sZYL5Mua2lQ">Aula 6: Cabelos com 2 ou mais cores</a> · dbr</li><li><a href="https://youtu.be/NdLsrgFK12g">Aula 7: Sombras</a> · dbr</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 162–176: capítulo 7: do rascunho ao sprite limpo <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\7_acabamento</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">characterIdle</a></li></ul>
+      <h4>3 · Entenda</h4>
 <p>A ordem de trabalho de todo personagem:</p>
       <ol>
-        <li><strong>Silhueta</strong> pintada de uma cor só (etapa 8).</li>
+        <li><strong>Silhueta</strong> pintada de uma cor só (etapa 4).</li>
         <li><strong>Blocos de cor:</strong> pele, cabelo, roupa, cada um de uma cor chapada.</li>
-        <li><strong>Luz e sombra</strong>, com a luz sempre do mesmo lado (etapa 5).</li>
-        <li><strong>Contorno:</strong> escuro por fora, mais suave por dentro (etapa 6).</li>
+        <li><strong>Luz e sombra</strong>, com a luz sempre do mesmo lado (etapa 6).</li>
+        <li><strong>Contorno:</strong> escuro por fora, mais suave por dentro (etapa 7).</li>
         <li><strong>Detalhes por último:</strong> olhos e boca com 2–3 pixels, cabelo em massas grandes (não fio a fio), dobras de roupa só onde o corpo dobra.</li>
+        <li><strong>Limpeza:</strong> a passada final do capítulo 7 do Pixel Logic (pixels soltos, clusters, ajustes com a ferramenta de seleção).</li>
       </ol>
       <ul>
         <li>Confira no <strong>cinza</strong> e no <strong>tamanho real</strong> (100%).</li>
         <li><strong>Guarde a paleta</strong> de cada personagem: as versões de inimigo com outra cor saem trocando a paleta.</li>
         <li>As aulas do dbr usam retratos maiores que o seu sprite, mas a técnica de rosto, cabelo e sombra é a mesma.</li>
+        <li><strong>Marco:</strong> refaça a Luana na armada (versão 2) e ponha do lado da versão 1 da etapa 0.</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/JfcJ6AH71pQ">Criação de personagens 1/6</a> · dbr · 46 min</li><li>⭐ <a href="https://youtu.be/aBXNHcW8pB4">Criação de personagens 2/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/s3cjmG-ydiE">Criação de personagens 3/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/HXRoe_SuUm8">Criação de personagens 4/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/eUXFBglZMt0">Criação de personagens 5/6</a> · dbr</li><li>⭐ <a href="https://youtu.be/6LK0a-lCJ2o">Criação de personagens 6/6</a> · dbr</li><li><a href="https://youtu.be/sF19tcGWmqc">Como fazer personagem pixel art (na prática)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/uAsbvozTcig">Luz e sombra em personagens (na prática)</a> · Como fazer pixel art</li><li><a href="https://youtu.be/nggRYRrdGQ0">Guia Completo #11: Personagem do zero até o final</a> · Capitão Dinossauro</li><li><a href="https://youtu.be/ldQbi9t_C5k">Como melhorar seus personagens (exercício)</a> · Baú Maker · 3 min</li><li><a href="https://youtu.be/hqbohVUzpiI">Aula 1: Base de rosto e olhos</a> · dbr</li><li><a href="https://youtu.be/xcngD-2OpTo">Aula 2: Rosto, cabelos e olhar</a> · dbr</li><li><a href="https://youtu.be/sZYL5Mua2lQ">Aula 6: Cabelos com 2 ou mais cores</a> · dbr</li><li><a href="https://youtu.be/NdLsrgFK12g">Aula 7: Sombras</a> · dbr</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e9"><span><span class="t">Luana e Tonho parados, em 3/4</span><span class="d">Primeiro as silhuetas pretas lado a lado, depois a cor, depois a luz. Confira o teste do cinza e o tamanho real.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g10"><span><span class="t">Luana e Tonho parados, em 3/4</span><span class="d">Primeiro as silhuetas pretas lado a lado, depois a cor, depois a luz. Confira o teste do cinza e o tamanho real.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> Luana e Tonho parados estão prontos para o jogo, e a armada v2 está claramente melhor que a v1.</p>
     </details>
-    <details class="lvl etapa" data-n="10">
-      <summary>Etapa 10 · Animação básica e levar para o jogo <span class="pill">janeiro</span></summary>
-      <h4>1 · No seu curso</h4>
+    <h3 class="fase">Fase 3 · Animação <span class="muted">· janeiro a março de 2027</span></h3>
+    <details class="lvl etapa" data-n="11">
+      <summary>Etapa 11 · Animação básica e levar para o jogo <span class="pill">janeiro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 5, Animação</strong>, aulas 1–5 (quadros-chave e interpolação) e a aula 11 de bônus.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/Bqccn2_BDj0">Como fazer animação no Aseprite</a> · Dininho · 15 min</li></ul>
+      <details class="mais"><summary>Se travar: mais 3 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/H40BkNNkgOs">Os 12 princípios da animação</a> · SantaMary · 4 min</li><li><a href="https://youtu.be/XwDN0sZBu1M">Animação em pixel art para iniciantes</a> · Como fazer pixel art</li><li><a href="https://youtu.be/PMeIsUtrUXg">Animando sua pixel art (aula 17)</a> · Dominando Pixel Art</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 214–221: tempo, comprimir e esticar, antecipação, ease <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\9_animacao</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Easings, Squash, characterIdle, loop</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Quadros-chave primeiro:</strong> desenhe as poses principais e só depois os quadros do meio (interpolação).</li>
         <li><strong>Tempo é tudo:</strong> no Aseprite, cada quadro tem uma duração (clique duas vezes no quadro). O mesmo desenho parece pesado ou leve só mudando o tempo.</li>
@@ -582,37 +651,40 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Nomes sem acento nem espaço:</strong> luana_idle.png, tonho_soco1.png.</li>
         <li><strong>Guia de estilo:</strong> uma folha com as paletas, o tamanho, a direção da luz e o tipo de contorno. Consulte antes de cada desenho novo para o jogo inteiro ficar igual.</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/Bqccn2_BDj0">Como fazer animação no Aseprite</a> · Dininho · 15 min</li><li><a href="https://youtu.be/H40BkNNkgOs">Os 12 princípios da animação</a> · SantaMary · 4 min</li><li><a href="https://youtu.be/XwDN0sZBu1M">Animação em pixel art para iniciantes</a> · Como fazer pixel art</li><li><a href="https://youtu.be/PMeIsUtrUXg">Animando sua pixel art (aula 17)</a> · Dominando Pixel Art</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e10"><span><span class="t">Idle dos dois tocando na Godot</span><span class="d">A ginga da Luana e a respiração do Tonho, exportadas como sprite sheet (com a origem nos pés) e no lugar dos quadrados do protótipo.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g11"><span><span class="t">Idle dos dois tocando na Godot</span><span class="d">A ginga da Luana e a respiração do Tonho, exportadas como sprite sheet (com a origem nos pés) e no lugar dos quadrados do protótipo.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> os dois respiram dentro do jogo, sem "pulo" no loop.</p>
     </details>
-    <details class="lvl etapa" data-n="11">
-      <summary>Etapa 11 · Andar, correr e dash <span class="pill">janeiro</span></summary>
-      <h4>1 · No seu curso</h4>
+    <details class="lvl etapa" data-n="12">
+      <summary>Etapa 12 · Andar, correr e dash <span class="pill">janeiro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 5</strong>, aulas 12–24 (idle, pulo e corrida).</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/M-ozjTe8TyM">Animação de andar super fácil</a> · Dininho</li></ul>
+      <details class="mais"><summary>Se travar: mais 3 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/bG-osWMvuJ8">Conceitos de personagens caminhando</a> · Pixel Perfeito</li><li><a href="https://youtu.be/O_1NMvJ6R0s">Aula 13: Animação do personagem andando</a> · Sharpax · 21 min</li><li><a href="https://youtu.be/0mM4ucIrvho">Como animar sprites correndo (8 quadros)</a> · Raveninha 2D</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 227–233: métodos, reaproveitar quadros, poucos quadros, casca de cebola <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\9_animacao</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Walk, RunCycleSimple, Slide-Roll, Jump</a></li></ul>
+      <h4>3 · Entenda</h4>
 <ul>
         <li><strong>Andar (6–8 quadros, ~100 ms):</strong> contato (o pé da frente toca o chão), descida (o corpo abaixa e recebe o peso), passagem (as pernas se cruzam e o corpo fica mais alto) e subida. Braços sempre ao contrário das pernas.</li>
         <li><strong>Correr (6–8 quadros, ~80 ms):</strong> corpo inclinado para a frente, passos mais longos, braços dobrados e um quadro com os dois pés fora do chão.</li>
         <li><strong>Dash (2–3 quadros):</strong> uma pose esticada e rápida, com um rastro ou poeira. Para a Luana, pode ser o aú (a estrela da capoeira).</li>
         <li><strong>Beat 'em up:</strong> andar "para dentro" e "para fora" da tela usa o mesmo ciclo de lado. Não precisa desenhar outro.</li>
+        <li><strong>Reaproveite:</strong> tronco e cabeça podem se repetir entre quadros, mudando só as pernas. É o "reciclar quadros" do Pixel Logic.</li>
         <li><strong>No jogo:</strong> ajuste a velocidade do código ao tamanho do passo do desenho, senão o personagem parece "patinar".</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/M-ozjTe8TyM">Animação de andar super fácil</a> · Dininho</li><li><a href="https://youtu.be/bG-osWMvuJ8">Conceitos de personagens caminhando</a> · Pixel Perfeito</li><li><a href="https://youtu.be/O_1NMvJ6R0s">Aula 13: Animação do personagem andando</a> · Sharpax · 21 min</li><li><a href="https://youtu.be/0mM4ucIrvho">Como animar sprites correndo (8 quadros)</a> · Raveninha 2D</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e11"><span><span class="t">Andar e dash dos dois</span><span class="d">Andar da Luana e do Tonho (pesado, mais lento) e o dash de cada um, testados no protótipo.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g12"><span><span class="t">Andar e dash dos dois</span><span class="d">Andar da Luana e do Tonho (pesado, mais lento) e o dash de cada um, testados no protótipo.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> os dois andam no jogo sem patinar.</p>
     </details>
-    <details class="lvl etapa" data-n="12">
-      <summary>Etapa 12 · Golpes e animação de luta <span class="pill">fevereiro</span></summary>
-      <h4>1 · No seu curso</h4>
+    <details class="lvl etapa" data-n="13">
+      <summary>Etapa 13 · Golpes e animação de luta <span class="pill">fevereiro</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 5</strong>, aulas 25–29: espada e smear. É a mesma técnica do soco com impacto.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/_lnQOdZbLj0">Aula 24: Criando animação do personagem atacando</a> · Sharpax</li></ul>
+      <details class="mais"><summary>Se travar: mais 3 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/IldKq38aVJk">Fazendo borrões (smear), aula 66</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/CVjUTROpoBY">Animações suaves (aula 59)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/uVZa8bwSwB8">Criando um inimigo completo</a> · O Poder do Pixel · 48 min</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 222–226: smears, passar do ponto, follow-through <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\9_animacao</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">AttackSheet, Impact, MotionBlur, Defend, Death</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Antecipação → golpe → recuperação.</strong> Antecipação: o corpo vai para trás (1–2 quadros, ~80–100 ms). Golpe: rápido (1 quadro). <strong>Quadro de impacto:</strong> fica mais tempo (~100–150 ms), e a Godot ainda congela o jogo uns quadros (hit stop). Recuperação: volta à guarda.</li>
         <li><strong>Smear:</strong> um quadro com o membro "esticado" ou borrado no meio do golpe. Dá velocidade sem desenhar quadros a mais.</li>
@@ -646,36 +718,38 @@ details.how ul, details.how ol { margin-top: 6px; }
           <tr><td>Soco do braço biônico</td><td>Especial</td></tr>
         </tbody>
       </table></div>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/_lnQOdZbLj0">Aula 24: Criando animação do personagem atacando</a> · Sharpax</li><li><a href="https://youtu.be/IldKq38aVJk">Fazendo borrões (smear), aula 66</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/CVjUTROpoBY">Animações suaves (aula 59)</a> · Dominando Pixel Art</li><li><a href="https://youtu.be/uVZa8bwSwB8">Criando um inimigo completo</a> · O Poder do Pixel · 48 min</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e12"><span><span class="t">Combo de 3 dos dois, com smear e impacto</span><span class="d">Depois: levar dano, cair e levantar. Teste no jogo com o hit stop ligado.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g13"><span><span class="t">Combo de 3 dos dois, com smear e impacto</span><span class="d">Depois: levar dano, cair e levantar. Teste no jogo com o hit stop ligado.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> um amigo joga e diz que o golpe "pesa".</p>
     </details>
-    <details class="lvl etapa" data-n="13">
-      <summary>Etapa 13 · Efeitos <span class="pill">março</span></summary>
-      <h4>1 · No seu curso</h4>
+    <details class="lvl etapa" data-n="14">
+      <summary>Etapa 14 · Efeitos <span class="pill">março</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo 6, Animação de efeitos</strong>, só as aulas 1, 7, 8 e 9.</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/jLKwL1OCvuY">Criando uma explosão em pixel art</a> · Sharpax</li></ul>
+      <details class="mais"><summary>Se travar: mais 1 vídeos</summary><ul class="vids"><li><a href="https://youtu.be/fUztwHq8HaA">Como fazer um efeito épico</a> · O Poder do Pixel</li></ul></details>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Impact, Blood, Explosion, Electric, SmokeSheet, Breaking</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Efeito começa forte e some devagar:</strong> o primeiro quadro é o maior e mais claro; os seguintes encolhem e escurecem.</li>
         <li><strong>Poucos quadros, rápidos:</strong> faísca de impacto com 3–4 quadros de ~50 ms.</li>
         <li><strong>Cor mais clara que tudo na tela</strong> no primeiro quadro (quase branco), para o olho ir direto ao golpe.</li>
         <li><strong>Para o jogo:</strong> faísca de impacto, poeira da queda, respingo curto de sangue (humanos), óleo e peças (robôs), explosão de robô, choque elétrico do drone, objeto quebrando.</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/jLKwL1OCvuY">Criando uma explosão em pixel art</a> · Sharpax</li><li><a href="https://youtu.be/fUztwHq8HaA">Como fazer um efeito épico</a> · O Poder do Pixel</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e13"><span><span class="t">Faísca, poeira e explosão de robô</span><span class="d">Teste no jogo junto com o golpe e a tremida de tela.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g14"><span><span class="t">Faísca, poeira e explosão de robô</span><span class="d">Teste no jogo junto com o golpe e a tremida de tela.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> faísca, poeira e explosão aparecem no jogo junto com o golpe.</p>
     </details>
-    <details class="lvl etapa" data-n="14">
-      <summary>Etapa 14 · Cenário <span class="pill">abril</span></summary>
-      <h4>1 · No seu curso</h4>
+    <h3 class="fase">Fase 4 · Mundo <span class="muted">· abril de 2027</span></h3>
+    <details class="lvl etapa" data-n="15">
+      <summary>Etapa 15 · Cenário noturno e neon <span class="pill">abril</span></summary>
+      <h4>1 · Assista</h4>
       <p><strong>Módulo Background</strong> (1h47).</p>
-      <h4>2 · Entenda</h4>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/7YQXFT2GA_c">Como fazer cenários e backgrounds para jogos</a> · Dininho</li></ul>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 109–110: sprite contra o fundo <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\4_legibilidade_personagem</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 121–128: padrões de dithering para céu e textura <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\5_dithering</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 235–236: parallax <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\9_animacao</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">City, Parallax, Holograms-Ghosts, Tech, Shine</a></li></ul>
+      <h4>3 · Entenda</h4>
       <ul>
         <li><strong>Perspectiva de beat 'em up:</strong> o chão ocupa a parte de baixo da tela (onde se anda), as paredes e prédios ficam atrás, e o horizonte fica alto.</li>
         <li><strong>Parallax:</strong> camadas que se movem em velocidades diferentes. O fundo distante (céu, prédios) anda devagar; o da frente, rápido. Dá profundidade com pouco desenho.</li>
@@ -683,13 +757,37 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><strong>Peças reaproveitáveis:</strong> desenhe a fachada, a barraca e o poste como peças separadas e monte a fase combinando. É o que o Pedro chama de modular.</li>
         <li><strong>Neon:</strong> o tubo de luz é quase branco no centro, com a cor forte em volta e um halo escuro e pouco saturado ao redor. O brilho vem do contraste, não de muitas cores.</li>
         <li>Para referência real, use fotos de feiras, orelhões, Kombis e calçadões. Os 20% de futuro vêm por cima.</li>
+      </ul><h4>Para o visual do VILA</h4>
+      <ul>
+        <li>Estude as referências em <code>Documentos\jogo\referencias\neon\</code>, principalmente <strong>Tales of the Neon Sea</strong> (01–04): cada luz tem uma fonte visível, e o chão molhado reflete os letreiros.</li>
+        <li>Paredes e céu nos tons de <strong>Fundo</strong> da paleta; o neon só nas fontes de luz (letreiros, janelas, postes).</li>
+        <li>A cena de teste (<code>marketing\capa_mockup\cena_jogo_1920x1080.png</code>) mostra a ideia de rua: fachadas, laje, orelhão, varal, letreiros.</li>
       </ul>
-      <h4>3 · Vídeos em português</h4>
-      <p class="muted">⭐ é o principal. Os outros são reforço, se travar.</p>
-      <ul class="vids"><li>⭐ <a href="https://youtu.be/7YQXFT2GA_c">Como fazer cenários e backgrounds para jogos</a> · Dininho</li></ul>
-      <h4>4 · Exercício</h4>
-      <div class="check"><label><input type="checkbox" id="e14"><span><span class="t">A feira da Vila Esperança em 3 camadas</span><span class="d">Céu e prédios ao fundo, barracas no meio e o chão onde se luta. Teste com a Luana na frente e confira se ela se destaca.</span></span></label></div>
-      <p class="muted">Marque quando terminar o exercício: a etapa fica concluída e a aba Hoje passa para a próxima.</p>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g15"><span><span class="t">A feira da Vila Esperança em 3 camadas</span><span class="d">Céu e prédios ao fundo, barracas no meio e o chão onde se luta. Teste com a Luana na frente e confira se ela se destaca.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> a Luana se destaca na frente do seu cenário, em tamanho real.</p>
+    </details>
+    <h3 class="fase">Fase 5 · Rumo ao profissional <span class="muted">· maio de 2027 em diante, sempre</span></h3>
+    <details class="lvl etapa" data-n="16">
+      <summary>Etapa 16 · Nível profissional: consistência e polimento <span class="pill">sempre</span></summary>
+      <h4>1 · Assista</h4>
+      <p>Nenhum módulo novo: aqui o professor são os jogos que você admira.</p>
+      <ul class="vids"><li>⭐ <a href="https://youtu.be/ldQbi9t_C5k">Como melhorar seus personagens (exercício)</a> · Baú Maker · 3 min</li></ul>
+      <h4>2 · Leia</h4>
+      <ul><li><strong>Pixel Logic</strong>, págs. 187–212: capítulo 8: subpixel, a animação suave dos profissionais <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\8_subpixel</code>)</span></li><li><strong>Pixel Logic</strong>, págs. 237–238: conclusão e epílogo <span class="muted">(pasta <code>Documentos\jogo\referencias\pixel_logic\9_animacao</code>)</span></li><li><strong>Pedro Medeiros</strong> (artista do Celeste), os GIFs <a href="https://saint11.art/blog/pixel-art-tutorials/">Subpixel</a></li></ul>
+      <h4>3 · Entenda</h4>
+<p>Profissional não é quem desenha o sprite mais bonito. É quem entrega <strong>sprites bons, iguais entre si, no prazo</strong>. Isso vem de hábitos:</p>
+      <ul>
+        <li><strong>Guia de estilo:</strong> uma folha com paletas, tamanhos, direção da luz e tipo de contorno. Consulte antes de cada desenho novo para o jogo inteiro parecer feito pela mesma mão.</li>
+        <li><strong>Estudo de mestres:</strong> copie quadro a quadro um golpe do SoR2 ou do Final Fight (The Spriters Resource) só para estudar. Depois faça o seu de memória.</li>
+        <li><strong>Subpixel:</strong> mover a cor em vez do pixel para animar movimentos menores que 1 pixel (respiração, cabelo). É o acabamento dos profissionais.</li>
+        <li><strong>Feedback:</strong> poste no r/PixelArt e no X com a tag #pixelart. Crítica específica acelera muito.</li>
+        <li><strong>Velocidade:</strong> reaproveite partes, troque paleta para fazer inimigos novos e cronometre quanto tempo leva cada sprite.</li>
+        <li><strong>Medição:</strong> todo dia 1 do mês, refaça a Luana na armada e guarde. É a prova da sua evolução.</li>
+      </ul>
+      <h4>4 · Faça</h4>
+      <div class="check"><label><input type="checkbox" id="g16"><span><span class="t">Guia de estilo e a armada v3</span><span class="d">Guia de estilo do VILA 2034 numa folha só, e a Luana na armada de novo: ponha a v1, a v2 e a v3 lado a lado.</span></span></label></div>
+      <p class="pronto"><strong>Pronto quando:</strong> nunca: essa etapa é o seu jeito de trabalhar daqui para a frente. Marque quando o guia de estilo existir.</p>
     </details>
     </div>
   </div>
@@ -737,7 +835,7 @@ details.how ul, details.how ol { margin-top: 6px; }
 
     <details>
       <summary>O seu curso: o que ver e o que pular</summary>
-      <p>São 204 aulas e 49 h. Para um beat 'em up, o essencial são umas 30 h, ou ~20 h em 1,5×. A trilha acima já diz qual módulo usar em cada etapa.</p>
+      <p>São 204 aulas e 49 h. Para um beat 'em up, o essencial são umas 30 h, ou ~20 h em 1,5×. O guia acima já diz qual módulo usar em cada etapa.</p>
       <div class="table-wrap"><table class="stack">
         <thead><tr><th>Módulo</th><th class="num">Duração</th><th>O que fazer</th></tr></thead>
         <tbody><tr><td>1. Introdução ao Aseprite</td><td class="num">2h21</td><td>Veja tudo. Atenção a Camadas, Frames, Tags e Exportar frames: você vai usar em toda animação.</td></tr><tr><td>2. Técnicas básicas</td><td class="num">9h29</td><td>Veja tudo. Luz e sombra, Materiais, Dithering e Anti-aliasing são a base do visual do SoR2. Faça os 4 exercícios do pirata: é aqui que a evolução aparece.</td></tr><tr><td>3. Desenho em pixel art</td><td class="num">4h17</td><td>Veja tudo. Proporção, volume, silhueta, ação, boneco de palito e Perspectiva em jogos 2D (a pose 3/4 do beat 'em up).</td></tr><tr><td>4. Design de personagem</td><td class="num">4h25</td><td>Resolução do jogo, tamanho do personagem e paleta limitada. As aulas 11–15 repetem silhueta do módulo 3: dá para acelerar.</td></tr><tr><td>5. Animação</td><td class="num">8h36</td><td>O mais importante para beat 'em up. Aulas 1–5 (quadros-chave, interpolação), 12–24 (idle, pulo, corrida), 25–29 (espada e smear = socos com impacto). A 11 é um bom bônus.</td></tr><tr><td>6. Animação de efeitos</td><td class="num">~1h15</td><td>Só as aulas 1, 7, 8 e 9: faíscas de impacto e poeira quando o inimigo cai.</td></tr><tr><td>Background</td><td class="num">1h47</td><td>Cidade com prédios, como os cenários do SoR2. Entra em abril de 2027, para o cenário da fase 1.</td></tr><tr><td>Tilesets e Top Down</td><td class="num">13h02</td><td>Beat 'em up usa cenário de fundo, não tiles, e a vista de cima não serve para o gênero.</td></tr></tbody>
@@ -752,7 +850,7 @@ details.how ul, details.how ol { margin-top: 6px; }
         <li><a href="https://pixeljoint.com/forum/forum_posts.asp?TID=11299">The Pixel Art Tutorial, do cure</a>: a base, numa página só (etapas 2–6).</li>
         <li><a href="https://web.cs.wpi.edu/~claypool/courses/frontiers-06/samples/pixel-artist/faq.htm">So You Want To Be A Pixel Artist?, do Tsugumo</a>: termina animando um lutador (etapa 12).</li>
         <li><a href="https://www.derekyu.com/makegames/pixelart.html">The Pixel Art Tutorial, do Derek Yu</a>: um personagem do esboço ao fim (etapa 9).</li>
-        <li><a href="https://michafrar.gumroad.com/l/pixel-logic">Pixel Logic</a> (livro em PDF, ~US$ 9): a referência mais completa, quase toda em imagens. Opcional.</li>
+        <li><a href="https://michafrar.gumroad.com/l/pixel-logic">Pixel Logic</a>: o livro usado no guia. As páginas de cada capítulo estão em <code>Documentos\jogo\referencias\pixel_logic\</code>. Vale comprar no site do autor (~US$ 9) para apoiar.</li>
         <li><a href="https://www.spriters-resource.com/">The Spriters Resource</a>: as folhas de sprites do SoR2 e do Final Fight, para estudar quadro a quadro.</li>
         <li><a href="https://lospec.com/palette-list">Lospec</a>: banco de paletas (procure as de Mega Drive).</li>
       </ul>
@@ -1771,7 +1869,7 @@ details.how ul, details.how ol { margin-top: 6px; }
     });
     return boxes;
   }
-  var etapas = persist('#arteList input', 'plano-arte');           /* Arte: 14 etapas */
+  var etapas = persist('#arteList > details.etapa input[id^="g"]', 'plano-arte2');  /* Arte: guia de 17 etapas */
   var godotSteps = persist('#godotSteps input', 'plano-beu-godot');  /* Godot: fundamentos */
   var gds = persist('#gdsList input', 'plano-beu-gds');              /* Godot: GDScript */
   var proto = persist('#proto input', 'plano-beu-proto');            /* Godot: protótipo */
